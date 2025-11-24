@@ -244,7 +244,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.Movement.CharacterMovement
   canMove: 1
-  speed: 200
-  canRun: 1
+  speed: 650
+  canRun: 0
   runningKey: 304
-  runningSpeedMultiplier: 1.2
+  runningSpeedMultiplier: 1
+  camera: {fileID: 4719739117529696088}
+  canRotate: 1
+  sensitivity: 500
+  smoothing: 5
+  lockCursor: 1
