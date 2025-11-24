@@ -245,11 +245,89 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NTO.Movement.CharacterMovement
   canMove: 1
   speed: 650
-  canRun: 0
-  runningKey: 304
-  runningSpeedMultiplier: 1
   camera: {fileID: 4719739117529696088}
   canRotate: 1
   sensitivity: 500
   smoothing: 5
   lockCursor: 1
+  canTwitch: 1
+  twitchCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.17497617
+      outSlope: 0.17497617
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.121524215
+      value: 0.021263842
+      inSlope: -0.062284738
+      outSlope: -0.062284738
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.27042565
+      value: -0.02333893
+      inSlope: -0.043131255
+      outSlope: -0.043131255
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.4459568
+      value: 0.014098905
+      inSlope: -0.018588565
+      outSlope: -0.018588565
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.64308447
+      value: -0.035273746
+      inSlope: 0.10762802
+      outSlope: 0.10762802
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.76334596
+      value: 0.020733988
+      inSlope: 0.015636757
+      outSlope: 0.015636757
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.92201185
+      value: -0.048197266
+      inSlope: 0.091782406
+      outSlope: 0.091782406
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0.6180076
+      outSlope: 0.6180076
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  twitchSpeed: 0.8
+  twitchAmplitude: 2
