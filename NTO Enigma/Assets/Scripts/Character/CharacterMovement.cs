@@ -1,15 +1,17 @@
 using UnityEngine;
 
-namespace NTO.Movement
+namespace NTO
 {
-    [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(Rigidbody), typeof(Character))]
     public sealed class CharacterMovement : MonoBehaviour
     {
-        [Header("Movement"), SerializeField] private bool canMove = true;
+        [SerializeField] private Rigidbody submarineRigidbody;
+        
+        [Header("Movement"), SerializeField] public bool canMove = true;
         [SerializeField, Min(0)] private float speed;
 
         [Header("Camera Rotation"), SerializeField] private new Transform camera;
-        [SerializeField] private bool canRotate = true;
+        [SerializeField] public bool canRotate = true;
         [SerializeField, Min(0)] private float sensitivity;
         [SerializeField, Min(0)] private float smoothing;
         [SerializeField] private bool lockCursor = true;
@@ -47,10 +49,9 @@ namespace NTO.Movement
 
         private void UpdateMovement()
         {
-            if (!canMove) return;
-            
-            var targetVelocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * speed * Time.deltaTime;
-            _rigidbody.linearVelocity = _rigidbody.rotation * new Vector3(targetVelocity.x, _rigidbody.linearVelocity.y, targetVelocity.y);
+            var targetVelocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * speed * Time.deltaTime * (canMove ? 1 : 0);
+            _rigidbody.linearVelocity = _rigidbody.rotation * new Vector3(targetVelocity.x, _rigidbody.linearVelocity.y, targetVelocity.y) +
+                                        submarineRigidbody.linearVelocity;
 
             if (targetVelocity.magnitude != 0 == Moving) return;
             

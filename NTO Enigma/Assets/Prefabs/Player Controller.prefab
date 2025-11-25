@@ -157,7 +157,9 @@ GameObject:
   - component: {fileID: 351699448012837056}
   - component: {fileID: 1966589000970846070}
   - component: {fileID: 7567903638443987507}
+  - component: {fileID: 7524859079115751161}
   - component: {fileID: 440682707884356034}
+  - component: {fileID: 4367156709343413028}
   m_Layer: 7
   m_Name: Player Controller
   m_TagString: Untagged
@@ -231,6 +233,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 1
+--- !u!114 &7524859079115751161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5697567470479646582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280525466a204e848c343d2badeeff06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.Character
+  movement: {fileID: 440682707884356034}
+  interaction: {fileID: 4367156709343413028}
 --- !u!114 &440682707884356034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,6 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70119039c095fe24b8f6ccf88b14c09b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.Movement.CharacterMovement
+  submarineRigidbody: {fileID: 0}
   canMove: 1
   speed: 650
   camera: {fileID: 4719739117529696088}
@@ -331,3 +348,22 @@ MonoBehaviour:
     m_RotationOrder: 4
   twitchSpeed: 0.8
   twitchAmplitude: 2
+--- !u!114 &4367156709343413028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5697567470479646582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6d623b912a47cb9fde91c1ed833777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.CharacterInteraction
+  radius: 3
+  camera: {fileID: 6211879108290117288}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  character: {fileID: 7524859079115751161}
+  canInteract: 1
