@@ -46,13 +46,14 @@ namespace NTO
             UpdateCameraTwitch();
             UpdateCameraRotation();
         }
-
+        
         private void UpdateMovement()
         {
-            var targetVelocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * speed * Time.deltaTime * (canMove ? 1 : 0);
+            var targetVelocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * speed;
+            targetVelocity *= Time.deltaTime * (canMove ? 1 : 0);
             _rigidbody.linearVelocity = _rigidbody.rotation * new Vector3(targetVelocity.x, _rigidbody.linearVelocity.y, targetVelocity.y) +
                                         submarineRigidbody.linearVelocity;
-
+            
             if (targetVelocity.magnitude != 0 == Moving) return;
             
             _twitchTime = 0;
