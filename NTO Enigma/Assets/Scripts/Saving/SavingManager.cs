@@ -8,13 +8,13 @@ using UnityEngine.Serialization;
 
 namespace NTO
 {
-    public sealed class SavingManager : MonoBehaviour, ISavingDataSource
+    public sealed class SavingManager : MonoBehaviour, ISavingReceiver
     {
         [Serializable]
-        private sealed class GeneralData
+        public sealed class GeneralData
         {
             public string name = "New Save";
-            public string creationDate;
+            [FormerlySerializedAs("creationDate")] public string creatingDate;
             public string updatingDate;
         }
 
@@ -34,7 +34,7 @@ namespace NTO
             public Category[] categories;
         }
         
-        [SerializeField] private GeneralData generalData;
+        [SerializeField] public GeneralData generalData;
         [SerializeField] private GameObject[] sources;
         
         public event Action SavingStarted;
@@ -43,7 +43,7 @@ namespace NTO
         public event Action LoadingStarted;
         public event Action<string, bool> LoadingEnded;
         
-        private List<ISavingDataSource> _sources;
+        private List<ISavingReceiver> _sources;
 
         private void Awake()
         {
@@ -60,7 +60,28 @@ namespace NTO
                 Load(generalData.name);
         }
 
-        private void ConvertSources() => _sources = sources.Select(s => s.GetComponent<ISavingDataSource>()).ToList();
+        private void ConvertSources() => _sources = sources.Select(s => s.GetComponent<ISavingReceiver>()).ToList();
+
+        private string[] GetAllSavesPaths() => Directory.GetFiles($"{Application.dataPath}/Saves")
+            .Where(path => Path.GetExtension(path) == ".json").ToArray();
+
+        public (string, GeneralData)[] GetAllSavesData()
+        {
+            var saves = GetAllSavesPaths();
+            var result = new (string, GeneralData)[saves.Length];
+
+            for (var i = 0; i < saves.Length; i++)
+            {
+                var path = saves[i];
+                var json = File.ReadAllText(path);
+                var saveObject = JsonUtility.FromJson<SaveObject>(json);
+                var generalCategory = saveObject.categories[0];
+                var data = JsonUtility.FromJson<GeneralData>(generalCategory.data);
+                result[i] = (path, data);
+            }
+            
+            return result;   
+        }
         
         public async Task Save()
         {
@@ -91,9 +112,9 @@ namespace NTO
             SavingEnded?.Invoke(message, success);
         }
 
-        public async Task Load(string saveName)
+        public async Task Load(string fileName)
         {
-            Debug.Log($"Loading {saveName}");
+            Debug.Log($"Loading {fileName}");
             
             LoadingStarted?.Invoke();
             
@@ -104,7 +125,7 @@ namespace NTO
             {
                 try
                 {
-                    var path = $"{Application.dataPath}/Saves/{saveName}.json";
+                    var path = $"{Application.dataPath}/Saves/{fileName}.json";
                     
                     if (!File.Exists(path))
                         throw new Exception("file not found");
@@ -148,8 +169,8 @@ namespace NTO
         private void SetDates()
         {
             var timeNow = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            if (generalData.creationDate == "")
-                generalData.creationDate = timeNow;
+            if (generalData.creatingDate == "")
+                generalData.creatingDate = timeNow;
             generalData.updatingDate = timeNow;
         }
 

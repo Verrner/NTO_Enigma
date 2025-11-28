@@ -1,0 +1,20 @@
+.save-button:hover {
+    background-color: rgba(49, 49, 49, 0.82);
+}
+
+.save-button {
+    background-color: rgba(28, 28, 28, 0.84);
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    padding-left: 15px;
+    font-size: 25px;
+    -unity-font-style: bold;
+    -unity-text-align: upper-left;
+    color: rgb(190, 190, 190);
+    text-overflow: ellipsis;
+}

@@ -1,6 +1,6 @@
 namespace NTO
 {
-    public interface ISavingDataSource
+    public interface ISavingReceiver
     {
         object GetSavedData();
         void LoadData(string data);
