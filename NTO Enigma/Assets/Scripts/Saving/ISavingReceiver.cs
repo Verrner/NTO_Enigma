@@ -2,7 +2,7 @@ namespace NTO
 {
     public interface ISavingReceiver
     {
-        object GetSavedData();
+        string GetSavedData();
         void LoadData(string data);
         string Id { get; }
     }

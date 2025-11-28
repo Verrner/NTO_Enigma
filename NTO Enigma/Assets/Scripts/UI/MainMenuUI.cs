@@ -18,6 +18,9 @@ namespace NTO
         [SerializeField] private string savePathLabelName = "save-path-label";
         
         [Header("General"), SerializeField] private SavingManager savingManager;
+
+        [LocalizationDynamicVariable("test-1"), SerializeField] public int Test1;
+        [LocalizationDynamicVariable("test-2"), SerializeField] public string Test2;
         
         private VisualElement _root;
 
@@ -37,6 +40,13 @@ namespace NTO
             SetElements();
             ShowAllSaves();
             RedrawSettings();
+            Debug.Log("Main Menu");
+            LocalizationManager.LocalizeUI(_root, this);
+            LocalizationManager.LanguageChanged += () =>
+            {
+                Debug.Log("Event Main Menu");
+                LocalizationManager.LocalizeUI(_root, this);
+            };
         }
 
         private void SetElements()
@@ -92,7 +102,6 @@ namespace NTO
             _saveCreatingDateLabel.text = _saves[_selectedSaveIndex].Item2.creatingDate;
             _saveUpdatingDateLabel.text = _saves[_selectedSaveIndex].Item2.updatingDate;
             _savePathLabel.text = _saves[_selectedSaveIndex].Item1;
-            Debug.Log($"{_saves[_selectedSaveIndex].Item2.creatingDate}, {_saves[_selectedSaveIndex].Item2.updatingDate}");
         }
 
         private TemplateContainer GetSaveButton(string name)

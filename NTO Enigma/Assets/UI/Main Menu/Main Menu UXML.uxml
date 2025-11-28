@@ -7,5 +7,11 @@
             <ui:Label text="Label" name="save-updating-date-label" style="color: rgb(207, 207, 207);" />
             <ui:Label text="Label" name="save-path-label" style="color: rgb(149, 149, 149); font-size: 12px; text-overflow: ellipsis; white-space: normal;" />
         </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1;">
+            <NTO.LocalizedLabel key="test-one" />
+            <NTO.LocalizedLabel key="test-random" />
+            <NTO.LocalizedLabel key="test-by-comparison" />
+            <NTO.LocalizedLabel key="test-replacing" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

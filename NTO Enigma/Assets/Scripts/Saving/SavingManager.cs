@@ -147,7 +147,7 @@ namespace NTO
         private string GetJson()
         {
             var dataArray = _sources.Select(s =>
-                new Category{data = JsonUtility.ToJson(s.GetSavedData()), id = s.Id}).ToArray();
+                new Category{data = s.GetSavedData(), id = s.Id}).ToArray();
             
             var data = new SaveObject { categories = dataArray };
             var res = JsonUtility.ToJson(data);
@@ -189,7 +189,7 @@ namespace NTO
             Directory.CreateDirectory(path);
         }
         
-        public object GetSavedData() => generalData;
+        public string GetSavedData() => JsonUtility.ToJson(generalData);
         public void LoadData(string data) => generalData = JsonUtility.FromJson<GeneralData>(data);
         public string Id => "general-data";
     }
