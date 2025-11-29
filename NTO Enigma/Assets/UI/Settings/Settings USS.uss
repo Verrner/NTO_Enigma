@@ -1,0 +1,3 @@
+.language-dropdown .unity-base-popup-field__text {
+    color: rgb(27, 27, 27);
+}

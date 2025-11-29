@@ -1,0 +1,3 @@
+.new-save-name-field .unity-text-element--inner-input-field-component {
+    color: rgb(27, 27, 27);
+}

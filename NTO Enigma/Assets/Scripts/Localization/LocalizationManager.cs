@@ -22,6 +22,7 @@ namespace NTO
 
         public static SystemLanguage Language
         {
+            get => _instance.language;
             set
             {
                 _instance.language = value;

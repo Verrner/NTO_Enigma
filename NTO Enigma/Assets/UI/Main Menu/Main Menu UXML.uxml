@@ -1,10 +1,20 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Main%20Menu/Main%20Menu%20USS.uss?fileID=7433441132597879392&amp;guid=48594ff4192272e4fb0843fc507b3272&amp;type=3#Main Menu USS" />
     <ui:VisualElement name="container" style="flex-grow: 1; flex-direction: row;">
         <ui:ScrollView name="saves-list-scroll-view" style="width: 30%; min-width: 30%; max-width: 30%; background-color: rgba(30, 30, 30, 0.89);" />
         <ui:VisualElement name="save-settings-content" style="flex-grow: 1; width: 30%; min-width: 30%; max-width: 30%; background-color: rgba(30, 30, 30, 0.89); border-top-width: 0; border-right-width: 1px; border-bottom-width: 0; border-left-width: 1px; border-left-color: rgb(222, 222, 222); border-right-color: rgb(222, 222, 222); border-top-color: rgb(222, 222, 222); border-bottom-color: rgb(222, 222, 222);">
-            <NTO.LocalizedLabel name="save-creating-date-label" key="creating-date" style="color: rgb(207, 207, 207);" />
-            <NTO.LocalizedLabel name="save-updating-date-label" key="updating-date" style="color: rgb(207, 207, 207);" />
-            <ui:Label text="Label" name="save-path-label" style="color: rgb(149, 149, 149); font-size: 12px; text-overflow: ellipsis; white-space: normal;" />
+            <NTO.LocalizedLabel name="save-creating-date-label" key="creating-date" _key="creating-date" style="color: rgb(207, 207, 207); font-size: 14px;" />
+            <NTO.LocalizedLabel name="save-updating-date-label" key="updating-date" _key="updating-date" style="color: rgb(207, 207, 207); font-size: 14px;" />
+            <ui:Label text="Label" name="save-path-label" style="color: rgb(149, 149, 149); font-size: 10px; white-space: normal;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="controls-content" style="flex-grow: 1; background-color: rgba(30, 30, 30, 0.89); justify-content: center;">
+            <ui:VisualElement name="new-save" style="flex-grow: 1; margin-top: 0; margin-right: 0; margin-bottom: 20px; margin-left: 0; justify-content: center; height: 80px; min-height: 80px; max-height: 80px;">
+                <NTO.LocalizedTextField name="new-save-name-field" _key="new-save-name-field" is-delayed="true" class="new-save-name-field" style="height: 40px; min-height: 40px; max-height: 40px; color: rgb(207, 207, 207);" />
+                <NTO.LocalizedButton name="create-new-save-button" _key="create-new-save" style="height: 40px; min-height: 40px; max-height: 40px;" />
+            </ui:VisualElement>
+            <NTO.LocalizedButton name="load-existing-save-button" _key="load-existing-save" style="height: 40px; min-height: 40px; max-height: 40px;" />
+            <NTO.LocalizedButton name="settings-button" _key="settings" style="height: 40px; min-height: 40px; max-height: 40px;" />
+            <NTO.LocalizedButton name="exit-button" _key="exit" style="height: 40px; min-height: 40px; max-height: 40px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

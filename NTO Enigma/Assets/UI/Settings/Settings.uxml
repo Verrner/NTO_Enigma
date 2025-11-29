@@ -1,0 +1,7 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Settings/Settings%20USS.uss?fileID=7433441132597879392&amp;guid=e2b7a723b0de9134b85633e80e13230e&amp;type=3#Settings USS" />
+    <ui:VisualElement name="content" style="flex-grow: 1; background-color: rgba(30, 30, 30, 0.89);">
+        <NTO.LocalizedButton name="exit-button" _key="exit" style="width: 80px; min-width: 80px; max-width: 80px;" />
+        <NTO.LocalizedDropdown name="language-dropdown" _key="language-dropdown" class="language-dropdown" style="width: 400px; min-width: 400px; max-width: 400px; color: rgb(207, 207, 207);" />
+    </ui:VisualElement>
+</ui:UXML>

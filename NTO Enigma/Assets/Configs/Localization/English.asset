@@ -24,3 +24,33 @@ MonoBehaviour:
     values:
     - condition: 
       value: 'Last updated: {updating-date}'
+  - key: new-save-name-field
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Name
+  - key: create-new-save
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Create
+  - key: load-existing-save
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Load
+  - key: settings
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Settings
+  - key: exit
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Exit
+  - key: language-dropdown
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: "Language|English|\u0420\u0443\u0441\u0441\u043A\u0438\u0439"
