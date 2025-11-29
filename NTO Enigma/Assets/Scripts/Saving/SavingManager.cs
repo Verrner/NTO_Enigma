@@ -85,9 +85,6 @@ namespace NTO
         
         public async Task Save()
         {
-            Debug.Log("Saving started");
-            Debug.Log($"{Application.dataPath}/Saves/{generalData.name}.json");
-            
             SavingStarted?.Invoke();
             
             var message = "Saved successfully";
@@ -114,14 +111,12 @@ namespace NTO
 
         public async Task Load(string fileName)
         {
-            Debug.Log($"Loading {fileName}");
-            
             LoadingStarted?.Invoke();
             
             var message = "Loaded successfully";
             var success = true;
 
-            await Task.Run(() =>
+            var task = Task<SaveObject>.Run(() =>
             {
                 try
                 {
@@ -132,14 +127,18 @@ namespace NTO
                     
                     var dataJson = File.ReadAllText(path);
                     var data = JsonUtility.FromJson<SaveObject>(dataJson);
-                    SetData(data);
+                    return data;
                 }
                 catch (Exception e)
                 {
                     message = e.Message;
                     success = false;
                 }
+
+                return null;
             });
+            await task;
+            SetData(task.Result);
             
             LoadingEnded?.Invoke(message, success);
         }
@@ -151,7 +150,6 @@ namespace NTO
             
             var data = new SaveObject { categories = dataArray };
             var res = JsonUtility.ToJson(data);
-            Debug.Log(res);
             return res;
         }
 

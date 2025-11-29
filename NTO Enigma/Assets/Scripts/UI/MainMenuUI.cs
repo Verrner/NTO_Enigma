@@ -12,64 +12,36 @@ namespace NTO
         [SerializeField] private VisualTreeAsset saveButtonTemplate;
         
         [Header("Save Settings"), SerializeField] private string saveSettingsContentName = "save-name-field";
-        [SerializeField] private string saveNameFieldName = "save-name-field";
-        [SerializeField] private string saveCreatingDateLabelName = "save-creating-date-label";
-        [SerializeField] private string saveUpdatingDateLabelName = "save-updating-date-label";
         [SerializeField] private string savePathLabelName = "save-path-label";
+        [HideInInspector, LocalizationDynamicVariable("creating-date")] public string creatingDate;
+        [HideInInspector, LocalizationDynamicVariable("updating-date")] public string updatingDate;
         
         [Header("General"), SerializeField] private SavingManager savingManager;
 
-        [LocalizationDynamicVariable("test-1"), SerializeField] public int Test1;
-        [LocalizationDynamicVariable("test-2"), SerializeField] public string Test2;
-        
-        private VisualElement _root;
+        private UIDocument _uiDocument;
 
         private VisualElement _savesListParent;
         private int _selectedSaveIndex;
         private List<(string, SavingManager.GeneralData)> _saves;
 
         private VisualElement _saveSettingsContent;
-        private TextField _saveNameField;
-        private Label _saveCreatingDateLabel;
-        private Label _saveUpdatingDateLabel;
         private Label _savePathLabel;
         
-        private void Awake()
+        private void OnEnable()
         {
-            _root = GetComponent<UIDocument>().rootVisualElement;
+            _uiDocument = GetComponent<UIDocument>();
             SetElements();
             ShowAllSaves();
             RedrawSettings();
-            Debug.Log("Main Menu");
-            LocalizationManager.LocalizeUI(_root, this);
-            LocalizationManager.LanguageChanged += () =>
-            {
-                Debug.Log("Event Main Menu");
-                LocalizationManager.LocalizeUI(_root, this);
-            };
+            LocalizationManager.LocalizeUI(_uiDocument.rootVisualElement, this);
         }
 
         private void SetElements()
         {
-            _savesListParent = _root.Q(savesListParentName);
+            _savesListParent = _uiDocument.rootVisualElement.Q(savesListParentName);
             
-            _saveSettingsContent = _root.Q(saveSettingsContentName);
-            _saveNameField = _root.Q<TextField>(saveNameFieldName);
-            _saveCreatingDateLabel = _root.Q<Label>(saveCreatingDateLabelName);
-            _saveUpdatingDateLabel = _root.Q<Label>(saveUpdatingDateLabelName);
-            _savePathLabel = _root.Q<Label>(savePathLabelName);
-
-            _saveNameField.RegisterValueChangedCallback(e =>
-            {
-                if (string.IsNullOrWhiteSpace(e.newValue))
-                {
-                    _saveNameField.value = "New Save";
-                    savingManager.generalData.name = "New Save";
-                    return;
-                }
-
-                savingManager.generalData.name = e.newValue;
-            });
+            _saveSettingsContent = _uiDocument.rootVisualElement.Q(saveSettingsContentName);
+            _savePathLabel = _uiDocument.rootVisualElement.Q<Label>(savePathLabelName);
         }
 
         private void ShowAllSaves()
@@ -98,10 +70,11 @@ namespace NTO
             _saveSettingsContent.style.opacity = _selectedSaveIndex >= _saves.Count ? 0 : 1;
             if (_selectedSaveIndex >= _saves.Count) return;
 
-            _saveNameField.value = _saves[_selectedSaveIndex].Item2.name;
-            _saveCreatingDateLabel.text = _saves[_selectedSaveIndex].Item2.creatingDate;
-            _saveUpdatingDateLabel.text = _saves[_selectedSaveIndex].Item2.updatingDate;
+            creatingDate = _saves[_selectedSaveIndex].Item2.creatingDate;
+            updatingDate = _saves[_selectedSaveIndex].Item2.updatingDate;
             _savePathLabel.text = _saves[_selectedSaveIndex].Item1;
+            
+            LocalizationManager.LocalizeUI(_uiDocument.rootVisualElement, this);
         }
 
         private TemplateContainer GetSaveButton(string name)

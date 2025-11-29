@@ -420,7 +420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NTO.LocalizationManager
   tables:
   - {fileID: 11400000, guid: d1783a3bd75b204498b3003757176c30, type: 2}
-  - {fileID: 11400000, guid: f8eb9fe95a212b34aaa73de486389bcb, type: 2}
+  - {fileID: 11400000, guid: e36d018da6b226c4fbd44e081b8c9320, type: 2}
   language: 10
 --- !u!4 &1412811468
 Transform:
@@ -471,12 +471,10 @@ MonoBehaviour:
   saveButtonTemplate: {fileID: 9197481963319205126, guid: 2f7200fbcba46f34a977139b47870015, type: 3}
   saveSettingsContentName: save-settings-content
   saveNameFieldName: save-name-field
-  saveCreatingDateLabelName: save-creating-date-label
-  saveUpdatingDateLabelName: save-updating-date-label
   savePathLabelName: save-path-label
+  creatingDate: 
+  updatingDate: 
   savingManager: {fileID: 332072651}
-  Test1: 2
-  Test2: asd
 --- !u!114 &1976612912
 MonoBehaviour:
   m_ObjectHideFlags: 0

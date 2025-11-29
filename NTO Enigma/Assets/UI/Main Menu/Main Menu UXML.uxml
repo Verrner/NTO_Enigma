@@ -2,16 +2,9 @@
     <ui:VisualElement name="container" style="flex-grow: 1; flex-direction: row;">
         <ui:ScrollView name="saves-list-scroll-view" style="width: 30%; min-width: 30%; max-width: 30%; background-color: rgba(30, 30, 30, 0.89);" />
         <ui:VisualElement name="save-settings-content" style="flex-grow: 1; width: 30%; min-width: 30%; max-width: 30%; background-color: rgba(30, 30, 30, 0.89); border-top-width: 0; border-right-width: 1px; border-bottom-width: 0; border-left-width: 1px; border-left-color: rgb(222, 222, 222); border-right-color: rgb(222, 222, 222); border-top-color: rgb(222, 222, 222); border-bottom-color: rgb(222, 222, 222);">
-            <ui:TextField label="Save Name" placeholder-text="Name" name="save-name-field" is-delayed="true" style="color: rgb(207, 207, 207);" />
-            <ui:Label text="Label" name="save-creating-date-label" style="color: rgb(207, 207, 207);" />
-            <ui:Label text="Label" name="save-updating-date-label" style="color: rgb(207, 207, 207);" />
+            <NTO.LocalizedLabel name="save-creating-date-label" key="creating-date" style="color: rgb(207, 207, 207);" />
+            <NTO.LocalizedLabel name="save-updating-date-label" key="updating-date" style="color: rgb(207, 207, 207);" />
             <ui:Label text="Label" name="save-path-label" style="color: rgb(149, 149, 149); font-size: 12px; text-overflow: ellipsis; white-space: normal;" />
-        </ui:VisualElement>
-        <ui:VisualElement style="flex-grow: 1;">
-            <NTO.LocalizedLabel key="test-one" />
-            <NTO.LocalizedLabel key="test-random" />
-            <NTO.LocalizedLabel key="test-by-comparison" />
-            <NTO.LocalizedLabel key="test-replacing" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

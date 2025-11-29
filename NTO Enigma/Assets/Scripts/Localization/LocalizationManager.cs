@@ -25,7 +25,6 @@ namespace NTO
             set
             {
                 _instance.language = value;
-                Debug.Log($"Language {value}");
                 LanguageChanged?.Invoke();
             }
         }
@@ -35,7 +34,14 @@ namespace NTO
             if (_instance == null) _instance = this;
             _tablesDictionary = tables.ToDictionary(table => table.language);
             DontDestroyOnLoad(this);
-            LanguageChanged += () => Debug.Log("Event");
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+                Language = SystemLanguage.English;
+            else if (Input.GetKeyDown(KeyCode.R))
+                Language = SystemLanguage.Russian;
         }
 
         public static string GetValue(string key, object dynamicVariablesSource)
@@ -108,13 +114,13 @@ namespace NTO
 
         public string Id => "localization";
 
-        public static void LocalizeUI(VisualElement root, object source)
+        public static void LocalizeUI(VisualElement root, object source, bool subscribeForLanguageChanging = true)
         {
-            Debug.Log("LocalizeUI");
             if (root is ILocalizable localizable)
             {
-                Debug.Log("Localizable Setted");
                 localizable.SetValue(GetValue(localizable.Key, source));
+                if (subscribeForLanguageChanging)
+                    LanguageChanged += () => localizable.SetValue(GetValue(localizable.Key, source));
             }
 
             foreach (var child in root.Children())
