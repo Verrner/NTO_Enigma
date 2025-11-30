@@ -6,9 +6,12 @@ namespace NTO
     [RequireComponent(typeof(Submarine))]
     public sealed class SubmarineOxygen : MonoBehaviour
     {
-        [SerializeField, Min(0)] private float oxygenOnStart;
+        [Header("General"), SerializeField, Min(0)] private float oxygenOnStart;
         [SerializeField, Min(0)] private float passiveOxygenUsagePerSecond;
 
+        [Header("Tanks"), SerializeField] private EventInteractable[] oxygenTanks;
+        [SerializeField] private CharacterOxygenTank characterOxygenTank;
+        
         private float _oxygen;
 
         public event Action OxygenOver;
@@ -28,6 +31,7 @@ namespace NTO
         private void Awake()
         {
             ResetOxygen();
+            SetOxygenTanks();
         }
 
         private void Update()
@@ -38,6 +42,24 @@ namespace NTO
         public void ResetOxygen()
         {
             Oxygen = oxygenOnStart;
+        }
+
+        private void SetOxygenTanks()
+        {
+            for (var i = 0; i < oxygenTanks.Length; i++)
+            {
+                var tank = oxygenTanks[i];
+                tank.Interacted += _ => OxygenTankInteracted(tank.gameObject);
+            }
+        }
+
+        private void OxygenTankInteracted(GameObject tank)
+        {
+            if (characterOxygenTank.TankGrabbed)
+                return;
+
+            Destroy(tank);
+            characterOxygenTank.GrabTank();
         }
     }
 }

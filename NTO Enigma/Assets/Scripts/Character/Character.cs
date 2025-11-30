@@ -3,7 +3,7 @@ using UnityEngine;
 namespace NTO
 {
     [RequireComponent(typeof(CharacterMovement), typeof(CharacterInteraction), typeof(Rigidbody)),
-    RequireComponent(typeof(CharacterLoading), typeof(CharacterOxygenLackScreenBlur))]
+    RequireComponent(typeof(CharacterLoading), typeof(CharacterOxygenLackScreenBlur), typeof(CharacterOxygenTank))]
     public sealed class Character : MonoBehaviour
     {
         [SerializeField] private CharacterMovement movement;

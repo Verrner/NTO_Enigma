@@ -986,6 +986,41 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.9259672, y: 3.914146, z: 0.13093376}
   m_Center: {x: -1.1657763, y: -3.179127, z: -4.147643}
+--- !u!1 &1833834243865196718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2249060827754451506}
+  m_Layer: 0
+  m_Name: Oxygen Tanks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2249060827754451506
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833834243865196718}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.959, y: -2.58, z: -12.340014}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1079402632084972763}
+  - {fileID: 5950517079151186002}
+  - {fileID: 6585670738241525555}
+  - {fileID: 2264637259415090388}
+  m_Father: {fileID: 4733245595334210206}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2017577979328510566
 GameObject:
   m_ObjectHideFlags: 0
@@ -4076,6 +4111,7 @@ Transform:
   m_Children:
   - {fileID: 1130594815463963028}
   - {fileID: 6469703053311490744}
+  - {fileID: 2249060827754451506}
   m_Father: {fileID: 1934112993872158469}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6317455400052457839
@@ -4584,8 +4620,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ecced85617141338630749e48998385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.SubmarineOxygen
-  oxygenOnStart: 100
+  oxygenOnStart: 10
   passiveOxygenUsagePerSecond: 2
+  oxygenTanks:
+  - {fileID: 1329399683694605382}
+  - {fileID: 5628458022035144911}
+  - {fileID: 5182859929873794990}
+  - {fileID: 280820317673563209}
+  characterOxygenTank: {fileID: 958133832424667439}
 --- !u!1 &6659689328912199014
 GameObject:
   m_ObjectHideFlags: 0
@@ -5892,6 +5934,298 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &1201791399983055522
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2249060827754451506}
+    m_Modifications:
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.113
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506313917484586221, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_Name
+      value: Oxygen Tank (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+--- !u!114 &5628458022035144911 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6823465985027490413, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+  m_PrefabInstance: {fileID: 1201791399983055522}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd374c78975744e5a974870815d9f505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.EventInteractable
+--- !u!4 &5950517079151186002 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+  m_PrefabInstance: {fileID: 1201791399983055522}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1827587939576415683
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2249060827754451506}
+    m_Modifications:
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.55799997
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506313917484586221, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_Name
+      value: Oxygen Tank (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+--- !u!114 &5182859929873794990 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6823465985027490413, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+  m_PrefabInstance: {fileID: 1827587939576415683}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd374c78975744e5a974870815d9f505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.EventInteractable
+--- !u!4 &6585670738241525555 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+  m_PrefabInstance: {fileID: 1827587939576415683}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5531312944956339755
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2249060827754451506}
+    m_Modifications:
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.6282166
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506313917484586221, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_Name
+      value: Oxygen Tank
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+--- !u!4 &1079402632084972763 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+  m_PrefabInstance: {fileID: 5531312944956339755}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1329399683694605382 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6823465985027490413, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+  m_PrefabInstance: {fileID: 5531312944956339755}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd374c78975744e5a974870815d9f505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.EventInteractable
+--- !u!1001 &6725139499927692836
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2249060827754451506}
+    m_Modifications:
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506313917484586221, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+      propertyPath: m_Name
+      value: Oxygen Tank (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+--- !u!114 &280820317673563209 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6823465985027490413, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+  m_PrefabInstance: {fileID: 6725139499927692836}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd374c78975744e5a974870815d9f505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.EventInteractable
+--- !u!4 &2264637259415090388 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4772097243067945712, guid: 8b2338985723e5947a8d21bded090a6c, type: 3}
+  m_PrefabInstance: {fileID: 6725139499927692836}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8450115290265373532
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5944,6 +6278,18 @@ PrefabInstance:
       propertyPath: submarineRigidbody
       value: 
       objectReference: {fileID: 1893411369752981491}
+    - target: {fileID: 513795535762546748, guid: a17381021740f7045834ace61ce65113, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1562555619271825628, guid: a17381021740f7045834ace61ce65113, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1562555619271825628, guid: a17381021740f7045834ace61ce65113, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.55
+      objectReference: {fileID: 0}
     - target: {fileID: 5697567470479646582, guid: a17381021740f7045834ace61ce65113, type: 3}
       propertyPath: m_Name
       value: Character Controller
@@ -5952,11 +6298,36 @@ PrefabInstance:
       propertyPath: submarineOxygen
       value: 
       objectReference: {fileID: 803256461822936552}
+    - target: {fileID: 8651184747276006003, guid: a17381021740f7045834ace61ce65113, type: 3}
+      propertyPath: tankRoot
+      value: 
+      objectReference: {fileID: 6983824199066424192}
+    - target: {fileID: 8651184747276006003, guid: a17381021740f7045834ace61ce65113, type: 3}
+      propertyPath: tankPrefab
+      value: 
+      objectReference: {fileID: 2170646798293609727, guid: 9e41a48882b8ee84eb1020f0bac82b91, type: 3}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5606493090242900363, guid: a17381021740f7045834ace61ce65113, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a17381021740f7045834ace61ce65113, type: 3}
+--- !u!114 &958133832424667439 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8651184747276006003, guid: a17381021740f7045834ace61ce65113, type: 3}
+  m_PrefabInstance: {fileID: 8450115290265373532}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49e24ac7a99a4e589465d03279132578, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.CharacterOxygenTank
+--- !u!4 &6983824199066424192 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1562555619271825628, guid: a17381021740f7045834ace61ce65113, type: 3}
+  m_PrefabInstance: {fileID: 8450115290265373532}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8189140463687359388 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 351699448012837056, guid: a17381021740f7045834ace61ce65113, type: 3}

@@ -69,3 +69,8 @@ MonoBehaviour:
     values:
     - condition: 
       value: Climb up
+  - key: oxygen-tank-tooltip
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Oxygen tank

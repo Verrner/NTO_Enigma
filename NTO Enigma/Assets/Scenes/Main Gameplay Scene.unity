@@ -266,14 +266,6 @@ PrefabInstance:
       propertyPath: level
       value: 
       objectReference: {fileID: 1185495555}
-    - target: {fileID: 803256461822936552, guid: c00bff7ecfb5aaa48bd97d67ce4af4b9, type: 3}
-      propertyPath: oxygenOnStart
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 803256461822936552, guid: c00bff7ecfb5aaa48bd97d67ce4af4b9, type: 3}
-      propertyPath: passiveOxygenUsagePerSecond
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1934112993872158469, guid: c00bff7ecfb5aaa48bd97d67ce4af4b9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
