@@ -4584,7 +4584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ecced85617141338630749e48998385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.SubmarineOxygen
-  oxygenOnStart: 50
+  oxygenOnStart: 100
   passiveOxygenUsagePerSecond: 2
 --- !u!1 &6659689328912199014
 GameObject:
