@@ -520,8 +520,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 6.8768444, y: 6.7663536, z: 3.2735462}
-  m_Center: {x: -1.1628833, y: -4.6052446, z: -0.31643677}
+  m_Size: {x: 6.8768444, y: 5.5999384, z: 3.2735462}
+  m_Center: {x: -1.1628833, y: -5.1884522, z: -0.31643677}
 --- !u!1 &1228565060158885670
 GameObject:
   m_ObjectHideFlags: 0
@@ -2062,6 +2062,114 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.4441886, y: 9.576695, z: 9.91082}
   m_Center: {x: -1.3418834, y: -3.2000732, z: 0.32196808}
+--- !u!1 &3762186558714188903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7359484204345981014}
+  - component: {fileID: 6469430365718438998}
+  - component: {fileID: 7534479610062536006}
+  - component: {fileID: 3217785014694471930}
+  - component: {fileID: 1401212976595585530}
+  m_Layer: 8
+  m_Name: Climb Up Interactable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7359484204345981014
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3762186558714188903}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.027, y: -1.08, z: -0.76}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6469703053311490744}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6469430365718438998
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3762186558714188903}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2244415, y: 2.355601, z: 0.25946617}
+  m_Center: {x: 0.112220764, y: 0.67780054, z: -0.03450656}
+--- !u!114 &7534479610062536006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3762186558714188903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd374c78975744e5a974870815d9f505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.EventInteractable
+--- !u!114 &3217785014694471930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3762186558714188903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927a704d732c414b8f783a179200fe84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.Tooltip
+  tooltipKey: climb-up-tooltip
+--- !u!54 &1401212976595585530
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3762186558714188903}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3836478057474341120
 GameObject:
   m_ObjectHideFlags: 0
@@ -2933,6 +3041,58 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &4978431520454514320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6469703053311490744}
+  - component: {fileID: 2989241772696695518}
+  m_Layer: 8
+  m_Name: Ladder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6469703053311490744
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4978431520454514320}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.475, y: -1.177, z: -3.43}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1367650435907155096}
+  - {fileID: 7359484204345981014}
+  m_Father: {fileID: 4733245595334210206}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2989241772696695518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4978431520454514320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a10f7efebae7459eacabbb4e56952ed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.Ladder
+  climbUpInteractable: {fileID: 7534479610062536006}
+  localPositionAfterClimbingUp: {x: -3.357, y: 0.78, z: -1.905}
+  localRotationAfterClimbingUp: {x: 0, y: 0, z: 0}
+  climbDownInteractable: {fileID: 3027485125229919129}
+  localPositionAfterClimbingDown: {x: -3.357, y: -2.717, z: -4.884}
+  localRotationAfterClimbingDown: {x: 0, y: 180, z: 0}
 --- !u!1 &5172554163958673454
 GameObject:
   m_ObjectHideFlags: 0
@@ -3419,6 +3579,114 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &5824434948718072310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1367650435907155096}
+  - component: {fileID: 5996251616434052161}
+  - component: {fileID: 3027485125229919129}
+  - component: {fileID: 4898252321020266863}
+  - component: {fileID: 438852691662264286}
+  m_Layer: 8
+  m_Name: Climb Down Interactable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1367650435907155096
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5824434948718072310}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.027, y: 2.47, z: 0.839}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6469703053311490744}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5996251616434052161
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5824434948718072310}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2244415, y: 2.355601, z: 0.25946617}
+  m_Center: {x: 0.112220764, y: 0.67780054, z: -0.03450656}
+--- !u!114 &3027485125229919129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5824434948718072310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd374c78975744e5a974870815d9f505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.EventInteractable
+--- !u!114 &4898252321020266863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5824434948718072310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927a704d732c414b8f783a179200fe84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.Tooltip
+  tooltipKey: climb-down-tooltip
+--- !u!54 &438852691662264286
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5824434948718072310}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5824511061226011242
 GameObject:
   m_ObjectHideFlags: 0
@@ -3807,6 +4075,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1130594815463963028}
+  - {fileID: 6469703053311490744}
   m_Father: {fileID: 1934112993872158469}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6317455400052457839
@@ -4170,7 +4439,9 @@ GameObject:
   - component: {fileID: 1739632503810209966}
   - component: {fileID: -6652053217006515296}
   - component: {fileID: 4772534929938602824}
+  - component: {fileID: 1095925783278378110}
   - component: {fileID: 1893411369752981491}
+  - component: {fileID: 803256461822936552}
   m_Layer: 6
   m_Name: Submarine
   m_TagString: Untagged
@@ -4212,6 +4483,7 @@ MonoBehaviour:
   energy: {fileID: 1739632503810209966}
   movement: {fileID: -6652053217006515296}
   rotation: {fileID: 4772534929938602824}
+  oxygen: {fileID: 803256461822936552}
 --- !u!114 &1739632503810209966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4224,7 +4496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ad13effcd7b427c8f821aa9aceb3ce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.SubmarineEnergy
-  energyFromStart: 100
+  energyOnStart: 0
 --- !u!114 &-6652053217006515296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4259,6 +4531,20 @@ MonoBehaviour:
   sensitivity: 50
   wheelInteractable: {fileID: 7161265926289003659}
   exitKey: 27
+--- !u!114 &1095925783278378110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6640844418867075165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 266607a65bda443fa5804f7f7164f931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.SubmarineLoading
+  rigidbody: {fileID: 1893411369752981491}
+  submarine: {fileID: 3363535612622454051}
 --- !u!54 &1893411369752981491
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4286,6 +4572,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &803256461822936552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6640844418867075165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ecced85617141338630749e48998385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.SubmarineOxygen
+  oxygenOnStart: 50
+  passiveOxygenUsagePerSecond: 2
 --- !u!1 &6659689328912199014
 GameObject:
   m_ObjectHideFlags: 0
@@ -4783,6 +5083,7 @@ GameObject:
   - component: {fileID: 3027671741787038463}
   - component: {fileID: 7161265926289003659}
   - component: {fileID: 4993815251679530632}
+  - component: {fileID: 5458894378506453263}
   m_Layer: 8
   m_Name: Wheel Interactable
   m_TagString: Untagged
@@ -4824,8 +5125,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 0.05664015}
-  m_Center: {x: 0, y: 0, z: -0.010280371}
+  m_Size: {x: 1.2712326, y: 1.1532061, z: 0.42117262}
+  m_Center: {x: 0, y: 0, z: -0.2}
 --- !u!114 &7161265926289003659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4865,6 +5166,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5458894378506453263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7578282360090556320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927a704d732c414b8f783a179200fe84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.Tooltip
+  tooltipKey: wheel-tooltip
 --- !u!1 &7804716755749778130
 GameObject:
   m_ObjectHideFlags: 0
@@ -5588,11 +5902,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 351699448012837056, guid: a17381021740f7045834ace61ce65113, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.922
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 351699448012837056, guid: a17381021740f7045834ace61ce65113, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.772
+      value: 0.78
       objectReference: {fileID: 0}
     - target: {fileID: 351699448012837056, guid: a17381021740f7045834ace61ce65113, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5632,8 +5946,12 @@ PrefabInstance:
       objectReference: {fileID: 1893411369752981491}
     - target: {fileID: 5697567470479646582, guid: a17381021740f7045834ace61ce65113, type: 3}
       propertyPath: m_Name
-      value: Person Controller
+      value: Character Controller
       objectReference: {fileID: 0}
+    - target: {fileID: 6226594450607278310, guid: a17381021740f7045834ace61ce65113, type: 3}
+      propertyPath: submarineOxygen
+      value: 
+      objectReference: {fileID: 803256461822936552}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

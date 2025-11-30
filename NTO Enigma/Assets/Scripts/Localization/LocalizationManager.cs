@@ -34,7 +34,6 @@ namespace NTO
         {
             if (_instance == null) _instance = this;
             _tablesDictionary = tables.ToDictionary(table => table.language);
-            DontDestroyOnLoad(this);
         }
 
         private void Update()

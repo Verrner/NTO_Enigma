@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace NTO
@@ -6,12 +5,15 @@ namespace NTO
     [RequireComponent(typeof(Submarine))]
     public sealed class SubmarineEnergy : MonoBehaviour
     {
-        [SerializeField, Min(0)] private float energyFromStart;
+        [SerializeField, Min(0)] private float energyOnStart;
         
         private float _energy;
 
-        public event Action<float> EnergyChanged;
-        public event Action EnergyEnded;
+        public float Energy
+        {
+            get => _energy;
+            set => _energy = Mathf.Max(0, value);
+        }
 
         private void Awake()
         {
@@ -20,16 +22,12 @@ namespace NTO
 
         public void SpendEnergy(float amount)
         {
-            _energy = Mathf.Max(0, _energy - amount);
-            EnergyChanged?.Invoke(_energy);
-            if (_energy == 0)
-                EnergyEnded?.Invoke();
+            Energy -= amount;
         }
 
         public void ResetEnergy()
         {
-            _energy = energyFromStart;
-            EnergyChanged?.Invoke(_energy);
+            Energy = energyOnStart;
         }
     }
 }

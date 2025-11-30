@@ -160,8 +160,10 @@ GameObject:
   - component: {fileID: 7524859079115751161}
   - component: {fileID: 440682707884356034}
   - component: {fileID: 4367156709343413028}
+  - component: {fileID: 6312648504422213895}
+  - component: {fileID: 6226594450607278310}
   m_Layer: 7
-  m_Name: Player Controller
+  m_Name: Character Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -176,7 +178,7 @@ Transform:
   m_GameObject: {fileID: 5697567470479646582}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.4150581, y: 0.69560146, z: -1.5868592}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -247,6 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NTO.Character
   movement: {fileID: 440682707884356034}
   interaction: {fileID: 4367156709343413028}
+  rigidbody: {fileID: 0}
 --- !u!114 &440682707884356034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,3 +370,96 @@ MonoBehaviour:
     m_Bits: 256
   character: {fileID: 7524859079115751161}
   canInteract: 1
+--- !u!114 &6312648504422213895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5697567470479646582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c735c9cef743788ec4e898d656b6f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.CharacterLoading
+--- !u!114 &6226594450607278310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5697567470479646582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5efb3e010a8044419f484bcdbc115dd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.CharacterOxygenLackScreenBlur
+  submarineOxygen: {fileID: 0}
+  blurringTimeMultiplier:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.24983093
+      outSlope: -0.24983093
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.08615379
+    - serializedVersion: 3
+      time: 10
+      value: 0
+      inSlope: -0.04298208
+      outSlope: -0.04298208
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.07819052
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  blurring:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.017565446
+      outSlope: 0.017565446
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.1424097
+    - serializedVersion: 3
+      time: 2
+      value: 1
+      inSlope: -0.016717972
+      outSlope: -0.016717972
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.14080453
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 4
+      value: 0
+      inSlope: -0.004125549
+      outSlope: 0
+      tangentMode: 65
+      weightedMode: 0
+      inWeight: 0.97412753
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 8
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  blurUIDocument: {fileID: 0}
+  blurBackgroundName: blur-background

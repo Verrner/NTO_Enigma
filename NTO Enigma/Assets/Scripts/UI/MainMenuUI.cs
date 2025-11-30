@@ -56,35 +56,37 @@ namespace NTO
             _saveSettingsContent = _root.Q(saveSettingsContentName);
             _savePathLabel = _root.Q<Label>(savePathLabelName);
 
-            _root.Q<TextField>(newSaveNameFieldName).RegisterValueChangedCallback(callback =>
+            var newSaveNameField = _root.Q<TextField>(newSaveNameFieldName);
+            newSaveNameField.RegisterValueChangedCallback(callback =>
             {
                 if (string.IsNullOrWhiteSpace(callback.newValue))
                     return;
                 savingManager.generalData.name = callback.newValue;
             });
-            _root.Q<Button>(createNewSaveButtonName).clicked += LoadGameplayScene;
+            _root.Q<Button>(createNewSaveButtonName).clicked += () =>
+            {
+                if (!string.IsNullOrWhiteSpace(newSaveNameField.value))
+                    savingManager.generalData.name = newSaveNameField.value;
+                LoadGameplayScene();
+            };
             _loadExistingSaveButton = _root.Q<Button>(loadExistingSaveButtonName);
             _loadExistingSaveButton.clicked += LoadExistingSave;
             _root.Q<Button>(settingsButtonName).clicked += OpenSettings;
             _root.Q<Button>(exitButtonName).clicked += () =>
             {
-                savingManager.SavingEnded += (message, success) =>
+                savingManager.Save((_, _) =>
                 {
-                    Debug.Log($"{success}: {message}");
                     Application.Quit();
-                };
-                savingManager.Save();
+                });
             };
         }
 
         private void LoadExistingSave()
         {
-            savingManager.LoadingEnded += (message, success) =>
+            savingManager.Load(Path.GetFileNameWithoutExtension(_saves[_selectedSaveIndex].Item1), (_, _) =>
             {
-                Debug.Log($"{success}: {message}");
                 LoadGameplayScene();
-            };
-            savingManager.Load(Path.GetFileNameWithoutExtension(_saves[_selectedSaveIndex].Item1));
+            });
         }
 
         private void LoadGameplayScene()

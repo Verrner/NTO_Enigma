@@ -33,8 +33,6 @@ namespace NTO
             
             if (!Physics.Raycast(ray, out RaycastHit hit, radius, layerMask))
                 return;
-
-            Debug.Log(hit.transform.name);
             
             var interactable = hit.transform.GetComponent<Interactable>();
             if (interactable != null)

@@ -47,17 +47,8 @@ namespace NTO
 
         private void Awake()
         {
-            DontDestroyOnLoad(this);
             CheckForSavesFolder();
             ConvertSources();
-        }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.S))
-                Save();
-            else if (Input.GetKeyDown(KeyCode.L))
-                Load(generalData.name);
         }
 
         private void ConvertSources() => _sources = sources.Select(s => s.GetComponent<ISavingReceiver>()).ToList();
@@ -83,7 +74,7 @@ namespace NTO
             return result;   
         }
         
-        public async Task Save()
+        public async Task Save(Action<string, bool> savingEnded = null)
         {
             SavingStarted?.Invoke();
             
@@ -106,10 +97,11 @@ namespace NTO
                 }
             });
             
+            savingEnded?.Invoke(message, success);
             SavingEnded?.Invoke(message, success);
         }
 
-        public async Task Load(string fileName)
+        public async Task Load(string fileName, Action<string, bool> loadingEnded = null)
         {
             LoadingStarted?.Invoke();
             
@@ -140,6 +132,7 @@ namespace NTO
             await task;
             SetData(task.Result);
             
+            loadingEnded?.Invoke(message, success);
             LoadingEnded?.Invoke(message, success);
         }
 

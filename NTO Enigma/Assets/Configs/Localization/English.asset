@@ -54,3 +54,18 @@ MonoBehaviour:
     values:
     - condition: 
       value: "Language|English|\u0420\u0443\u0441\u0441\u043A\u0438\u0439"
+  - key: wheel-tooltip
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Turn
+  - key: climb-down-tooltip
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Climb down
+  - key: climb-up-tooltip
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Climb up

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace NTO
 {
-    [RequireComponent(typeof(Rigidbody), typeof(Character))]
+    [RequireComponent(typeof(Character))]
     public sealed class CharacterMovement : MonoBehaviour
     {
         [SerializeField] private Rigidbody submarineRigidbody;
