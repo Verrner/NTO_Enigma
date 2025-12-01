@@ -74,3 +74,22 @@ MonoBehaviour:
     values:
     - condition: 
       value: Oxygen tank
+  - key: oxygen-room-door-tooltip
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Oxygen supply room
+  - key: insert-tank-button
+    choiceMethod: 2
+    values:
+    - condition: True|tank-inserted
+      value: Pull out tank
+    - condition: True|has-tank
+      value: Insert tank
+    - condition: False|has-tank
+      value: You have no tank
+  - key: has-tank-label
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Has tank

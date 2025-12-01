@@ -119,6 +119,38 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &312202749
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 312202750}
+  m_Layer: 0
+  m_Name: Rooms UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &312202750
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312202749}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1961573541}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1185495555 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -5224708849817913810, guid: 0fef9175696c05b4b8b3f8fbbb68c3c9, type: 3}
@@ -162,7 +194,7 @@ MonoBehaviour:
   m_PanelSettings: {fileID: 11400000, guid: 3ced82deb864e6040b1ac504a0b81cb2, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: e1d1eba9cca5f854783824030d1575b1, type: 3}
-  m_SortingOrder: 1
+  m_SortingOrder: 100
   m_Position: 0
   m_WorldSpaceSizeMode: 1
   m_WorldSpaceWidth: 1920
@@ -234,7 +266,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1685901756}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -254,6 +286,88 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.MainGameplayUI
   tooltipLabelName: tooltip-label
+--- !u!1 &1961573540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1961573541}
+  - component: {fileID: 1961573542}
+  - component: {fileID: 1961573543}
+  m_Layer: 5
+  m_Name: Oxygen Supply Room UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1961573541
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961573540}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 312202750}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1961573542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961573540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.UIElements.UIDocument
+  m_PanelSettings: {fileID: 11400000, guid: 3ced82deb864e6040b1ac504a0b81cb2, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 4d4dba0d4582a2d4485df87169b2582f, type: 3}
+  m_SortingOrder: 1
+  m_Position: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+  m_PivotReferenceSize: 0
+  m_Pivot: 0
+  m_WorldSpaceCollider: {fileID: 0}
+--- !u!114 &1961573543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961573540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbccd4d45b994c05b48e2ac8bf029ced, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.OxygenSupplyRoomUI
+  document: {fileID: 1961573542}
+  closeByKey: 1
+  exitKey: 27
+  backgroundName: background
+  tooltipsEnabled: 1
+  tooltipLabelName: tooltip-label
+  withoutTankBackground: {fileID: 2800000, guid: ac07d967e40d2854ba8cab76b1bbe7a7, type: 3}
+  withTankBackground: {fileID: 2800000, guid: 8a9e4e46354d87f40a5dc1f7a6d8a428, type: 3}
+  insertTankButton: insert-tank-button
+  hasTankLabelName: has-tank-label
+  submarineOxygen: {fileID: 2965642871993814184}
+  characterOxygenTank: {fileID: 2965642871993814183}
+  hasTank: 0
+  tankInsertedDynamic: 1
 --- !u!1001 &2965642871993814182
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -314,11 +428,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: Submarine
       objectReference: {fileID: 0}
+    - target: {fileID: 7405535185353273731, guid: c00bff7ecfb5aaa48bd97d67ce4af4b9, type: 3}
+      propertyPath: roomUI
+      value: 
+      objectReference: {fileID: 1961573543}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c00bff7ecfb5aaa48bd97d67ce4af4b9, type: 3}
+--- !u!114 &2965642871993814183 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 958133832424667439, guid: c00bff7ecfb5aaa48bd97d67ce4af4b9, type: 3}
+  m_PrefabInstance: {fileID: 2965642871993814182}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49e24ac7a99a4e589465d03279132578, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.CharacterOxygenTank
+--- !u!114 &2965642871993814184 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 803256461822936552, guid: c00bff7ecfb5aaa48bd97d67ce4af4b9, type: 3}
+  m_PrefabInstance: {fileID: 2965642871993814182}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ecced85617141338630749e48998385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.SubmarineOxygen
 --- !u!1001 &5510938553918465456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -441,4 +581,5 @@ SceneRoots:
   - {fileID: 5510938553918465456}
   - {fileID: 2965642871993814182}
   - {fileID: 1685901758}
+  - {fileID: 312202750}
   - {fileID: 1233904944}

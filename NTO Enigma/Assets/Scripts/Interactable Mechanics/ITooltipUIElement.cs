@@ -1,8 +1,6 @@
-using UnityEngine.UIElements;
-
 namespace NTO
 {
-    public interface ILocalizable
+    public interface ITooltipUIElement
     {
         string Key { get; }
         void SetValue(string value);

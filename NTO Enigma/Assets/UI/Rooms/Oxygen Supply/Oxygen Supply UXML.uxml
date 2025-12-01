@@ -1,0 +1,9 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="room-base" template="Room Base UXML" style="flex-grow: 1;">
+        <ui:VisualElement name="background" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI/UI%20Resources/Rooms/Oxygen%20Supply/Background%20(without%20tank).jpg?fileID=2800000&amp;guid=ac07d967e40d2854ba8cab76b1bbe7a7&amp;type=3#Background (without tank)&quot;);">
+            <ui:Label name="tooltip-label" style="bottom: 10%; position: absolute; right: 0; left: 0; -unity-text-align: upper-center; color: rgb(207, 207, 207); font-size: 20px;" />
+            <NTO.LocalizedLabel name="has-tank-label" _key="has-tank-label" style="position: absolute; bottom: 5%; left: 5%; font-size: 16px; color: rgb(207, 207, 207);" />
+            <NTO.TooltipButton name="insert-tank-button" _key="insert-tank-button" style="position: absolute; right: 32%; top: 38%; height: 10%; width: 22%; background-color: rgba(188, 188, 188, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

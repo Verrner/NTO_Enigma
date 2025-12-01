@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3614210264085348017
+--- !u!1 &2276307867793113791
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5048542665365893451}
-  - component: {fileID: 4204508265324731697}
-  - component: {fileID: 8016293753763102711}
+  - component: {fileID: 8093468815476185102}
+  - component: {fileID: 7167886888889753450}
+  - component: {fileID: 8290426353263918901}
   m_Layer: 9
   m_Name: Geometry
   m_TagString: Untagged
@@ -18,36 +18,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5048542665365893451
+--- !u!4 &8093468815476185102
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3614210264085348017}
+  m_GameObject: {fileID: 2276307867793113791}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0.000000026692543, y: 0.7071068, z: 0.000000026692545, w: -0.70710677}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15, y: 15, z: 15}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 72.65509, y: 133.95485, z: 7.1565194}
+  m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4772097243067945712}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!33 &4204508265324731697
+  m_Father: {fileID: 815048819455266938}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &7167886888889753450
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3614210264085348017}
-  m_Mesh: {fileID: 2534964839176971238, guid: 18e02b77c8b045045882bc62aa15c070, type: 3}
---- !u!23 &8016293753763102711
+  m_GameObject: {fileID: 2276307867793113791}
+  m_Mesh: {fileID: 5779197439840542771, guid: 748399fe2bf8e0d4880ee9a86b236ab4, type: 3}
+--- !u!23 &8290426353263918901
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3614210264085348017}
+  m_GameObject: {fileID: 2276307867793113791}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -66,7 +66,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6478536213147159724, guid: 18e02b77c8b045045882bc62aa15c070, type: 3}
+  - {fileID: 1550975326256456482, guid: 748399fe2bf8e0d4880ee9a86b236ab4, type: 3}
+  - {fileID: 1491054644948600008, guid: 748399fe2bf8e0d4880ee9a86b236ab4, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -89,7 +90,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &8506313917484586221
+--- !u!1 &2492431011925684112
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,41 +98,80 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4772097243067945712}
-  - component: {fileID: 4309258381828731394}
-  - component: {fileID: 4277031269531987150}
-  - component: {fileID: 4491864049017109991}
-  - component: {fileID: 6823465985027490413}
+  - component: {fileID: 815048819455266938}
+  - component: {fileID: 4984014380797009456}
+  - component: {fileID: 5454068018876565997}
+  - component: {fileID: 3296587955598577007}
+  - component: {fileID: 149590916602631517}
+  - component: {fileID: 2208731223956571768}
   m_Layer: 9
-  m_Name: Oxygen Tank
+  m_Name: Room Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4772097243067945712
+--- !u!4 &815048819455266938
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8506313917484586221}
+  m_GameObject: {fileID: 2492431011925684112}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.6298983, y: -1.3291622, z: -7.038187}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5048542665365893451}
+  - {fileID: 8093468815476185102}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4309258381828731394
+--- !u!114 &4984014380797009456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2492431011925684112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c2430eadff4afda097703af557fb7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.RoomDoor
+  roomUI: {fileID: 0}
+--- !u!114 &5454068018876565997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2492431011925684112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927a704d732c414b8f783a179200fe84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.Tooltip
+  tooltipKey: 
+--- !u!114 &3296587955598577007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2492431011925684112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd374c78975744e5a974870815d9f505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.EventInteractable
+--- !u!65 &149590916602631517
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8506313917484586221}
+  m_GameObject: {fileID: 2492431011925684112}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -144,15 +184,15 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.30632436, y: 1.4224439, z: 0.35163993}
-  m_Center: {x: 0, y: 0.5, z: 0}
---- !u!54 &4277031269531987150
+  m_Size: {x: 0.27515352, y: 2.6966357, z: 1.458664}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &2208731223956571768
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8506313917484586221}
+  m_GameObject: {fileID: 2492431011925684112}
   serializedVersion: 5
   m_Mass: 1
   m_LinearDamping: 0
@@ -173,29 +213,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4491864049017109991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8506313917484586221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 927a704d732c414b8f783a179200fe84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NTO.Tooltip
-  tooltipKey: oxygen-tank-tooltip
-  radius: 3
---- !u!114 &6823465985027490413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8506313917484586221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd374c78975744e5a974870815d9f505, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NTO.EventInteractable
