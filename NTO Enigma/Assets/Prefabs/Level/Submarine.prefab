@@ -4422,6 +4422,7 @@ GameObject:
   - component: {fileID: 1893411369752981491}
   - component: {fileID: 803256461822936552}
   - component: {fileID: 3712280200276907696}
+  - component: {fileID: 2715190524012379506}
   m_Layer: 6
   m_Name: Submarine
   m_TagString: Untagged
@@ -4476,7 +4477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ad13effcd7b427c8f821aa9aceb3ce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.SubmarineEnergy
-  energyOnStart: 0
+  energyOnStart: 100
   submarine: {fileID: 3363535612622454051}
   pressureAdding: 1000
   deathSentenceKey: energy-lack
@@ -4591,6 +4592,24 @@ MonoBehaviour:
   maxPressure: 100
   timeUntilDeath: 10
   deathCause: 
+--- !u!114 &2715190524012379506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6640844418867075165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f7a4707e44849bcbcb26f39095b35b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.SubmarineLevelBounds
+  rigidbody: {fileID: 1893411369752981491}
+  bounds:
+    m_Center: {x: -3, y: 0, z: -9}
+    m_Extent: {x: 35, y: 10, z: 35}
+  level: {fileID: 0}
+  intersectionsChecksPerSecond: 1
 --- !u!1 &6659689328912199014
 GameObject:
   m_ObjectHideFlags: 0

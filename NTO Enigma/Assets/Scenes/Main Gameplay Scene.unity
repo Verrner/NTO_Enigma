@@ -216,6 +216,89 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &306181838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 306181840}
+  - component: {fileID: 306181839}
+  m_Layer: 0
+  m_Name: Level
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &306181839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306181838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b010012b3dd64f359ab847b39d252b87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.Level
+  chunksPrefabs:
+  - {fileID: 4296545718436652260, guid: ffce556e36043b547be3419f6019a9b8, type: 3}
+  chunkSize: 100
+  levelInstance:
+    instances: 1
+    size: {x: 2, y: 2, z: 2}
+    level: 0000000000000000000000000000000000000000000000000000000000000000
+  draw: 1
+  drawWire: 1
+  drawGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 1, g: 1, b: 1, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 1002
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
+--- !u!4 &306181840
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306181838}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &312202749
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,17 +345,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.RoomsLoading
   oxygenSupplyRoomUI: {fileID: 1961573543}
---- !u!114 &1185495555 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -5224708849817913810, guid: 0fef9175696c05b4b8b3f8fbbb68c3c9, type: 3}
-  m_PrefabInstance: {fileID: 5510938553918465456}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b010012b3dd64f359ab847b39d252b87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NTO.Level
 --- !u!1 &1233904942
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,7 +562,7 @@ PrefabInstance:
     - target: {fileID: -6652053217006515296, guid: c00bff7ecfb5aaa48bd97d67ce4af4b9, type: 3}
       propertyPath: level
       value: 
-      objectReference: {fileID: 1185495555}
+      objectReference: {fileID: 306181839}
     - target: {fileID: 1934112993872158469, guid: c00bff7ecfb5aaa48bd97d67ce4af4b9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -535,6 +607,10 @@ PrefabInstance:
       propertyPath: blurUIDocument
       value: 
       objectReference: {fileID: 1233904943}
+    - target: {fileID: 2715190524012379506, guid: c00bff7ecfb5aaa48bd97d67ce4af4b9, type: 3}
+      propertyPath: level
+      value: 
+      objectReference: {fileID: 306181839}
     - target: {fileID: 6640844418867075165, guid: c00bff7ecfb5aaa48bd97d67ce4af4b9, type: 3}
       propertyPath: m_Name
       value: Submarine
@@ -581,63 +657,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 280525466a204e848c343d2badeeff06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.Character
---- !u!1001 &5510938553918465456
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 326413231148040571, guid: 0fef9175696c05b4b8b3f8fbbb68c3c9, type: 3}
-      propertyPath: m_Name
-      value: Level
-      objectReference: {fileID: 0}
-    - target: {fileID: 3331184993025647176, guid: 0fef9175696c05b4b8b3f8fbbb68c3c9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3331184993025647176, guid: 0fef9175696c05b4b8b3f8fbbb68c3c9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3331184993025647176, guid: 0fef9175696c05b4b8b3f8fbbb68c3c9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3331184993025647176, guid: 0fef9175696c05b4b8b3f8fbbb68c3c9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3331184993025647176, guid: 0fef9175696c05b4b8b3f8fbbb68c3c9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3331184993025647176, guid: 0fef9175696c05b4b8b3f8fbbb68c3c9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3331184993025647176, guid: 0fef9175696c05b4b8b3f8fbbb68c3c9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3331184993025647176, guid: 0fef9175696c05b4b8b3f8fbbb68c3c9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3331184993025647176, guid: 0fef9175696c05b4b8b3f8fbbb68c3c9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3331184993025647176, guid: 0fef9175696c05b4b8b3f8fbbb68c3c9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0fef9175696c05b4b8b3f8fbbb68c3c9, type: 3}
 --- !u!1001 &5646198452818576861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -700,7 +719,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 5646198452818576861}
-  - {fileID: 5510938553918465456}
+  - {fileID: 306181840}
   - {fileID: 2965642871993814182}
   - {fileID: 1685901758}
   - {fileID: 312202750}
