@@ -26,6 +26,13 @@ namespace NTO
             TankGrabbed = false;
         }
 
+        public void SetTankGrabbed(bool value)
+        {
+            TankGrabbed = value;
+            if (value)
+                InstantiateTank();
+        }
+
         private void InstantiateTank() => Instantiate(tankPrefab, tankRoot);
     }
 }

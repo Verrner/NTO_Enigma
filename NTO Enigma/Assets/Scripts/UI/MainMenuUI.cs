@@ -72,20 +72,22 @@ namespace NTO
             _loadExistingSaveButton = _root.Q<Button>(loadExistingSaveButtonName);
             _loadExistingSaveButton.clicked += LoadExistingSave;
             _root.Q<Button>(settingsButtonName).clicked += OpenSettings;
-            _root.Q<Button>(exitButtonName).clicked += () =>
-            {
-                savingManager.Save((_, _) =>
-                {
-                    Application.Quit();
-                });
-            };
+            _root.Q<Button>(exitButtonName).clicked += Application.Quit;
         }
 
         private void LoadExistingSave()
         {
-            savingManager.Load(Path.GetFileNameWithoutExtension(_saves[_selectedSaveIndex].Item1), (_, _) =>
+            savingManager.Load(Path.GetFileNameWithoutExtension(_saves[_selectedSaveIndex].Item1), (message, success) =>
             {
-                LoadGameplayScene();
+                switch (success)
+                {
+                    case true:
+                        LoadGameplayScene();
+                        return;
+                    case false:
+                        LoadingErrorCaughtUI.ShowError(message);
+                        return;
+                }
             });
         }
 

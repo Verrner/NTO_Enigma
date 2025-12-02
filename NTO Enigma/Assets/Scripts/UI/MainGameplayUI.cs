@@ -13,7 +13,7 @@ namespace NTO
         private VisualElement _root;
         
         private Label _tooltipLabel;
-        private string _currentTooltipKey;
+        private string _currentTooltipKey = "";
         private object _currentTooltipSource;
 
         private void Awake()

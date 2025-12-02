@@ -20,7 +20,6 @@ namespace NTO
 
         private Label _tooltipLabel;
         private string _currentTooltipKey = "";
-        private float _orderOnStart;
 
         private string CurrentTooltipKey
         {
@@ -41,7 +40,6 @@ namespace NTO
 
         private void OnEnable()
         {
-            _orderOnStart = document.sortingOrder;
             Root = document.rootVisualElement;
             Background = document.rootVisualElement.Q(backgroundName);
             if (tooltipsEnabled)
@@ -80,7 +78,6 @@ namespace NTO
 
         private void SetRoomOpening(Character character, bool opened)
         {
-            document.sortingOrder = opened ? 1000 : _orderOnStart;
             Opened = opened;
             Character = opened ? character : null;
             gameObject.SetActive(opened);

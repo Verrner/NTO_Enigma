@@ -2210,6 +2210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.Tooltip
   tooltipKey: climb-up-tooltip
+  radius: 3
 --- !u!54 &1401212976595585530
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3637,6 +3638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.Tooltip
   tooltipKey: climb-down-tooltip
+  radius: 3
 --- !u!54 &438852691662264286
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4419,6 +4421,7 @@ GameObject:
   - component: {fileID: 1095925783278378110}
   - component: {fileID: 1893411369752981491}
   - component: {fileID: 803256461822936552}
+  - component: {fileID: 3712280200276907696}
   m_Layer: 6
   m_Name: Submarine
   m_TagString: Untagged
@@ -4459,9 +4462,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.Submarine
   energy: {fileID: 1739632503810209966}
-  movement: {fileID: -6652053217006515296}
-  rotation: {fileID: 4772534929938602824}
   oxygen: {fileID: 803256461822936552}
+  pressure: {fileID: 3712280200276907696}
 --- !u!114 &1739632503810209966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4475,6 +4477,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.SubmarineEnergy
   energyOnStart: 0
+  submarine: {fileID: 3363535612622454051}
+  pressureAdding: 1000
+  deathSentenceKey: energy-lack
+  sourceKey: energy
 --- !u!114 &-6652053217006515296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4562,14 +4568,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ecced85617141338630749e48998385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.SubmarineOxygen
-  oxygenOnStart: 10
-  passiveOxygenUsagePerSecond: 2
+  oxygenOnStart: 180
+  passiveOxygenUsagePerSecond: 1
   oxygenTanks:
   - {fileID: 1329399683694605382}
   - {fileID: 5628458022035144911}
   - {fileID: 5182859929873794990}
   - {fileID: 280820317673563209}
   characterOxygenTank: {fileID: 958133832424667439}
+--- !u!114 &3712280200276907696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6640844418867075165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8dd28888604107b8612238f48f49af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.SubmarinePressure
+  maxPressure: 100
+  timeUntilDeath: 10
+  deathCause: 
 --- !u!1 &6659689328912199014
 GameObject:
   m_ObjectHideFlags: 0
@@ -5163,6 +5184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.Tooltip
   tooltipKey: wheel-tooltip
+  radius: 3
 --- !u!1 &7804716755749778130
 GameObject:
   m_ObjectHideFlags: 0

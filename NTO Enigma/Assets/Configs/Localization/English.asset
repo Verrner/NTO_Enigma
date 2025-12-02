@@ -93,3 +93,28 @@ MonoBehaviour:
     values:
     - condition: 
       value: Has tank
+  - key: death-label
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: You died
+  - key: oxygen-lack-sentence
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: You have run out of oxygen
+  - key: submarine-pressure-sentence
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: The pressure has increased greatly because {death-cause}.
+  - key: energy-lack
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: energy ran out
+  - key: loading-error-caught-label
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Loading error caught

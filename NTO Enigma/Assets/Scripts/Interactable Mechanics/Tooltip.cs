@@ -11,21 +11,37 @@ namespace NTO
 
         private Transform _characterTransform;
 
+        private bool _mouseEnter;
+        private bool _tooltipShown;
+        
         private void Awake()
         {
             _characterTransform = FindFirstObjectByType<Character>().transform;
         }
 
+        private void Update()
+        {
+            switch (_tooltipShown)
+            {
+                case false when _mouseEnter && Vector3.Distance(_characterTransform.position, transform.position) <= radius:
+                    MainGameplayUI.SetTooltip(tooltipKey, this);
+                    _tooltipShown = true;
+                    break;
+                case true when !_mouseEnter || Vector3.Distance(_characterTransform.position, transform.position) > radius:
+                    MainGameplayUI.ResetTooltip();
+                    _tooltipShown = false;
+                    break;
+            }
+        }
+
         private void OnMouseEnter()
         {
-            if (Vector3.Distance(_characterTransform.position, transform.position) > radius)
-                return;
-            MainGameplayUI.SetTooltip(tooltipKey, this);    
+            _mouseEnter = true;
         }
 
         private void OnMouseExit()
         {
-            MainGameplayUI.ResetTooltip();
+            _mouseEnter = false;
         }
     }
 }

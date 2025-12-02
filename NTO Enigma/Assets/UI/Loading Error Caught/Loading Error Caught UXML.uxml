@@ -1,0 +1,7 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="background" style="flex-grow: 1; background-color: rgb(0, 0, 0); justify-content: center;">
+        <NTO.LocalizedLabel name="loading-error-caught-label" _key="loading-error-caught-label" style="-unity-text-align: upper-center; font-size: 40px; color: rgb(207, 0, 0); -unity-font-style: bold; margin-top: 0; margin-right: 0; margin-bottom: 20px; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+        <ui:Label name="error-message-label" style="-unity-text-align: upper-center; font-size: 16px; color: rgb(161, 0, 0); width: 500px; min-width: 500px; max-width: 500px; align-self: center; height: 300px; min-height: 300px; max-height: 300px; white-space: normal;" />
+        <NTO.LocalizedButton name="exit-button" _key="exit" style="margin-top: 0; margin-right: 0; margin-bottom: 5px; margin-left: 0; width: 200px; height: 30px; min-width: 200px; min-height: 30px; max-width: 200px; max-height: 30px; align-self: center;" />
+    </ui:VisualElement>
+</ui:UXML>

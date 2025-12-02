@@ -3,17 +3,15 @@ using UnityEngine;
 namespace NTO
 {
     [RequireComponent(typeof(SubmarineEnergy), typeof(SubmarineMovement), typeof(SubmarineRotation)),
-     RequireComponent(typeof(SubmarineLoading), typeof(SubmarineOxygen))]
+     RequireComponent(typeof(SubmarineLoading), typeof(SubmarineOxygen), typeof(SubmarinePressure))]
     public sealed class Submarine : MonoBehaviour
     {
         [SerializeField] private SubmarineEnergy energy;
-        [SerializeField] private SubmarineMovement movement;
-        [SerializeField] private SubmarineRotation rotation;
         [SerializeField] private SubmarineOxygen oxygen;
+        [SerializeField] private SubmarinePressure pressure;
         
         public SubmarineEnergy Energy => energy;
-        public SubmarineMovement Movement => movement;
-        public SubmarineRotation Rotation => rotation;
         public SubmarineOxygen Oxygen => oxygen;
+        public SubmarinePressure Pressure => pressure;
     }
 }

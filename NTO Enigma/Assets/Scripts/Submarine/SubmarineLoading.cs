@@ -17,6 +17,7 @@ namespace NTO
                 rigidbody.rotation = data.rotation;
                 submarine.Energy.Energy = data.energy;
                 submarine.Oxygen.Oxygen = data.oxygen;
+                submarine.Oxygen.DestroySpentTanks(data.oxygenTanksSpent);
             }
 
             var saving = FindFirstObjectByType<SavingManager>();
@@ -24,6 +25,9 @@ namespace NTO
             {
                 data.position = rigidbody.position;
                 data.rotation = rigidbody.rotation;
+                data.energy = submarine.Energy.Energy;
+                data.oxygen = submarine.Oxygen.Oxygen;
+                data.oxygenTanksSpent = submarine.Oxygen.GetSpentTanks();
             };
         }
     }

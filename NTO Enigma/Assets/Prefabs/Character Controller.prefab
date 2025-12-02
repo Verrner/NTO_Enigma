@@ -417,6 +417,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2c735c9cef743788ec4e898d656b6f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.CharacterLoading
+  characterMovement: {fileID: 440682707884356034}
+  characterInteraction: {fileID: 4367156709343413028}
+  oxygenBlurring: {fileID: 6226594450607278310}
+  oxygenTank: {fileID: 8651184747276006003}
 --- !u!114 &6226594450607278310
 MonoBehaviour:
   m_ObjectHideFlags: 0

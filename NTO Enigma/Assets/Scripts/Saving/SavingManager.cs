@@ -132,6 +132,9 @@ namespace NTO
             await task;
             SetData(task.Result);
             
+            if (!success)
+                Debug.LogError($"Error caught while loading: {message}");
+            
             loadingEnded?.Invoke(message, success);
             LoadingEnded?.Invoke(message, success);
         }

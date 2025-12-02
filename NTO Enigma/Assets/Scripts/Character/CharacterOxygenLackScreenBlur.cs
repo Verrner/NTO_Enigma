@@ -40,11 +40,19 @@ namespace NTO
             _blurringCycleLength = blurring.keys[blurring.length - 1].time;
         }
 
+        public void SetTimes(float blurringTime, float actualTime)
+        {
+            _blurringTimeSinceOxygenOver = blurringTime;
+            _actualTimeSinceOxygenOver = actualTime;
+        }
+
+        public (float, float) GetTimes() => (_blurringTimeSinceOxygenOver, _actualTimeSinceOxygenOver);
+
         private void OxygenOver()
         {
             if (_actualTimeSinceOxygenOver >= _timeUntilDeath)
             {
-                Death();
+                Died();
                 return;
             }
 
@@ -55,9 +63,9 @@ namespace NTO
                 Time.deltaTime * blurringTimeMultiplier.Evaluate(_actualTimeSinceOxygenOver);
         }
 
-        private void Death()
+        private void Died()
         {
-            Debug.Log("Died from oxygen lack");
+            Death.ShowDeath("oxygen-lack-sentence", this);
         }
     }
 }

@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace NTO
@@ -13,6 +15,20 @@ namespace NTO
         [SerializeField] private CharacterOxygenTank characterOxygenTank;
         
         private float _oxygen;
+
+        private sealed class OxygenTankData
+        {
+            public bool Spent;
+            public GameObject Instance;
+
+            public OxygenTankData(bool spent, GameObject instance)
+            {
+                Spent = spent;
+                Instance = instance;
+            }
+        }
+        
+        private readonly List<OxygenTankData> _oxygenTankData = new List<OxygenTankData>();
 
         public event Action OxygenOver;
         public event Action OxygenAvailable;
@@ -50,6 +66,7 @@ namespace NTO
             {
                 var tank = oxygenTanks[i];
                 tank.Interacted += _ => OxygenTankInteracted(tank.gameObject);
+                _oxygenTankData.Add(new OxygenTankData(false, tank.gameObject));
             }
         }
 
@@ -58,8 +75,24 @@ namespace NTO
             if (characterOxygenTank.TankGrabbed)
                 return;
 
+            var index = _oxygenTankData.FindIndex(d => d.Instance == tank);
+            _oxygenTankData[index].Spent = true;
             Destroy(tank);
             characterOxygenTank.GrabTank();
         }
+
+        public void DestroySpentTanks(bool[] spentTanks)
+        {
+            var length = Mathf.Min(oxygenTanks.Length, spentTanks.Length);
+            for (var i = 0; i < length; i++)
+            {
+                if (!spentTanks[i])
+                    continue;
+                _oxygenTankData[i].Spent = true;
+                Destroy(_oxygenTankData[i].Instance);
+            }
+        }
+
+        public bool[] GetSpentTanks() => _oxygenTankData.Select(d => d.Spent).ToArray();
     }
 }

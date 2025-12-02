@@ -82,20 +82,6 @@ namespace NTO
             return "";
         }
 
-        private string PasteDynamicVariables(string format, object source)
-        {
-            var result = format;
-            var wordsToReplace = format.Split(' ')
-                .Where(word => word.Length >= 3 && word[0] == '{' && word.Last() == '}').Distinct();
-            foreach (var word in wordsToReplace)
-            {
-                var key = word.Substring(1, word.Length - 2);
-                var value = GetVariableFromDynamicSource(key, source);
-                result = result.Replace(word, value);
-            }
-            return result;
-        }
-
         private string GetVariableFromDynamicSource(string key, object source)
         {
             foreach (var field in source.GetType().GetFields())
@@ -106,6 +92,18 @@ namespace NTO
             }
 
             throw new Exception($"dynamic variable \"{key}\" not found in {source.GetType()}");
+        }
+
+        private string PasteDynamicVariables(string format, object source)
+        {
+            var result = format;
+            foreach (var field in source.GetType().GetFields())
+            {
+                var attribute = field.GetCustomAttribute<LocalizationDynamicVariable>();
+                if (attribute == null) continue;
+                result = result.Replace('{' + attribute.key + '}', field.GetValue(source).ToString());
+            }
+            return result;
         }
 
         public string GetSavedData() => language == SystemLanguage.English ? "en" : "ru";
