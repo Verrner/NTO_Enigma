@@ -11,6 +11,7 @@ namespace NTO
         public float energy;
         public float oxygen;
         public bool[] oxygenTanksSpent;
+        public SubmarineMovement.SpeedMode speedMode;
         public bool Loaded { get; private set; }
 
         [Serializable]
@@ -27,20 +28,23 @@ namespace NTO
                 get => oxygenTanksSpentBitmask.ToCharArray().Select(c => c == '1').ToArray();
                 set => oxygenTanksSpentBitmask = new string(value.Select(x => x ? '1' : '0').ToArray());
             }
+            public SubmarineMovement.SpeedMode speedMode;
             
-            public SubmarineSavingModel(Vector3 position, Quaternion rotation, float energy, float oxygen, bool[] oxygenTanksSpent)
+            public SubmarineSavingModel(Vector3 position, Quaternion rotation, float energy, float oxygen, bool[] oxygenTanksSpent,
+                SubmarineMovement.SpeedMode speedMode)
             {
                 this.position = position;
                 this.rotation = rotation;
                 this.energy = energy;
                 this.oxygen = oxygen;
                 OxygenTanksSpent = oxygenTanksSpent;
+                this.speedMode = speedMode;
             }
         }
         
         public string GetSavedData()
         {
-            var model = new SubmarineSavingModel(position, rotation, energy, oxygen, oxygenTanksSpent);
+            var model = new SubmarineSavingModel(position, rotation, energy, oxygen, oxygenTanksSpent, speedMode);
             return JsonUtility.ToJson(model);
         }
 
@@ -52,6 +56,7 @@ namespace NTO
             energy = model.energy;
             oxygen = model.oxygen;
             oxygenTanksSpent = model.OxygenTanksSpent;
+            speedMode = model.speedMode;
             Loaded = true;
         }
 

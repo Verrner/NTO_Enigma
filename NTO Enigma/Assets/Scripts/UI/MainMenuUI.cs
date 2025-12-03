@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -43,8 +44,17 @@ namespace NTO
         {
             _root = GetComponent<UIDocument>().rootVisualElement;
             SetElements();
-            ShowAllSaves();
-            RedrawSettings();
+            try
+            {
+                ShowAllSaves();
+                RedrawSettings();
+            }
+            catch (Exception e)
+            {
+                LoadingErrorCaughtUI.ShowError(e.Message);
+                throw;
+            }
+
             if (_saves.Count == 0) _loadExistingSaveButton.SetEnabled(false);
             LocalizationManager.LocalizeUI(_root, this);
         }

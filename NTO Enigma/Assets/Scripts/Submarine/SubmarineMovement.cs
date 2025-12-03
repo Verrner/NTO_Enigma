@@ -1,15 +1,16 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace NTO
 {
     [RequireComponent(typeof(Submarine), typeof(SubmarineEnergy))]
     public sealed class SubmarineMovement : MonoBehaviour
     {
-        public enum MovementType
+        public enum SpeedMode
         {
             Default,
-            Swift,
+            Fast,
             Silent
         }
         
@@ -23,17 +24,7 @@ namespace NTO
         [Header("Silent Mode"), SerializeField, Min(0)] private float silentModeSpeedMultiplier;
         [SerializeField, Min(0)] private float silentModeEnergyUsageMultiplier;
 
-        private MovementType _type;
-        public event Action<MovementType> TypeChanged;
-        public MovementType type
-        {
-            get => _type;
-            set
-            {
-                _type = value;
-                TypeChanged?.Invoke(_type);
-            }
-        }
+        public SpeedMode speedMode;
 
         private SubmarineEnergy _energy;
         private Rigidbody _rigidbody;
@@ -58,19 +49,19 @@ namespace NTO
 
         private void UpdateMovement()
         {
-            var curSpeed = speed * _type switch
+            var curSpeed = speed * speedMode switch
             {
-                MovementType.Default => 1,
-                MovementType.Swift => swiftModeSpeedMultiplier,
+                SpeedMode.Default => 1,
+                SpeedMode.Fast => swiftModeSpeedMultiplier,
                 _ => silentModeSpeedMultiplier
             } * Time.deltaTime;
 
             _rigidbody.linearVelocity = _rigidbody.rotation * new Vector3(0, 0, curSpeed);
             
-            _energy.SpendEnergy(energyPerSecond * Time.deltaTime * _type switch
+            _energy.SpendEnergy(energyPerSecond * Time.deltaTime * speedMode switch
             {
-                MovementType.Default => 1,
-                MovementType.Swift => swiftModeEnergyUsageMultiplier,
+                SpeedMode.Default => 1,
+                SpeedMode.Fast => swiftModeEnergyUsageMultiplier,
                 _ => silentModeEnergyUsageMultiplier
             });
         }

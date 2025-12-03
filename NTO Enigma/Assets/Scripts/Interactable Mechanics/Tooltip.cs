@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace NTO
@@ -9,6 +8,13 @@ namespace NTO
         [SerializeField] private string tooltipKey;
         [SerializeField] private float radius = 3;
 
+        private object _localizationSource;
+        public object LocalizationSource
+        {
+            get => _localizationSource ?? this;
+            set => _localizationSource = value;
+        }
+        
         private Transform _characterTransform;
 
         private bool _mouseEnter;
@@ -24,7 +30,7 @@ namespace NTO
             switch (_tooltipShown)
             {
                 case false when _mouseEnter && Vector3.Distance(_characterTransform.position, transform.position) <= radius:
-                    MainGameplayUI.SetTooltip(tooltipKey, this);
+                    MainGameplayUI.SetTooltip(tooltipKey, LocalizationSource);
                     _tooltipShown = true;
                     break;
                 case true when !_mouseEnter || Vector3.Distance(_characterTransform.position, transform.position) > radius:
@@ -34,14 +40,16 @@ namespace NTO
             }
         }
 
-        private void OnMouseEnter()
+        public void RefreshTooltipText()
         {
-            _mouseEnter = true;
+            if (!_tooltipShown)
+                MainGameplayUI.ResetTooltip();
+            else
+                MainGameplayUI.SetTooltip(tooltipKey, LocalizationSource);
         }
 
-        private void OnMouseExit()
-        {
-            _mouseEnter = false;
-        }
+        private void OnMouseEnter() => _mouseEnter = true;
+
+        private void OnMouseExit() => _mouseEnter = false;
     }
 }

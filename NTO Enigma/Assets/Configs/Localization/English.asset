@@ -118,3 +118,23 @@ MonoBehaviour:
     values:
     - condition: 
       value: Loading error caught
+  - key: speed-lever-tooltip
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Change speed mode (Now {mode-tooltip})
+  - key: fast-mode-tooltip
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: fast mode
+  - key: silent-mode-tooltip
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: silent mode
+  - key: default-mode-tooltip
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: default mode
