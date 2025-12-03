@@ -11,6 +11,7 @@ namespace NTO
         
         public Vector3Int LevelSize => levelInstance.Size;
         public float ChunkSize => chunkSize;
+        public LevelInstance LevelInstance => levelInstance;
 
         private Chunk[] _chunks;
 

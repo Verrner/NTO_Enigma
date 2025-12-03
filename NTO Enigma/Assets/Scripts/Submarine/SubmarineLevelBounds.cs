@@ -81,7 +81,7 @@ namespace NTO
             return res;
         }
 
-        private Vector3Int GetApproximateChunkPosition()
+        public Vector3Int GetApproximateChunkPosition()
         {
             var pos = rigidbody.position / level.ChunkSize;
             var res = new Vector3Int(Mathf.CeilToInt(pos.x), Mathf.CeilToInt(pos.y), Mathf.CeilToInt(pos.z));

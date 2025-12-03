@@ -138,3 +138,13 @@ MonoBehaviour:
     values:
     - condition: 
       value: default mode
+  - key: map-computer-tooltip
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Map
+  - key: depth-level-label
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: 'Depth level: {depth-level}'

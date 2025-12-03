@@ -31,7 +31,18 @@ namespace NTO
 
         public int this[int x, int y, int z]
         {
-            get => level[y * size.x * size.z + z * size.x + x];
+            get
+            {
+                try
+                {
+                    return level[y * size.x * size.z + z * size.x + x];
+                }
+                catch
+                {
+                    Debug.Log($"({x}, {y}, {z}) {y * size.x * size.z + z * size.x + x} > {level.Count}");
+                    throw;
+                }
+            }
             set
             {
                 var val = value < 0 ? instances - 1 : value >= instances ? 0 : value;

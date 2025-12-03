@@ -146,3 +146,14 @@ MonoBehaviour:
     values:
     - condition: 
       value: "\u043E\u0431\u044B\u0447\u043D\u044B\u0439 \u0440\u0435\u0436\u0438\u043C"
+  - key: map-computer-tooltip
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: "\u041A\u0430\u0440\u0442\u0430"
+  - key: depth-level-label
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C \u0433\u043B\u0443\u0431\u0438\u043D\u044B:
+        {depth-level}"
