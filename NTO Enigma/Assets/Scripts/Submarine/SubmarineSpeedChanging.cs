@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace NTO
@@ -9,26 +8,19 @@ namespace NTO
         [Header("Objects"), SerializeField] private SubmarineMovement submarineMovement;
         [SerializeField] private Character character;
         [SerializeField] private EventInteractable interactable;
-        [SerializeField] private Tooltip tooltip;
+        [SerializeField] private Transform leverRootTransform;
+        [SerializeField] private float leverRotationSpeed;
         
         [Header("Keys"), SerializeField] private KeyCode fastModeKey = KeyCode.F;
         [SerializeField] private KeyCode silentModeKey = KeyCode.S;
         [SerializeField] private KeyCode defaultModeKey = KeyCode.D;
         [SerializeField] private KeyCode exitKey = KeyCode.Escape;
 
-        [Header("Tooltips"), SerializeField] private string fastModeTooltipLocalizationKey = "fast-mode-tooltip";
-        [SerializeField] private string silentModeTooltipLocalizationKey = "silent-mode-tooltip";
-        [SerializeField] private string defaultModeTooltipLocalizationKey = "default-mode-tooltip";
-
-        [HideInInspector, LocalizationDynamicVariable("mode-tooltip")] public string modeTooltip = "";
-
         private bool _interacted;
+        private float _targetRotation;
 
         private void Awake()
         {
-            SetModeTooltip();
-            LocalizationManager.LanguageChanged += SetModeTooltip;
-            tooltip.LocalizationSource = this;
             interactable.Interacted += _ => SetInteraction(true);
         }
 
@@ -45,36 +37,33 @@ namespace NTO
 
         private void Update()
         {
+            leverRootTransform.localRotation = Quaternion.Euler(
+                Mathf.LerpAngle(leverRootTransform.localRotation.eulerAngles.x, _targetRotation,
+                    leverRotationSpeed * Time.deltaTime), 0, 0);
+            
             if (!_interacted)
                 return;
             
             if (Input.GetKeyDown(fastModeKey))
-                SetMode(SubmarineMovement.SpeedMode.Fast);
+                ChangeMode(SubmarineMovement.SpeedMode.Fast);
             else if (Input.GetKeyDown(silentModeKey))
-                SetMode(SubmarineMovement.SpeedMode.Silent);
+                ChangeMode(SubmarineMovement.SpeedMode.Silent);
             else if (Input.GetKeyDown(defaultModeKey))
-                SetMode(SubmarineMovement.SpeedMode.Default);
+                ChangeMode(SubmarineMovement.SpeedMode.Default);
             else if (Input.GetKeyDown(exitKey))
                 SetInteraction(false);
         }
 
-        private void SetMode(SubmarineMovement.SpeedMode mode)
+        public void ChangeMode(SubmarineMovement.SpeedMode mode)
         {
             submarineMovement.speedMode = mode;
-            SetModeTooltip();
-            tooltip.RefreshTooltipText();
-        }
-
-        private void SetModeTooltip()
-        {
-            var mode = submarineMovement.speedMode;
-            var key = mode switch
+            _targetRotation = mode switch
             {
-                SubmarineMovement.SpeedMode.Default => defaultModeTooltipLocalizationKey,
-                SubmarineMovement.SpeedMode.Silent => silentModeTooltipLocalizationKey,
-                _ => fastModeTooltipLocalizationKey
+                SubmarineMovement.SpeedMode.Default => 0,
+                SubmarineMovement.SpeedMode.Silent => -45,
+                SubmarineMovement.SpeedMode.Fast => 45,
+                _ => 0
             };
-            modeTooltip = LocalizationManager.GetValue(key, this);
         }
     }
 }

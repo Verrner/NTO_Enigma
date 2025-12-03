@@ -122,22 +122,7 @@ MonoBehaviour:
     choiceMethod: 0
     values:
     - condition: 
-      value: Change speed mode (Now {mode-tooltip})
-  - key: fast-mode-tooltip
-    choiceMethod: 0
-    values:
-    - condition: 
-      value: fast mode
-  - key: silent-mode-tooltip
-    choiceMethod: 0
-    values:
-    - condition: 
-      value: silent mode
-  - key: default-mode-tooltip
-    choiceMethod: 0
-    values:
-    - condition: 
-      value: default mode
+      value: Change speed mode
   - key: map-computer-tooltip
     choiceMethod: 0
     values:

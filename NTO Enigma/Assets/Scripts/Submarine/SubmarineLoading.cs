@@ -18,7 +18,7 @@ namespace NTO
                 submarine.Energy.Energy = data.energy;
                 submarine.Oxygen.Oxygen = data.oxygen;
                 submarine.Oxygen.DestroySpentTanks(data.oxygenTanksSpent);
-                submarine.Movement.speedMode = data.speedMode;
+                submarine.SpeedChanging.ChangeMode(data.speedMode);
             }
 
             var saving = FindFirstObjectByType<SavingManager>();

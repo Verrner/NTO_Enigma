@@ -10,11 +10,16 @@ namespace NTO
         [SerializeField, Min(0)] private float sensitivity;
         [SerializeField] private EventInteractable wheelInteractable;
         [SerializeField] private KeyCode exitKey = KeyCode.Escape;
+        [SerializeField] private Transform wheelTransform;
+        [SerializeField] private float wheelRotationSensitivity;
+        [SerializeField] private float wheelRotationSpeed;
         
         private Rigidbody _rigidbody;
 
         private bool _turning;
         private float _rotation;
+
+        private float _targetWheelRotation;
 
         private Character _character;
 
@@ -30,13 +35,20 @@ namespace NTO
 
         private void Update()
         {
+            wheelTransform.localRotation = Quaternion.Euler(0, 0,
+                Mathf.LerpAngle(wheelTransform.localRotation.eulerAngles.z, _targetWheelRotation, wheelRotationSpeed * Time.deltaTime));
+            
             if (!_turning)
                 return;
-            
-            _rotation += Input.GetAxis("Horizontal") * sensitivity * Time.deltaTime;
+
+            var axis = Input.GetAxis("Horizontal");
+            _rotation += axis * sensitivity * Time.deltaTime;
             _rigidbody.rotation = Quaternion.Euler(0, _rotation, 0);
             _character.transform.localPosition = _localCharacterPosition;
             _character.transform.localRotation = _localCharacterRotation;
+
+            if (axis != 0)
+                _targetWheelRotation -= wheelRotationSensitivity * Time.deltaTime * (axis > 0 ? 1 : -1);
 
             if (!Input.GetKeyDown(exitKey))
                 return;

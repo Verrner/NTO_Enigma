@@ -520,6 +520,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 83922318}
   m_Mesh: {fileID: -5146402869137820533, guid: 748399fe2bf8e0d4880ee9a86b236ab4, type: 3}
+--- !u!1 &90679970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 90679971}
+  m_Layer: 8
+  m_Name: Lever Root
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &90679971
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90679970}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.018, y: -0.185, z: -0.184}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 944065023}
+  m_Father: {fileID: 987423736}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &92738186
 GameObject:
   m_ObjectHideFlags: 0
@@ -1943,7 +1975,7 @@ GameObject:
   - component: {fileID: 403849202}
   - component: {fileID: 403849201}
   m_Layer: 6
-  m_Name: Torus
+  m_Name: Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1957,12 +1989,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 403849199}
   serializedVersion: 2
-  m_LocalRotation: {x: -2.9111989e-15, y: 1, z: 0.00000003774895, w: 0.0000000754979}
-  m_LocalPosition: {x: 4.7667336, y: 1.7398199, z: -4.972849}
+  m_LocalRotation: {x: 0.00000003774895, y: 0.0000000754979, z: 2.9111989e-15, w: -1}
+  m_LocalPosition: {x: 0.0072665215, y: -0.008180141, z: -0.0011510849}
   m_LocalScale: {x: 48.602352, y: 48.602352, z: 48.602352}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1398947844}
+  m_Father: {fileID: 507686705}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &403849201
 MeshRenderer:
@@ -2232,7 +2264,8 @@ Transform:
   m_LocalPosition: {x: -4.774, y: 1.748, z: 4.974}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 403849200}
   m_Father: {fileID: 818920714}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &507686706
@@ -3625,7 +3658,7 @@ GameObject:
   - component: {fileID: 944065025}
   - component: {fileID: 944065024}
   m_Layer: 6
-  m_Name: Plane.007
+  m_Name: Geometry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3639,13 +3672,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 944065022}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00000007427152, y: 0.02740741, z: 0.9996244, w: 0.00000004576417}
-  m_LocalPosition: {x: 1.8873849, y: 1.7929827, z: -5.5928063}
-  m_LocalScale: {x: 46.664177, y: 46.66419, z: 46.66419}
+  m_LocalRotation: {x: -1, y: 0, z: 0, w: 0}
+  m_LocalPosition: {x: -0.045, y: 0.289, z: 0}
+  m_LocalScale: {x: 46.664177, y: 46.664192, z: 46.66419}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1398947844}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 90679971}
+  m_LocalEulerAnglesHint: {x: -180, y: 0, z: 0}
 --- !u!23 &944065024
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3985,7 +4018,8 @@ Transform:
   m_LocalPosition: {x: -1.826, y: 1.683, z: 5.753}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 90679971}
   m_Father: {fileID: 818920714}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &987423737
@@ -5381,14 +5415,12 @@ Transform:
   - {fileID: 2129637426}
   - {fileID: 1204708591}
   - {fileID: 1810596031}
-  - {fileID: 944065023}
   - {fileID: 1203754211}
   - {fileID: 1884002398}
   - {fileID: 1075997692}
   - {fileID: 1237768300}
   - {fileID: 1653254440}
   - {fileID: 2043228689}
-  - {fileID: 403849200}
   - {fileID: 921936520}
   - {fileID: 1841224899}
   - {fileID: 106753242}
@@ -8278,15 +8310,12 @@ MonoBehaviour:
   submarineMovement: {fileID: 2965642871993814200}
   character: {fileID: 2965642871993814185}
   interactable: {fileID: 987423739}
-  tooltip: {fileID: 987423737}
+  leverRootTransform: {fileID: 90679971}
+  leverRotationSpeed: 10
   fastModeKey: 102
   silentModeKey: 115
   defaultModeKey: 100
   exitKey: 27
-  fastModeTooltipLocalizationKey: fast-mode-tooltip
-  silentModeTooltipLocalizationKey: silent-mode-tooltip
-  defaultModeTooltipLocalizationKey: default-mode-tooltip
-  modeTooltip: 
 --- !u!114 &2965642871993814196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8349,6 +8378,9 @@ MonoBehaviour:
   sensitivity: 50
   wheelInteractable: {fileID: 507686708}
   exitKey: 27
+  wheelTransform: {fileID: 403849200}
+  wheelRotationSensitivity: 100
+  wheelRotationSpeed: 2
 --- !u!114 &2965642871993814200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8402,6 +8434,7 @@ MonoBehaviour:
   energy: {fileID: 2965642871993814201}
   oxygen: {fileID: 2965642871993814184}
   pressure: {fileID: 2965642871993814197}
+  speedChanging: {fileID: 2965642871993814195}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
