@@ -133,3 +133,8 @@ MonoBehaviour:
     values:
     - condition: 
       value: 'Depth level: {depth-level}'
+  - key: altitude-changing-tooltip
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Change altitude

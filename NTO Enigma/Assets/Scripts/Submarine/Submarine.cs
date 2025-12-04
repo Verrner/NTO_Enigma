@@ -4,7 +4,7 @@ namespace NTO
 {
     [RequireComponent(typeof(SubmarineEnergy), typeof(SubmarineMovement), typeof(SubmarineRotation)),
      RequireComponent(typeof(SubmarineLoading), typeof(SubmarineOxygen), typeof(SubmarinePressure)),
-     RequireComponent(typeof(SubmarineLevelBounds), typeof(SubmarineSpeedChanging))]
+     RequireComponent(typeof(SubmarineLevelBounds), typeof(SubmarineSpeedChanging), typeof(SubmarineAltitudeChanging))]
     public sealed class Submarine : MonoBehaviour
     {
         [SerializeField] private SubmarineMovement movement;

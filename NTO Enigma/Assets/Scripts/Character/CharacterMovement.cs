@@ -51,7 +51,7 @@ namespace NTO
         {
             var targetVelocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * speed;
             targetVelocity *= Time.deltaTime * (canMove ? 1 : 0);
-            _rigidbody.linearVelocity = _rigidbody.rotation * new Vector3(targetVelocity.x, _rigidbody.linearVelocity.y, targetVelocity.y) +
+            _rigidbody.linearVelocity = _rigidbody.rotation * new Vector3(targetVelocity.x, 0, targetVelocity.y) +
                                         submarineRigidbody.linearVelocity;
             
             if (targetVelocity.magnitude != 0 == Moving) return;
