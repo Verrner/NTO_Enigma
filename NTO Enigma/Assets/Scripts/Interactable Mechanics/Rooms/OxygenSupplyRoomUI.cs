@@ -64,6 +64,9 @@ namespace NTO
         
         private void InsertTankButtonClicked()
         {
+            if (!OpenedOneFrame)
+                return;
+            
             if (TankInserted)
             {
                 TankInserted = false;

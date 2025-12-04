@@ -138,3 +138,15 @@ MonoBehaviour:
     values:
     - condition: 
       value: Change altitude
+  - key: engine-room-door-tooltip
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Engine room
+  - key: fix-engine-tooltip
+    choiceMethod: 2
+    values:
+    - condition: True|engine-broken
+      value: Fix engine
+    - condition: False|engine-broken
+      value: Engine fixed

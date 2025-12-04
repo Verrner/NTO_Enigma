@@ -16,8 +16,9 @@ namespace NTO
 
         protected VisualElement Root { get; private set; }
         protected VisualElement Background { get; private set; }
-        protected Character Character { get; private set; }
+        protected bool OpenedOneFrame { get; private set; }
 
+        private Character _character;
         private Label _tooltipLabel;
         private string _currentTooltipKey = "";
 
@@ -60,12 +61,15 @@ namespace NTO
 
         private void Update()
         {
+            if (Opened && !OpenedOneFrame)
+                OpenedOneFrame = true;
             if (closeByKey && Input.GetKeyDown(exitKey))
-                Close(Character);
+                Close(_character);
         }
 
         public void Open(Character character)
         {
+            OpenedOneFrame = false;
             SetRoomOpening(character, true);
             RoomOpened(character);
         }
@@ -79,7 +83,7 @@ namespace NTO
         private void SetRoomOpening(Character character, bool opened)
         {
             Opened = opened;
-            Character = opened ? character : null;
+            _character = opened ? character : null;
             gameObject.SetActive(opened);
             character.Movement.canMove = !opened;
             character.Movement.canRotate = !opened;

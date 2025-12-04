@@ -1,10 +1,8 @@
-using System;
-using NTO;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Editor.Property_Drawers
+namespace NTO
 {
     [CustomPropertyDrawer(typeof(LevelInstance))]
     public sealed class LevelInstancePropertyDrawer : PropertyDrawer

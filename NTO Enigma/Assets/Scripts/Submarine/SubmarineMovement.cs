@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace NTO
 {
@@ -17,6 +15,7 @@ namespace NTO
         [Header("General"), SerializeField, Min(0)] private float speed;
         [SerializeField, Min(0)] private float energyPerSecond;
         [SerializeField] private Level level;
+        [SerializeField] private SubmarineEngineBreak engineBreak;
         
         [Header("Swift Mode"), SerializeField, Min(0)] private float swiftModeSpeedMultiplier;
         [SerializeField, Min(0)] private float swiftModeEnergyUsageMultiplier;
@@ -49,21 +48,21 @@ namespace NTO
 
         private void UpdateMovement()
         {
-            var curSpeed = speed * speedMode switch
+            var curSpeed = speed * (engineBreak.engineBroken ? silentModeSpeedMultiplier : speedMode switch
             {
                 SpeedMode.Default => 1,
                 SpeedMode.Fast => swiftModeSpeedMultiplier,
                 _ => silentModeSpeedMultiplier
-            } * Time.deltaTime;
+            }) * Time.deltaTime;
 
             _rigidbody.linearVelocity = _rigidbody.rotation * new Vector3(0, 0, curSpeed);
             
-            _energy.SpendEnergy(energyPerSecond * Time.deltaTime * speedMode switch
+            _energy.SpendEnergy(energyPerSecond * Time.deltaTime * (engineBreak.engineBroken ? 1 : speedMode switch
             {
                 SpeedMode.Default => 1,
                 SpeedMode.Fast => swiftModeEnergyUsageMultiplier,
                 _ => silentModeEnergyUsageMultiplier
-            });
+            }));
         }
     }
 }

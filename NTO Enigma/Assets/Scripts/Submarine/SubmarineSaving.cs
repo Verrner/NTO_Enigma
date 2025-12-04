@@ -12,6 +12,7 @@ namespace NTO
         public float oxygen;
         public bool[] oxygenTanksSpent;
         public SubmarineMovement.SpeedMode speedMode;
+        public bool engineBroken;
         public bool Loaded { get; private set; }
 
         [Serializable]
@@ -21,7 +22,6 @@ namespace NTO
             public Quaternion rotation;
             public float energy;
             public float oxygen;
-            
             [SerializeField] private string oxygenTanksSpentBitmask;
             public bool[] OxygenTanksSpent
             {
@@ -29,9 +29,10 @@ namespace NTO
                 set => oxygenTanksSpentBitmask = new string(value.Select(x => x ? '1' : '0').ToArray());
             }
             public SubmarineMovement.SpeedMode speedMode;
+            public bool engineBroken;
             
             public SubmarineSavingModel(Vector3 position, Quaternion rotation, float energy, float oxygen, bool[] oxygenTanksSpent,
-                SubmarineMovement.SpeedMode speedMode)
+                SubmarineMovement.SpeedMode speedMode, bool engineBroken)
             {
                 this.position = position;
                 this.rotation = rotation;
@@ -39,12 +40,13 @@ namespace NTO
                 this.oxygen = oxygen;
                 OxygenTanksSpent = oxygenTanksSpent;
                 this.speedMode = speedMode;
+                this.engineBroken = engineBroken;
             }
         }
         
         public string GetSavedData()
         {
-            var model = new SubmarineSavingModel(position, rotation, energy, oxygen, oxygenTanksSpent, speedMode);
+            var model = new SubmarineSavingModel(position, rotation, energy, oxygen, oxygenTanksSpent, speedMode, engineBroken);
             return JsonUtility.ToJson(model);
         }
 
@@ -57,6 +59,7 @@ namespace NTO
             oxygen = model.oxygen;
             oxygenTanksSpent = model.OxygenTanksSpent;
             speedMode = model.speedMode;
+            engineBroken = model.engineBroken;
             Loaded = true;
         }
 
