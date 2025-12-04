@@ -8756,7 +8756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fba29f5b556346a796262076ab6012ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.SubmarineAltitudeChanging
-  altitudeChangingMultiplier: 100
+  altitudeChangingMultiplier: 10000
   exitKey: 27
   altitudeChangingInteractable: {fileID: 928423532}
   altitudeChangingTransform: {fileID: 1184438664}

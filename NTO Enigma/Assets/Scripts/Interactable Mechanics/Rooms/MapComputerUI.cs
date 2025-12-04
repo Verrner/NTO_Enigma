@@ -87,9 +87,9 @@ namespace NTO
 
         private void RefreshVerticalPositionSliderTranslation()
         {
-            var wholeHeight= _verticalPositionSliderBackground.resolvedStyle.height;
-            var translation = _verticalPosInDepthLevel / level.ChunkSize * wholeHeight;
-            _verticalPositionSlider.style.translate = new Vector2(0, -translation);
+            var translationPercent = _verticalPosInDepthLevel / level.ChunkSize * 100;
+            _verticalPositionSlider.style.top =
+                new StyleLength(new Length(100 - translationPercent, LengthUnit.Percent));
         }
         
         private void SetElements()
