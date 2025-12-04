@@ -74,11 +74,9 @@ namespace NTO
 
         private void UpdateCameraRotation()
         {
-            if (!canRotate) return;
-            
             var mouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
             var rawFrameVelocity = Vector2.Scale(mouseDelta, Vector2.one * sensitivity * Time.deltaTime);
-            _frameVelocity = Vector2.Lerp(_frameVelocity, rawFrameVelocity, 1 / smoothing);
+            _frameVelocity = !canRotate ? Vector2.zero : Vector2.Lerp(_frameVelocity, rawFrameVelocity, 1 / smoothing);
             _velocity += _frameVelocity;
             _velocity.y = Mathf.Clamp(_velocity.y, -90, 90);
             
