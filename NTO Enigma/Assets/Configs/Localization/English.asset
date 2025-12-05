@@ -195,3 +195,8 @@ MonoBehaviour:
     values:
     - condition: 
       value: Silent fish hooked on you.
+  - key: mouse-key-tooltip
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: RMB

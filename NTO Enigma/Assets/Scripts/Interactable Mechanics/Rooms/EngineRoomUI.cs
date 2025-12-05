@@ -61,7 +61,7 @@ namespace NTO
             fixEngineElement.RegisterCallback<PointerLeaveEvent>(_ => _pointerOverElement = false);
         }
 
-        private void Update()
+        protected override void UpdateRoom()
         {
             if (!_pointerOverElement || _minigameStarted)
                 return;

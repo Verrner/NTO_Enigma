@@ -9,6 +9,7 @@ namespace NTO
         private static MainGameplayUI _instance;
 
         [Header("Tooltip"), SerializeField] private string tooltipLabelName = "tooltip-label";
+        [SerializeField] private string mouseKeyTooltipKey = "mouse-key-tooltip";
         
         private VisualElement _root;
         
@@ -30,7 +31,7 @@ namespace NTO
             {
                 if (_currentTooltipKey == "")
                     return;
-                _tooltipLabel.text = LocalizationManager.GetValue(_currentTooltipKey, _currentTooltipSource);
+                _tooltipLabel.text = $"{LocalizationManager.GetValue(_currentTooltipKey, _currentTooltipSource)} ({LocalizationManager.GetValue(_instance.mouseKeyTooltipKey, _currentTooltipSource)})";
             };
         }
 
@@ -38,7 +39,8 @@ namespace NTO
 
         public static void SetTooltip(string localizationKey, object source)
         {
-            var value = LocalizationManager.GetValue(localizationKey, source);
+            var value =
+                $"{LocalizationManager.GetValue(localizationKey, source)} ({LocalizationManager.GetValue(_instance.mouseKeyTooltipKey, source)})";
             _instance._tooltipLabel.text = value;
             _instance._currentTooltipKey = localizationKey;
             _instance._currentTooltipSource = source;

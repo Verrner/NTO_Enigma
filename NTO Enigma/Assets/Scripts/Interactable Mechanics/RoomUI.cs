@@ -65,7 +65,11 @@ namespace NTO
                 OpenedOneFrame = true;
             if (closeByKey && Input.GetKeyDown(exitKey))
                 Close();
+            
+            UpdateRoom();
         }
+        
+        protected virtual void UpdateRoom(){}
 
         public void Open(Character character)
         {
