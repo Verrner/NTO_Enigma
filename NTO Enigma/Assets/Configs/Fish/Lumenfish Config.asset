@@ -16,3 +16,6 @@ MonoBehaviour:
   texture: {fileID: 2800000, guid: 37b9892c462db8749a6be9a17b84c262, type: 3}
   uiNameLocalizationKey: lumenfish-name
   descriptionLocalizationKey: lumenfish-description
+  timeUntilDeath: 30
+  sentenceKey: stalker-sentence
+  timeForSwimAway: 20

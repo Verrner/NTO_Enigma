@@ -16,6 +16,9 @@ namespace NTO
 
         private void Update()
         {
+            if (Death.Dead)
+                return;
+            
             foreach (var f in _fish)
                 f.Item2.UpdateFish();
         }

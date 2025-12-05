@@ -102,7 +102,7 @@ MonoBehaviour:
     choiceMethod: 0
     values:
     - condition: 
-      value: You have run out of oxygen
+      value: You have run out of oxygen.
   - key: submarine-pressure-sentence
     choiceMethod: 0
     values:
@@ -180,3 +180,18 @@ MonoBehaviour:
     values:
     - condition: 
       value: Left camera
+  - key: coverlet-sentence
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Coverlet caught up with you.
+  - key: stalker-sentence
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Stalker heard you.
+  - key: silent-sentence
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Silent fish hooked on you.

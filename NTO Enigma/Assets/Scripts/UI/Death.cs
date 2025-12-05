@@ -26,6 +26,8 @@ namespace NTO
 
         private bool _opened;
         private float _backgroundAppearanceTime;
+
+        public static bool Dead => _instance._opened;
         
         private void Awake()
         {
@@ -38,7 +40,6 @@ namespace NTO
             var root = GetComponent<UIDocument>().rootVisualElement;
             SetElements(root);
             LocalizationManager.LocalizeUI(root, this);
-            _opened = true;
         }
 
         private void Update()
@@ -70,6 +71,8 @@ namespace NTO
 
         public static void ShowDeath(string sentenceKey, object source)
         {
+            _instance._opened = true;
+            
             _instance.gameObject.SetActive(true);
 
             Cursor.lockState = CursorLockMode.None;

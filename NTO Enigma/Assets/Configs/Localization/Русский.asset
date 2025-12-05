@@ -190,3 +190,21 @@ MonoBehaviour:
     values:
     - condition: 
       value: "\u041B\u0435\u0432\u0430\u044F \u043A\u0430\u043C\u0435\u0440\u0430"
+  - key: coverlet-sentence
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: "\u041F\u043E\u043A\u0440\u044B\u0432\u0430\u0442\u0435\u043B\u044C
+        \u0434\u043E\u0433\u043D\u0430\u043B \u0432\u0430\u0441."
+  - key: stalker-sentence
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: "\u041F\u0440\u0435\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u0442\u0435\u043B\u044C
+        \u0443\u0441\u043B\u044B\u0448\u0430\u043B \u0432\u0430\u0441."
+  - key: silent-sentence
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: "\u0422\u0438\u0445\u043E\u0445\u043E\u0434\u043A\u0430 \u0437\u0430\u0446\u0435\u043F\u0438\u043B\u0430\u0441\u044C
+        \u0437\u0430 \u0432\u0430\u0441."

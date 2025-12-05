@@ -16,3 +16,6 @@ MonoBehaviour:
   texture: {fileID: 2800000, guid: 13181df0796d211429c94fbaf1b23a6c, type: 3}
   uiNameLocalizationKey: flatoscorpio-name
   descriptionLocalizationKey: flatoscorpio-description
+  timeUntilDeath: 30
+  sentenceKey: coverlet-sentence
+  timeForSwimAway: 20

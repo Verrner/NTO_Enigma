@@ -149,7 +149,7 @@ namespace NTO
                     minWidth = new StyleLength(new Length(200, LengthUnit.Percent)),
                     maxWidth = new StyleLength(new Length(200, LengthUnit.Percent)),
                     transformOrigin = new StyleTransformOrigin(new TransformOrigin(
-                        new Length(0, LengthUnit.Percent), new Length(0, LengthUnit.Percent))),
+                        new Length(25, LengthUnit.Percent), new Length(0, LengthUnit.Percent))),
                     rotate = new StyleRotate(Quaternion.Euler(0, 0, angle)),
                     backgroundColor = color
                 }

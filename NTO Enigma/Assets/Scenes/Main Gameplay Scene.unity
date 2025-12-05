@@ -4385,6 +4385,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 945351151}
   m_Mesh: {fileID: -6823461999428419903, guid: 748399fe2bf8e0d4880ee9a86b236ab4, type: 3}
+--- !u!1 &948822866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 948822868}
+  - component: {fileID: 948822867}
+  - component: {fileID: 948822869}
+  m_Layer: 5
+  m_Name: Saving Icon UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &948822867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948822866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.UIElements.UIDocument
+  m_PanelSettings: {fileID: 11400000, guid: 3ced82deb864e6040b1ac504a0b81cb2, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: ce7325dbac991de4da4ae42c86282b99, type: 3}
+  m_SortingOrder: 5
+  m_Position: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+  m_PivotReferenceSize: 0
+  m_Pivot: 0
+  m_WorldSpaceCollider: {fileID: 0}
+--- !u!4 &948822868
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948822866}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &948822869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948822866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b80786df8c8f4c7bb02bd154a1eb133a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.SavingIconUI
+  savingIconName: saving-icon
 --- !u!1 &959657114
 GameObject:
   m_ObjectHideFlags: 0
@@ -8769,10 +8838,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NTO.Movement.CharacterMovement
   submarineRigidbody: {fileID: 2965642871993814190}
   canMove: 1
-  speed: 650
+  speed: 430
   camera: {fileID: 110080130}
   canRotate: 1
-  sensitivity: 500
+  sensitivity: 400
   smoothing: 5
   lockCursor: 1
   canTwitch: 1
@@ -8854,7 +8923,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  twitchSpeed: 0.8
+  twitchSpeed: 0.6
   twitchAmplitude: 2
 --- !u!54 &2965642871993814190
 Rigidbody:
@@ -9322,3 +9391,4 @@ SceneRoots:
   - {fileID: 1233904944}
   - {fileID: 312202750}
   - {fileID: 289736870}
+  - {fileID: 948822868}
