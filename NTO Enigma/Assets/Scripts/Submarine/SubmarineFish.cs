@@ -27,11 +27,11 @@ namespace NTO
             if (IsFishAppeared(fish))
                 return;
             
-            fish.Appeared(this);
-
-            if (!TryGetNotUsedFishAppearanceOrientation(out FishAppearanceOrientation orientation))
+            if (!TryGetCorrectOrientation(fish, out FishAppearanceOrientation orientation))
                 throw new Exception("All orientations used");
             
+            fish.Appeared(this);
+
             _fish.Add((orientation, fish));
         }
 
@@ -48,14 +48,16 @@ namespace NTO
 
         private bool IsFishAppeared(Fish fish) => _fish.Exists(f => f.Item2 == fish);
 
-        private bool TryGetNotUsedFishAppearanceOrientation(out FishAppearanceOrientation orientation)
+        private bool TryGetCorrectOrientation(Fish fish, out FishAppearanceOrientation orientation)
         {
-            for (var i = 0; i < 4; i++)
+            var availableOrientations = fish.GetAvailableOrientations();
+
+            foreach (var o in availableOrientations)
             {
-                var curOrientation = (FishAppearanceOrientation)i;
-                var index = _fish.FindIndex(f => f.Item1 == curOrientation);
-                if (index != -1) continue;
-                orientation = curOrientation;
+                var index = _fish.FindIndex(f => f.Item1 == o);
+                if (index != -1)
+                    continue;
+                orientation = o;
                 return true;
             }
 

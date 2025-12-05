@@ -17,5 +17,10 @@ namespace NTO
         public abstract void Appeared(SubmarineFish submarineFish);
         public abstract void UpdateFish();
         public abstract void Leave();
+
+        public virtual FishAppearanceOrientation[] GetAvailableOrientations() => new []
+        {
+            FishAppearanceOrientation.Top, FishAppearanceOrientation.Right, FishAppearanceOrientation.Left, FishAppearanceOrientation.Back
+        };
     }
 }
