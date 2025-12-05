@@ -48,7 +48,7 @@ namespace NTO
 
         private void UpdateMovement()
         {
-            var curSpeed = speed * (engineBreak.engineBroken ? silentModeSpeedMultiplier : speedMode switch
+            var curSpeed = speed * (engineBreak.EngineBroken ? silentModeSpeedMultiplier : speedMode switch
             {
                 SpeedMode.Default => 1,
                 SpeedMode.Fast => swiftModeSpeedMultiplier,
@@ -57,7 +57,7 @@ namespace NTO
 
             _rigidbody.linearVelocity = _rigidbody.rotation * new Vector3(0, 0, curSpeed);
             
-            _energy.SpendEnergy(energyPerSecond * Time.deltaTime * (engineBreak.engineBroken ? 1 : speedMode switch
+            _energy.SpendEnergy(energyPerSecond * Time.deltaTime * (engineBreak.EngineBroken ? 1 : speedMode switch
             {
                 SpeedMode.Default => 1,
                 SpeedMode.Fast => swiftModeEnergyUsageMultiplier,

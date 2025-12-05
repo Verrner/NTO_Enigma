@@ -19,7 +19,7 @@ namespace NTO
                 submarine.Oxygen.Oxygen = data.oxygen;
                 submarine.Oxygen.DestroySpentTanks(data.oxygenTanksSpent);
                 submarine.SpeedChanging.ChangeMode(data.speedMode);
-                submarine.EngineBreak.engineBroken = data.engineBroken;
+                submarine.EngineBreak.EngineBroken = data.engineBroken;
             }
 
             var saving = FindFirstObjectByType<SavingManager>();
@@ -31,7 +31,7 @@ namespace NTO
                 data.oxygen = submarine.Oxygen.Oxygen;
                 data.oxygenTanksSpent = submarine.Oxygen.GetSpentTanks();
                 data.speedMode = submarine.Movement.speedMode;
-                data.engineBroken = submarine.EngineBreak.engineBroken;
+                data.engineBroken = submarine.EngineBreak.EngineBroken;
             };
         }
     }

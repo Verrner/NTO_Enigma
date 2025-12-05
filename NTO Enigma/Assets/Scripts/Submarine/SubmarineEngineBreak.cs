@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace NTO
@@ -5,6 +6,18 @@ namespace NTO
     [RequireComponent(typeof(Submarine))]
     public class SubmarineEngineBreak : MonoBehaviour
     {
-        public bool engineBroken;
+        [SerializeField] private bool engineBroken;
+
+        public bool EngineBroken
+        {
+            get => engineBroken;
+            set
+            {
+                engineBroken = value;
+                EngineBreakingStateChanged?.Invoke(value);
+            }
+        }
+
+        public event Action<bool> EngineBreakingStateChanged;
     }
 }

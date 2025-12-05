@@ -150,3 +150,8 @@ MonoBehaviour:
       value: Fix engine ({fix-engine-key})
     - condition: False|engine-broken
       value: Engine fixed
+  - key: fast-currents
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: you are entered a zone of fast currents

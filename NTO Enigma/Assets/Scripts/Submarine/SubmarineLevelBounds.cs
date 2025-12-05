@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -45,13 +44,13 @@ namespace NTO
                 if (_intersectedChunks.Contains(chunk))
                     chunk.SubmarineInside(_submarine);
                 else
-                    chunk.SubmarineEntered(_submarine);
+                    chunk.Enter(_submarine);
                 newIntersectedChunks.Add(chunk);
             }
 
             foreach (var oldChunk in _intersectedChunks.Where(oldChunk => !newIntersectedChunks.Contains(oldChunk)))
             {
-                oldChunk.SubmarineLeave(_submarine);
+                oldChunk.Leave(_submarine);
             }
 
             _intersectedChunks = newIntersectedChunks;

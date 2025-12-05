@@ -44,7 +44,7 @@ namespace NTO
         {
             _minigameStarted = false;
             _pointerOverElement = false;
-            engineBroken = engineBreak.engineBroken;
+            engineBroken = engineBreak.EngineBroken;
             _minigameContainer.visible = false;
         }
 
@@ -178,7 +178,7 @@ namespace NTO
         private void Win()
         {
             Debug.Log("Win!!");
-            engineBreak.engineBroken = false;
+            engineBreak.EngineBroken = false;
             Close();
         }
         
