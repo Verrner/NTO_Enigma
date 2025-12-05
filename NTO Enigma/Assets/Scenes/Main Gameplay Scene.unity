@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.Tooltip
   tooltipKey: climb-up-tooltip
-  radius: 3
+  radius: 5
 --- !u!114 &66435799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1270,7 +1270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.Tooltip
   tooltipKey: oxygen-tank-tooltip
-  radius: 3
+  radius: 5
 --- !u!54 &160135025
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2675,7 +2675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.Tooltip
   tooltipKey: wheel-tooltip
-  radius: 3
+  radius: 5
 --- !u!54 &507686707
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3565,7 +3565,7 @@ MonoBehaviour:
   tooltipsEnabled: 0
   tooltipLabelName: tooltip-label
   chunksMatrixName: chunks-matrix
-  chunkSide: 50
+  chunkSide: 150
   depthLevelLabelName: depth-level-label
   verticalPositionSliderBackgroundName: vertical-position-slider-background
   verticalPositionSliderName: vertical-position-slider
@@ -4016,7 +4016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.Tooltip
   tooltipKey: altitude-changing-tooltip
-  radius: 3
+  radius: 5
 --- !u!114 &928423532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4662,7 +4662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.Tooltip
   tooltipKey: speed-lever-tooltip
-  radius: 3
+  radius: 5
 --- !u!54 &987423738
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5473,7 +5473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.Tooltip
   tooltipKey: oxygen-tank-tooltip
-  radius: 3
+  radius: 5
 --- !u!54 &1208830935
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6955,7 +6955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.Tooltip
   tooltipKey: oxygen-tank-tooltip
-  radius: 3
+  radius: 5
 --- !u!54 &1785766645
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7341,7 +7341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.Tooltip
   tooltipKey: oxygen-tank-tooltip
-  radius: 3
+  radius: 5
 --- !u!54 &1836872736
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7477,7 +7477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.Tooltip
   tooltipKey: climb-down-tooltip
-  radius: 3
+  radius: 5
 --- !u!114 &1840641444
 MonoBehaviour:
   m_ObjectHideFlags: 0
