@@ -392,6 +392,7 @@ GameObject:
   - component: {fileID: 2965642871993814195}
   - component: {fileID: 2965642871993814203}
   - component: {fileID: 2965642871993814204}
+  - component: {fileID: 2965642871993814205}
   m_Layer: 6
   m_Name: Submarine
   m_TagString: Untagged
@@ -1362,6 +1363,7 @@ Transform:
   - {fileID: 285730040}
   - {fileID: 110400289}
   - {fileID: 653297019}
+  - {fileID: 1357656396}
   m_Father: {fileID: 2965642871993814188}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &261957623
@@ -1724,11 +1726,12 @@ MonoBehaviour:
   - {fileID: 4296545718436652260, guid: ffce556e36043b547be3419f6019a9b8, type: 3}
   - {fileID: 727134003831603316, guid: a9b8021e4a42a1d40869845ddf3e698d, type: 3}
   - {fileID: 7452385930263419211, guid: 72b00b7e0cd40f24db6696cdb8d4e974, type: 3}
+  - {fileID: 6844932226344432970, guid: 09ead20d7ba60c943ad34e5e9f033f49, type: 3}
   chunkSize: 500
   levelInstance:
-    instances: 3
+    instances: 4
     size: {x: 5, y: 5, z: 5}
-    level: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000100000002000000020000000200000001000000000000000100000002000000020000000100000002000000010000000200000001000000020000000200000001000000010000000000000001000000010000000000000000000000
+    level: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000010000000200000001000000030000000200000003000000030000000200000000000000010000000200000002000000030000000200000003000000020000000300000002000000030000000100000003000000030000000300000003000000
   draw: 0
   drawWire: 1
   drawGradient:
@@ -1809,6 +1812,7 @@ Transform:
   - {fileID: 1961573541}
   - {fileID: 868652025}
   - {fileID: 76662968}
+  - {fileID: 399556003}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &312202751
@@ -2273,6 +2277,86 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396818520}
   m_Mesh: {fileID: 3661931850883200941, guid: 748399fe2bf8e0d4880ee9a86b236ab4, type: 3}
+--- !u!1 &399556002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 399556003}
+  - component: {fileID: 399556004}
+  - component: {fileID: 399556005}
+  m_Layer: 0
+  m_Name: Cameras Computer UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &399556003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399556002}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 312202750}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &399556004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399556002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.UIElements.UIDocument
+  m_PanelSettings: {fileID: 11400000, guid: 3ced82deb864e6040b1ac504a0b81cb2, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 5cc3db84283c6bf49aa9bacd5daef968, type: 3}
+  m_SortingOrder: 3
+  m_Position: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+  m_PivotReferenceSize: 0
+  m_Pivot: 0
+  m_WorldSpaceCollider: {fileID: 0}
+--- !u!114 &399556005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399556002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7feb6d78c0104088bc4306c6cfed9230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.CamerasComputerUI
+  document: {fileID: 399556004}
+  closeByKey: 1
+  exitKey: 27
+  backgroundName: background
+  tooltipsEnabled: 1
+  tooltipLabelName: tooltip-label
+  submarineFish: {fileID: 2965642871993814205}
+  cameraViewElementName: camera-view-element
+  topCameraButtonName: top-camera-button
+  rightCameraButtonName: right-camera-button
+  backCameraButtonName: back-camera-button
+  leftCameraButtonName: left-camera-button
 --- !u!1 &403849199
 GameObject:
   m_ObjectHideFlags: 0
@@ -5795,6 +5879,129 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.9259672, y: 3.914146, z: 0.13093376}
   m_Center: {x: -1.1657763, y: -3.179127, z: -4.147643}
+--- !u!1 &1357656395
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1357656396}
+  - component: {fileID: 1357656401}
+  - component: {fileID: 1357656400}
+  - component: {fileID: 1357656399}
+  - component: {fileID: 1357656398}
+  - component: {fileID: 1357656397}
+  m_Layer: 9
+  m_Name: Cameras Computer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1357656396
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357656395}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.70730543, z: -0, w: 0.70690805}
+  m_LocalPosition: {x: -0.379, y: 1.965, z: 3.176}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 229108711}
+  m_LocalEulerAnglesHint: {x: 0, y: 90.032, z: 0}
+--- !u!54 &1357656397
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357656395}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1357656398
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357656395}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2517266, y: 0.9056108, z: 1.458664}
+  m_Center: {x: -0.119440794, y: -0.041982174, z: 0}
+--- !u!114 &1357656399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357656395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd374c78975744e5a974870815d9f505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.EventInteractable
+--- !u!114 &1357656400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357656395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927a704d732c414b8f783a179200fe84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.Tooltip
+  tooltipKey: cameras-computer-tooltip
+  radius: 3
+--- !u!114 &1357656401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357656395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c2430eadff4afda097703af557fb7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.RoomDoor
+  roomUI: {fileID: 399556005}
 --- !u!1 &1364924372
 GameObject:
   m_ObjectHideFlags: 0
@@ -9001,6 +9208,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.SubmarineEngineBreak
   engineBroken: 1
+--- !u!114 &2965642871993814205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74798250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40feee90c2b445d08def3301a502a743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.SubmarineFish
+  submarine: {fileID: 2965642871993814202}
+  cameraWorkEnergyCost: 100
 --- !u!1 &5139140806738128047
 GameObject:
   m_ObjectHideFlags: 0

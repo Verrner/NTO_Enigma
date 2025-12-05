@@ -155,3 +155,28 @@ MonoBehaviour:
     values:
     - condition: 
       value: you are entered a zone of fast currents
+  - key: cameras-computer-tooltip
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Cameras
+  - key: top-camera-button-tooltip
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Top camera
+  - key: right-camera-button-tooltip
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Right camera
+  - key: back-camera-button-tooltip
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Back camera
+  - key: left-camera-button-tooltip
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Left camera
