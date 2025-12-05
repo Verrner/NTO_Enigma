@@ -45,8 +45,6 @@ namespace NTO
             _insertTankButton = Root.Q<Button>(insertTankButtonName);
             _insertTankButton.clicked += InsertTankButtonClicked;
             _hasTankLabel = Root.Q<Label>(hasTankLabelName);
-            HasTank = characterOxygenTank.TankGrabbed;
-            RefreshTankInserted();
         }
         
         private void RefreshTankInserted()
@@ -85,12 +83,8 @@ namespace NTO
 
         protected override void RoomOpened(Character character)
         {
-            
-        }
-
-        protected override void RoomClosed(Character character)
-        {
-            
+            HasTank = characterOxygenTank.TankGrabbed;
+            RefreshTankInserted();
         }
     }
 }

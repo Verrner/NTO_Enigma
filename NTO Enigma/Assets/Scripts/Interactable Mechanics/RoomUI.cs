@@ -64,7 +64,7 @@ namespace NTO
             if (Opened && !OpenedOneFrame)
                 OpenedOneFrame = true;
             if (closeByKey && Input.GetKeyDown(exitKey))
-                Close(_character);
+                Close();
         }
 
         public void Open(Character character)
@@ -72,12 +72,12 @@ namespace NTO
             OpenedOneFrame = false;
             SetRoomOpening(character, true);
             RoomOpened(character);
+            RefreshTooltip();
         }
         
-        public void Close(Character character)
+        protected void Close()
         {
-            SetRoomOpening(character, false);
-            RoomClosed(character);
+            SetRoomOpening(_character, false);
         }
 
         private void SetRoomOpening(Character character, bool opened)
@@ -113,6 +113,5 @@ namespace NTO
         
         protected abstract void Enable();
         protected abstract void RoomOpened(Character character);
-        protected abstract void RoomClosed(Character character);
     }
 }

@@ -147,6 +147,6 @@ MonoBehaviour:
     choiceMethod: 2
     values:
     - condition: True|engine-broken
-      value: Fix engine
+      value: Fix engine ({fix-engine-key})
     - condition: False|engine-broken
       value: Engine fixed

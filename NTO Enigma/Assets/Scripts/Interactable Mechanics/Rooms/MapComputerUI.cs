@@ -54,8 +54,6 @@ namespace NTO
             RefreshChunksStyle();
             RefreshSubmarineElement();
         }
-
-        protected override void RoomClosed(Character character){}
         
         private void SetDepthLevel()
         {
