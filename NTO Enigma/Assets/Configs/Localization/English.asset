@@ -58,7 +58,7 @@ MonoBehaviour:
     choiceMethod: 0
     values:
     - condition: 
-      value: Turn
+      value: Turn (W/D)
   - key: climb-down-tooltip
     choiceMethod: 0
     values:
@@ -122,7 +122,7 @@ MonoBehaviour:
     choiceMethod: 0
     values:
     - condition: 
-      value: Change speed mode
+      value: Change speed mode (S/D/F)
   - key: map-computer-tooltip
     choiceMethod: 0
     values:
@@ -137,7 +137,7 @@ MonoBehaviour:
     choiceMethod: 0
     values:
     - condition: 
-      value: Change altitude
+      value: Change altitude (Mouse Y)
   - key: engine-room-door-tooltip
     choiceMethod: 0
     values:
