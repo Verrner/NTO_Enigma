@@ -33,6 +33,7 @@ namespace NTO
                     return;
                 _tooltipLabel.text = $"{LocalizationManager.GetValue(_currentTooltipKey, _currentTooltipSource)} ({LocalizationManager.GetValue(_instance.mouseKeyTooltipKey, _currentTooltipSource)})";
             };
+            LocalizationManager.LocalizeUI(_root, this);
         }
 
         public static void SetTooltip(string localizationKey) => SetTooltip(localizationKey, _instance);

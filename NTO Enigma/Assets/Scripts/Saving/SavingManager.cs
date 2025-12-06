@@ -130,6 +130,7 @@ namespace NTO
                 return null;
             });
             await task;
+            
             SetData(task.Result);
             
             if (!success)

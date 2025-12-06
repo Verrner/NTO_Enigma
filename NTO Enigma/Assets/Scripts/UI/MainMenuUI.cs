@@ -68,9 +68,9 @@ namespace NTO
             var newSaveNameField = _root.Q<TextField>(newSaveNameFieldName);
             newSaveNameField.RegisterValueChangedCallback(callback =>
             {
-                if (string.IsNullOrWhiteSpace(callback.newValue))
+                if (string.IsNullOrWhiteSpace(newSaveNameField.value))
                     return;
-                savingManager.generalData.name = callback.newValue;
+                savingManager.generalData.name = newSaveNameField.value;
             });
             _root.Q<Button>(createNewSaveButtonName).clicked += () =>
             {

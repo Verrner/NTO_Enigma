@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace NTO
@@ -9,11 +10,16 @@ namespace NTO
         
         private AudioSource _audioSource;
 
-        private void Awake()
+        private void OnEnable()
         {
             _audioSource = GetComponent<AudioSource>();
             RefreshVolume();
             AudioSettings.VolumeChanged += RefreshVolume;
+        }
+
+        private void OnDisable()
+        {
+            AudioSettings.VolumeChanged -= RefreshVolume;
         }
 
         private void RefreshVolume()

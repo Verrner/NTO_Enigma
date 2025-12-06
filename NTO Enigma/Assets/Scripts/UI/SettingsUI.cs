@@ -11,8 +11,7 @@ namespace NTO
         [Header("General"), SerializeField] private MainMenuUI mainMenuUI;
         [SerializeField] private KeyCode exitKey = KeyCode.Escape;
         
-        [Header("Elements"), SerializeField] private string exitButtonName = "exit-button";
-        [SerializeField] private string languageDropdownName = "language-dropdown";
+        [Header("Elements"), SerializeField] private string languageDropdownName = "language-dropdown";
         [SerializeField] private string volumeSliderName = "volume-slider";
 
         private static SettingsUI _instance;
@@ -23,11 +22,21 @@ namespace NTO
         public static bool Opened { get; private set; }
         
         private VisualElement _root;
+        private Slider _volumeSlider;
+        private DropdownField _languageDropdown;
 
         private void Awake()
         {
             if (_instance == null)
+            {
                 _instance = this;
+                FindFirstObjectByType<SavingManager>().LoadingEnded += (_, _) =>
+                {
+                    _volumeSlider.value = AudioSettings.Volume;
+                    _languageDropdown.value = LocalizationManager.Language == SystemLanguage.English ? "English" : "Русский";
+                };
+            }
+
             DontDestroyOnLoad(gameObject);
         }
 
@@ -35,11 +44,9 @@ namespace NTO
         {
             _root = GetComponent<UIDocument>().rootVisualElement;
             
-            _root.Q<Button>(exitButtonName).clicked += Close;
-            
-            var languageDropdown = _root.Q<DropdownField>(languageDropdownName);
-            languageDropdown.value = LocalizationManager.Language == SystemLanguage.English ? "English" : "Русский";
-            languageDropdown.RegisterValueChangedCallback(callback =>
+            _languageDropdown = _root.Q<DropdownField>(languageDropdownName);
+            _languageDropdown.value = LocalizationManager.Language == SystemLanguage.English ? "English" : "Русский";
+            _languageDropdown.RegisterValueChangedCallback(callback =>
             {
                 LocalizationManager.Language = callback.newValue switch
                 {
@@ -49,9 +56,9 @@ namespace NTO
                 };
             });
             
-            var volumeSlider = _root.Q<Slider>(volumeSliderName);
-            volumeSlider.value = AudioSettings.Volume;
-            volumeSlider.RegisterValueChangedCallback(callback =>
+            _volumeSlider = _root.Q<Slider>(volumeSliderName);
+            _volumeSlider.value = AudioSettings.Volume;
+            _volumeSlider.RegisterValueChangedCallback(callback =>
             {
                 AudioSettings.Volume = callback.newValue;
             });

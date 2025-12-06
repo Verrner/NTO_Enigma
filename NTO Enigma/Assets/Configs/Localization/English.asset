@@ -227,3 +227,8 @@ MonoBehaviour:
     values:
     - condition: 
       value: Volume
+  - key: settings-key-tooltip
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Press Tab for Settings
