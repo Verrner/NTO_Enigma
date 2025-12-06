@@ -21,6 +21,8 @@ namespace NTO
 
         private bool _interacted;
         private float _targetAnimationPosition;
+
+        private float _altitudeChangingActual = 0;
         
         private void Awake()
         {
@@ -38,10 +40,14 @@ namespace NTO
 
             var mouseButtonClicked = Input.GetMouseButton(0);
             var altitudeChangingRaw = mouseButtonClicked ? Input.GetAxis("Mouse Y") : 0;
-            var altitudeChangingActual = altitudeChangingRaw * altitudeChangingMultiplier * Time.deltaTime;
             var altitudeChangingAnimation = altitudeChangingRaw * animationSensitivity * Time.deltaTime;
 
-            submarine.linearVelocity = new Vector3(submarine.linearVelocity.x, altitudeChangingActual, submarine.linearVelocity.z);
+            _altitudeChangingActual = mouseButtonClicked
+                ? _altitudeChangingActual + altitudeChangingRaw * altitudeChangingMultiplier * Time.deltaTime
+                : 0;
+                
+
+            submarine.linearVelocity = new Vector3(submarine.linearVelocity.x, _altitudeChangingActual, submarine.linearVelocity.z);
             _targetAnimationPosition = mouseButtonClicked
                 ? Mathf.Clamp(_targetAnimationPosition + altitudeChangingAnimation, minAnimationPosition,
                     maxAnimationPosition)

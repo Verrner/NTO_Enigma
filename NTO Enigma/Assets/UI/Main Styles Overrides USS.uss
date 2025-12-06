@@ -1,0 +1,47 @@
+.unity-text-element {
+    -unity-font-definition: url("project://database/Assets/UI/UI%20Resources/Font.ttf?fileID=12800000&guid=f4760639ee1d79040bb21c34fbb1340f&type=3#Font");
+    color: rgb(207, 207, 207);
+}
+
+.unity-button {
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(207, 207, 207);
+    -unity-font-style: bold;
+    border-left-color: rgb(207, 207, 207);
+    border-right-color: rgb(207, 207, 207);
+    border-top-color: rgb(207, 207, 207);
+    border-bottom-color: rgb(207, 207, 207);
+    border-top-width: 1.5px;
+    border-right-width: 1.5px;
+    border-bottom-width: 1.5px;
+    border-left-width: 1.5px;
+}
+
+.unity-base-field__input {
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(207, 207, 207);
+    border-left-color: rgb(207, 207, 207);
+    border-right-color: rgb(207, 207, 207);
+    border-top-color: rgb(207, 207, 207);
+    border-bottom-color: rgb(207, 207, 207);
+    border-top-width: 1.5px;
+    border-right-width: 1.5px;
+    border-bottom-width: 1.5px;
+    border-left-width: 1.5px;
+}
+
+.unity-button:hover {
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    font-size: 16px;
+}
+
+.unity-base-field__input:hover {
+    font-size: 16px;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+}

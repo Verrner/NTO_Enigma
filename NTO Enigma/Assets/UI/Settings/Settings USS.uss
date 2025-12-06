@@ -1,3 +1,4 @@
-.language-dropdown .unity-base-popup-field__text {
+.language-dropdown .unity-base-popup-field__arrow {
     color: rgb(27, 27, 27);
+    -unity-background-image-tint-color: rgb(207, 207, 207);
 }
