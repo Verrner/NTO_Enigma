@@ -28,7 +28,7 @@ MonoBehaviour:
     choiceMethod: 0
     values:
     - condition: 
-      value: "\u0422\u0435\u0441\u0442\u0422\u0435\u0441\u0442"
+      value: "\u0418\u043C\u044F"
   - key: create-new-save
     choiceMethod: 0
     values:
