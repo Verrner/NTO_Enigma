@@ -4418,7 +4418,7 @@ MonoBehaviour:
   m_PanelSettings: {fileID: 11400000, guid: 3ced82deb864e6040b1ac504a0b81cb2, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: ce7325dbac991de4da4ae42c86282b99, type: 3}
-  m_SortingOrder: 5
+  m_SortingOrder: 6
   m_Position: 0
   m_WorldSpaceSizeMode: 1
   m_WorldSpaceWidth: 1920
@@ -5948,6 +5948,53 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.9259672, y: 3.914146, z: 0.13093376}
   m_Center: {x: -1.1657763, y: -3.179127, z: -4.147643}
+--- !u!1 &1266960740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1266960741}
+  - component: {fileID: 1266960742}
+  m_Layer: 0
+  m_Name: Gameplay Settings Opening
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1266960741
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266960740}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1266960742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266960740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7fbb39f633d4d6b947a95e7c1fec7f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NTO.GameplaySettingsOpening
+  settingsOpeningKey: 27
+  exitKey: exit
+  character: {fileID: 2965642871993814185}
 --- !u!1 &1357656395
 GameObject:
   m_ObjectHideFlags: 0
@@ -6738,6 +6785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.MainGameplayUI
   tooltipLabelName: tooltip-label
+  mouseKeyTooltipKey: mouse-key-tooltip
 --- !u!1 &1724188537
 GameObject:
   m_ObjectHideFlags: 0
@@ -9436,5 +9484,6 @@ SceneRoots:
   - {fileID: 1233904944}
   - {fileID: 312202750}
   - {fileID: 289736870}
+  - {fileID: 1266960741}
   - {fileID: 948822868}
   - {fileID: 1438316052}

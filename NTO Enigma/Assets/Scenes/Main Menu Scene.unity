@@ -206,7 +206,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &519906290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_PanelSettings: {fileID: 11400000, guid: 3ced82deb864e6040b1ac504a0b81cb2, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 6cc7182a75564264394a0a58e4207a31, type: 3}
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Position: 0
   m_WorldSpaceSizeMode: 1
   m_WorldSpaceWidth: 1920
@@ -258,6 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.SettingsUI
   mainMenuUI: {fileID: 1976612911}
+  exitKey: 27
   exitButtonName: exit-button
   languageDropdownName: language-dropdown
 --- !u!1 &709920632
@@ -567,7 +568,6 @@ MonoBehaviour:
   exitButtonName: exit-button
   savingManager: {fileID: 769119882042947228}
   gameplaySceneName: Main Gameplay Scene
-  settingsUI: {fileID: 519906292}
 --- !u!114 &1976612912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -774,6 +774,8 @@ MonoBehaviour:
   energy: 0
   oxygen: 0
   oxygenTanksSpent: 
+  speedMode: 0
+  engineBroken: 0
 --- !u!1 &5945486136183137761
 GameObject:
   m_ObjectHideFlags: 0

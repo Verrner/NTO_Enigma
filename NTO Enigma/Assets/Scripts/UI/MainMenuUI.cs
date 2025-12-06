@@ -27,7 +27,6 @@ namespace NTO
         
         [Header("General"), SerializeField] private SavingManager savingManager;
         [SerializeField] private string gameplaySceneName = "Main Gameplay Scene";
-        [SerializeField] private SettingsUI settingsUI;
 
         private VisualElement _root;
 
@@ -81,7 +80,7 @@ namespace NTO
             };
             _loadExistingSaveButton = _root.Q<Button>(loadExistingSaveButtonName);
             _loadExistingSaveButton.clicked += LoadExistingSave;
-            _root.Q<Button>(settingsButtonName).clicked += OpenSettings;
+            _root.Q<Button>(settingsButtonName).clicked += SettingsUI.Open;
             _root.Q<Button>(exitButtonName).clicked += Application.Quit;
         }
 
@@ -104,11 +103,6 @@ namespace NTO
         private void LoadGameplayScene()
         {
             SceneManager.LoadScene(gameplaySceneName);
-        }
-
-        private void OpenSettings()
-        {
-            settingsUI.gameObject.SetActive(true);
         }
 
         private void ShowAllSaves()
