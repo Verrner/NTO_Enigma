@@ -10,12 +10,21 @@ namespace NTO
         
         private Transform _characterTransform;
 
+        private object _localizationSource;
+
+        public object LocalizationSource
+        {
+            get => _localizationSource ?? this;
+            set => _localizationSource = value;
+        }
+        
         private bool _mouseEnter;
         private bool _tooltipShown;
         
         private void Awake()
         {
-            _characterTransform = FindFirstObjectByType<Character>().transform;
+            var character = FindFirstObjectByType<Character>() ?? (MonoBehaviour)FindFirstObjectByType<HotelCharacter>();
+            _characterTransform = character.transform;
         }
 
         private void Update()
@@ -23,7 +32,7 @@ namespace NTO
             switch (_tooltipShown)
             {
                 case false when _mouseEnter && Vector3.Distance(_characterTransform.position, transform.position) <= radius:
-                    MainGameplayUI.SetTooltip(tooltipKey, this);
+                    MainGameplayUI.SetTooltip(tooltipKey, LocalizationSource);
                     _tooltipShown = true;
                     break;
                 case true when !_mouseEnter || Vector3.Distance(_characterTransform.position, transform.position) > radius:

@@ -213,3 +213,25 @@ MonoBehaviour:
     values:
     - condition: 
       value: "\u041B\u041A\u041C"
+  - key: hotel-door-tooltip
+    choiceMethod: 2
+    values:
+    - condition: False|can-enter-hotel
+      value: "\u0417\u0430\u043A\u0440\u044B\u0442\u043E"
+    - condition: True|can-enter-hotel
+      value: "\u0417\u0430\u0439\u0442\u0438 \u0432 \u043E\u0442\u0435\u043B\u044C"
+  - key: bed-tooltip
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: "\u041F\u043E\u0441\u043F\u0430\u0442\u044C"
+  - key: game-over
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: "\u0418\u0433\u0440\u0430 \u0437\u0430\u043A\u043E\u043D\u0447\u0435\u043D\u0430"
+  - key: gameplay-time
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: "\u0412\u0440\u0435\u043C\u044F \u0438\u0433\u0440\u044B: {game-time}"

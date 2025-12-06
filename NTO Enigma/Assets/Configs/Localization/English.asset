@@ -200,3 +200,25 @@ MonoBehaviour:
     values:
     - condition: 
       value: RMB
+  - key: hotel-door-tooltip
+    choiceMethod: 2
+    values:
+    - condition: False|can-enter-hotel
+      value: Locked
+    - condition: True|can-enter-hotel
+      value: Enter hotel
+  - key: bed-tooltip
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Sleep
+  - key: game-over
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Game over
+  - key: gameplay-time
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: 'Gameplay time: {game-time}'

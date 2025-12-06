@@ -2,7 +2,6 @@ using UnityEngine;
 
 namespace NTO
 {
-    [RequireComponent(typeof(Character))]
     public sealed class CharacterInteraction : MonoBehaviour
     {
         [SerializeField, Min(0)] private float radius;
