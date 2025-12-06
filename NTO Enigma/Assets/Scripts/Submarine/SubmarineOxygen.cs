@@ -38,9 +38,17 @@ namespace NTO
             get => _oxygen;
             set
             {
-                _oxygen = Mathf.Max(0, value);  
-                if (_oxygen == 0) OxygenOver?.Invoke();
-                else OxygenAvailable?.Invoke();
+                _oxygen = Mathf.Max(0, value);
+                if (_oxygen == 0)
+                {
+                    SubmarineAlarmSound.Play("oxygen-lack");
+                    OxygenOver?.Invoke();
+                }
+                else
+                {
+                    SubmarineAlarmSound.Stop("oxygen-lack");
+                    OxygenAvailable?.Invoke();
+                }
             }
         }
 

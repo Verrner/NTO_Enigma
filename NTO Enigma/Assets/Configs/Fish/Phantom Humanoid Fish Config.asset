@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NTO.PhantomHumanoidFish
   chanceOfAppearance: 80
   texture: {fileID: 2800000, guid: 8f5756e2fe267fd4bad2ca563115d205, type: 3}
-  uiNameLocalizationKey: phantom-humanoid-name
-  descriptionLocalizationKey: phantom-humanoid-description
+  audioClip: {fileID: 8300000, guid: 75c51ec7c70fed444b584c9572a767b7, type: 3}
   timeUntilDeath: 10
   sentenceKey: silent-sentence
   verticalOffsetForSwimAway: 100

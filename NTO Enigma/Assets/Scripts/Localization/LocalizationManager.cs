@@ -35,7 +35,7 @@ namespace NTO
             if (_instance == null) _instance = this;
             _tablesDictionary = tables.ToDictionary(table => table.language);
         }
-
+#if UNITY_EDITOR
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.E))
@@ -43,7 +43,7 @@ namespace NTO
             else if (Input.GetKeyDown(KeyCode.R))
                 Language = SystemLanguage.Russian;
         }
-
+#endif
         public static string GetValue(string key, object dynamicVariablesSource)
         {
             var variable = _instance._tablesDictionary[_instance.language].variables.ToList().Find(variable => variable.key == key);

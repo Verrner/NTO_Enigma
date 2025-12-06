@@ -6,13 +6,11 @@ namespace NTO
     {
         [SerializeField, Range(0, 100)] private float chanceOfAppearance;
         [SerializeField] private Texture2D texture;
-        [SerializeField] private string uiNameLocalizationKey;
-        [SerializeField] private string descriptionLocalizationKey;
+        [SerializeField] private AudioClip audioClip;
 
         public float ChanceOfAppearance => chanceOfAppearance;
         public Texture2D Texture => texture;
-        public string UINameLocalizationKey => uiNameLocalizationKey;
-        public string DescriptionLocalizationKey => descriptionLocalizationKey;
+        public AudioClip AudioClip => audioClip;
 
         public abstract void Appeared(SubmarineFish submarineFish);
         public abstract void UpdateFish();

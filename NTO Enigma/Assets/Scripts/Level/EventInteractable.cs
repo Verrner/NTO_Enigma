@@ -8,6 +8,7 @@ namespace NTO
         
         public override void Interact(CharacterInteraction character)
         {
+            Play();
             Interacted?.Invoke(character);
         }
     }

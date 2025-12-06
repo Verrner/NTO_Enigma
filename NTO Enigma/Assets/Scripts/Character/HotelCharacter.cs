@@ -6,6 +6,7 @@ namespace NTO
     public class HotelCharacter : MonoBehaviour
     {
         [Header("Movement"), SerializeField] private float speed;
+        [SerializeField] private new CharacterAudio audio;
 
         [Header("Camera Rotation"), SerializeField] private new Transform camera;
         [SerializeField, Min(0)] private float sensitivity;
@@ -52,6 +53,7 @@ namespace NTO
             
             _twitchTime = 0;
             Moving = targetVelocity.magnitude != 0;
+            audio.RefreshStepsSource(Moving);
             camera.localPosition = new Vector3(camera.localPosition.x, _baseCameraHeight, camera.localPosition.z);
         }
 

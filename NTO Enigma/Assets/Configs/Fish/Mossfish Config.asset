@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NTO.Mossfish
   chanceOfAppearance: 80
   texture: {fileID: 2800000, guid: 9d8640979a3c3d34cbf9ddb5352eae94, type: 3}
-  uiNameLocalizationKey: mossfish-name
-  descriptionLocalizationKey: mossfish-description
+  audioClip: {fileID: 8300000, guid: 75c51ec7c70fed444b584c9572a767b7, type: 3}
   timeUntilDeath: 20
   sentenceKey: silent-sentence
   verticalOffsetForSwimAway: 100

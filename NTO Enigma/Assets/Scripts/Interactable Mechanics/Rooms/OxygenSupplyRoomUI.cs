@@ -11,6 +11,7 @@ namespace NTO
         [SerializeField] private string hasTankLabelName = "has-tank-label";
         [SerializeField] private SubmarineOxygen submarineOxygen;
         [SerializeField] private CharacterOxygenTank characterOxygenTank;
+        [SerializeField] private AudioClip clip;
 
         [HideInInspector, LocalizationDynamicVariable("has-tank")] public bool hasTank;
 
@@ -79,6 +80,7 @@ namespace NTO
             HasTank = false;
             characterOxygenTank.DestroyTank();
             submarineOxygen.ResetOxygen();
+            CharacterInteractionSound.Play(clip);
         }
 
         protected override void RoomOpened(Character character)

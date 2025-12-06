@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace NTO
@@ -7,8 +8,16 @@ namespace NTO
     [RequireComponent(typeof(Submarine))]
     public class SubmarineFish : MonoBehaviour
     {
+        [Serializable]
+        private struct FishSourceInfo
+        {
+            public FishAppearanceOrientation orientation;
+            public AudioSource source;
+        }
+        
         [SerializeField] private Submarine submarine;
         [SerializeField] private float cameraWorkEnergyCost;
+        [SerializeField] private FishSourceInfo[] fishSources;
 
         public Submarine Submarine => submarine;
         
@@ -25,13 +34,15 @@ namespace NTO
 
         public void FishAppeared(Fish fish)
         {
-            Debug.Log($"Appeared {fish.name}");
-
             if (IsFishAppeared(fish))
                 return;
             
             if (!TryGetCorrectOrientation(fish, out FishAppearanceOrientation orientation))
                 throw new Exception("All orientations used");
+            
+            var source = fishSources.ToList().Find(o => o.orientation == orientation);
+            source.source.clip = fish.AudioClip;
+            source.source.Play();
             
             fish.Appeared(this);
 
@@ -40,8 +51,6 @@ namespace NTO
 
         public void FishLeave(Fish fish)
         {
-            Debug.Log($"Leave {fish.name}");
-
             if (!IsFishAppeared(fish))
                 return;
             

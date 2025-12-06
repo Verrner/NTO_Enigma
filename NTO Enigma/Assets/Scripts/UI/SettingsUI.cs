@@ -13,6 +13,7 @@ namespace NTO
         
         [Header("Elements"), SerializeField] private string exitButtonName = "exit-button";
         [SerializeField] private string languageDropdownName = "language-dropdown";
+        [SerializeField] private string volumeSliderName = "volume-slider";
 
         private static SettingsUI _instance;
 
@@ -33,7 +34,9 @@ namespace NTO
         private void OnEnable()
         {
             _root = GetComponent<UIDocument>().rootVisualElement;
+            
             _root.Q<Button>(exitButtonName).clicked += Close;
+            
             var languageDropdown = _root.Q<DropdownField>(languageDropdownName);
             languageDropdown.value = LocalizationManager.Language == SystemLanguage.English ? "English" : "Русский";
             languageDropdown.RegisterValueChangedCallback(callback =>
@@ -45,7 +48,16 @@ namespace NTO
                     _ => LocalizationManager.Language
                 };
             });
+            
+            var volumeSlider = _root.Q<Slider>(volumeSliderName);
+            volumeSlider.value = AudioSettings.Volume;
+            volumeSlider.RegisterValueChangedCallback(callback =>
+            {
+                AudioSettings.Volume = callback.newValue;
+            });
+            
             LocalizationManager.LocalizeUI(_root, this);
+            
             _root.visible = false;
         }
 

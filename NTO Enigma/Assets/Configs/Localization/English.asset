@@ -222,3 +222,8 @@ MonoBehaviour:
     values:
     - condition: 
       value: 'Gameplay time: {game-time}'
+  - key: volume-slider
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Volume

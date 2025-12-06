@@ -24,7 +24,12 @@ namespace NTO
             {
                 _pressure = Mathf.Clamp(value, 0, maxPressure);
                 if (_pressure < maxPressure)
+                {
                     _pressureTimer = 0;
+                    SubmarineAlarmSound.Stop("pressure");
+                }
+                else
+                    SubmarineAlarmSound.Play("pressure");
             }
         }
 

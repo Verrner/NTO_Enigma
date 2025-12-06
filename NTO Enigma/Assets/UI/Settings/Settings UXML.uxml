@@ -4,5 +4,6 @@
     <ui:VisualElement name="content" style="flex-grow: 1; background-color: rgba(30, 30, 30, 0.89);">
         <NTO.LocalizedButton name="exit-button" _key="exit" style="width: 80px; min-width: 80px; max-width: 80px;" />
         <NTO.LocalizedDropdown name="language-dropdown" _key="language-dropdown" class="language-dropdown" style="width: 400px; min-width: 400px; max-width: 400px; color: rgb(207, 207, 207);" />
+        <NTO.LocalizedSlider name="volume-slider" _key="volume-slider" high-value="1" style="width: 400px;" />
     </ui:VisualElement>
 </ui:UXML>

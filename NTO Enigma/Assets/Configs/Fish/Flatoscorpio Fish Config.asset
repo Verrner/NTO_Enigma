@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NTO.FlatoscorpioFish
   chanceOfAppearance: 80
   texture: {fileID: 2800000, guid: 13181df0796d211429c94fbaf1b23a6c, type: 3}
-  uiNameLocalizationKey: flatoscorpio-name
-  descriptionLocalizationKey: flatoscorpio-description
+  audioClip: {fileID: 8300000, guid: 0570be23269c20f468b6770110875308, type: 3}
   timeUntilDeath: 30
   sentenceKey: coverlet-sentence
   timeForSwimAway: 20

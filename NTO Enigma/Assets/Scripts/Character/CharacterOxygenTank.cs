@@ -7,6 +7,7 @@ namespace NTO
     {
         [SerializeField] private Transform tankPrefab;
         [SerializeField] private Transform tankRoot;
+        [SerializeField] private AudioClip clip;
         
         public bool TankGrabbed { get; private set; }
 
@@ -16,6 +17,7 @@ namespace NTO
                 return;
             InstantiateTank();
             TankGrabbed = true;
+            CharacterInteractionSound.Play(clip);
         }
 
         public void DestroyTank()
