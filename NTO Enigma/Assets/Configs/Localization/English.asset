@@ -217,11 +217,6 @@ MonoBehaviour:
     values:
     - condition: 
       value: Game over
-  - key: gameplay-time
-    choiceMethod: 0
-    values:
-    - condition: 
-      value: 'Gameplay time: {game-time}'
   - key: volume-slider
     choiceMethod: 0
     values:
@@ -232,3 +227,8 @@ MonoBehaviour:
     values:
     - condition: 
       value: Press Tab for Settings
+  - key: game-over-tooltip
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: game over

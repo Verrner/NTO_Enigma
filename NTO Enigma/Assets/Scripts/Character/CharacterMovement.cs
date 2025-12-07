@@ -39,6 +39,17 @@ namespace NTO
             CheckCursorLocking();
 
             _baseCameraHeight = camera.localPosition.y;
+
+            SettingsUI.SettingsOpened += () =>
+            {
+                canMove = false;
+                canRotate = false;
+            };
+            SettingsUI.SettingsClosed += () =>
+            {
+                canMove = true;
+                canRotate = true;
+            };
         }
 
         private void Update()
@@ -50,7 +61,7 @@ namespace NTO
         
         private void UpdateMovement()
         {
-            var targetVelocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * speed;
+            var targetVelocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized * speed;
             targetVelocity *= Time.deltaTime * (canMove ? 1 : 0);
             _rigidbody.linearVelocity = _rigidbody.rotation * new Vector3(targetVelocity.x, 0, targetVelocity.y) +
                                         submarineRigidbody.linearVelocity;

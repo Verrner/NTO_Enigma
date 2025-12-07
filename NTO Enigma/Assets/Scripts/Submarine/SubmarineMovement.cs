@@ -27,11 +27,13 @@ namespace NTO
 
         private SubmarineEnergy _energy;
         private Rigidbody _rigidbody;
+        private Bounds _levelBounds;
 
         private void Awake()
         {
             _energy = GetComponent<SubmarineEnergy>();
             _rigidbody = GetComponent<Rigidbody>();
+            _levelBounds = level.LevelBounds;
             SetStartPosition();
         }
 
@@ -63,6 +65,11 @@ namespace NTO
                 SpeedMode.Fast => swiftModeEnergyUsageMultiplier,
                 _ => silentModeEnergyUsageMultiplier
             }));
+            
+            _rigidbody.position = new Vector3(
+                Mathf.Clamp(_rigidbody.position.x, _levelBounds.min.x, _levelBounds.max.x), 
+                Mathf.Clamp(_rigidbody.position.y, _levelBounds.min.y, _levelBounds.max.y), 
+                Mathf.Clamp(_rigidbody.position.z, _levelBounds.min.z, _levelBounds.max.z));
         }
     }
 }

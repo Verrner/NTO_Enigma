@@ -5,10 +5,12 @@ namespace NTO
     [RequireComponent(typeof(CharacterInteraction))]
     public class HotelCharacter : MonoBehaviour
     {
-        [Header("Movement"), SerializeField] private float speed;
+        [Header("Movement"), SerializeField] private bool canMove = true;
+        [SerializeField] private float speed;
         [SerializeField] private new CharacterAudio audio;
 
-        [Header("Camera Rotation"), SerializeField] private new Transform camera;
+        [Header("Camera Rotation"), SerializeField] private bool canRotate = true;
+        [SerializeField] private new Transform camera;
         [SerializeField, Min(0)] private float sensitivity;
         [SerializeField, Min(0)] private float smoothing;
         [SerializeField] private bool lockCursor = true;
@@ -34,6 +36,17 @@ namespace NTO
             CheckCursorLocking();
 
             _baseCameraHeight = camera.localPosition.y;
+            
+            SettingsUI.SettingsOpened += () =>
+            {
+                canMove = false;
+                canRotate = false;
+            };
+            SettingsUI.SettingsClosed += () =>
+            {
+                canMove = true;
+                canRotate = true;
+            };
         }
 
         private void Update()
@@ -45,8 +58,8 @@ namespace NTO
         
         private void UpdateMovement()
         {
-            var targetVelocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * speed;
-            targetVelocity *= Time.deltaTime;
+            var targetVelocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized * speed;
+            targetVelocity *= canMove ? Time.deltaTime : 0;
             _rigidbody.linearVelocity = _rigidbody.rotation * new Vector3(targetVelocity.x, 0, targetVelocity.y);
             
             if (targetVelocity.magnitude != 0 == Moving) return;
@@ -73,7 +86,7 @@ namespace NTO
             var mouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
             var rawFrameVelocity = Vector2.Scale(mouseDelta, Vector2.one * sensitivity * Time.deltaTime);
             _frameVelocity = Vector2.Lerp(_frameVelocity, rawFrameVelocity, 1 / smoothing);
-            _velocity += _frameVelocity;
+            _velocity += _frameVelocity * (canRotate ? 1 : 0);
             _velocity.y = Mathf.Clamp(_velocity.y, -90, 90);
             
             camera.localRotation = Quaternion.AngleAxis(-_velocity.y, Vector3.right);

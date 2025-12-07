@@ -25,7 +25,7 @@ namespace NTO
 
         private void Update()
         {
-            if (Death.Dead)
+            if (DeathUI.Dead)
                 return;
             
             foreach (var f in _fish)

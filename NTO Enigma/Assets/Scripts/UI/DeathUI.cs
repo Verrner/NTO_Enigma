@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Cursor = UnityEngine.Cursor;
@@ -6,7 +5,7 @@ using Cursor = UnityEngine.Cursor;
 namespace NTO
 {
     [RequireComponent(typeof(UIDocument))]
-    public sealed class Death : MonoBehaviour
+    public sealed class DeathUI : MonoBehaviour
     {
         [Header("General"), SerializeField] private Character character;
         
@@ -17,10 +16,9 @@ namespace NTO
 
         [Header("Animation"), SerializeField] private AnimationCurve backgroundAppearanceCurve;
 
-        private static Death _instance;
+        private static DeathUI _instance;
         
         private VisualElement _background;
-        private Label _deathLabel;
         private Label _deathSentenceLabel;
         private Button _exitButton;
 
@@ -55,7 +53,6 @@ namespace NTO
         private void SetElements(VisualElement root)
         {
             _background = root.Q(backgroundName);
-            _deathLabel = root.Q<Label>(deathLabelName);
             _deathSentenceLabel = root.Q<Label>(deathSentenceLabelName);
             _exitButton = root.Q<Button>(exitButtonName);
 
@@ -85,6 +82,9 @@ namespace NTO
             var sentence = LocalizationManager.GetValue(sentenceKey, source);
             _instance._deathSentenceLabel.text = sentence;
             LocalizationManager.LanguageChanged += () => _instance._deathSentenceLabel.text = LocalizationManager.GetValue(sentenceKey, source);
+
+            var saving = FindFirstObjectByType<SavingManager>();
+            saving.generalData.gameOver = true;
         }
     }
 }

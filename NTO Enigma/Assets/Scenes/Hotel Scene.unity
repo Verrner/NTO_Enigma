@@ -431,7 +431,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 116
   m_CollisionDetection: 1
 --- !u!136 &290350197
 CapsuleCollider:
@@ -468,8 +468,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8179d21d699486aaaef39dd78d9a880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.HotelCharacter
+  canMove: 1
   speed: 430
-  audio: {fileID: 0}
+  audio: {fileID: 290350199}
+  canRotate: 1
   camera: {fileID: 1080124387}
   sensitivity: 400
   smoothing: 5
@@ -882,75 +884,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &555533607
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 555533610}
-  - component: {fileID: 555533609}
-  - component: {fileID: 555533608}
-  m_Layer: 5
-  m_Name: Saving Icon UI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &555533608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 555533607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b80786df8c8f4c7bb02bd154a1eb133a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NTO.SavingIconUI
-  savingIconName: saving-icon
---- !u!114 &555533609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 555533607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.UIElements.UIDocument
-  m_PanelSettings: {fileID: 11400000, guid: 3ced82deb864e6040b1ac504a0b81cb2, type: 2}
-  m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: ce7325dbac991de4da4ae42c86282b99, type: 3}
-  m_SortingOrder: 1
-  m_Position: 0
-  m_WorldSpaceSizeMode: 1
-  m_WorldSpaceWidth: 1920
-  m_WorldSpaceHeight: 1080
-  m_PivotReferenceSize: 0
-  m_Pivot: 0
-  m_WorldSpaceCollider: {fileID: 0}
---- !u!4 &555533610
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 555533607}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &596454933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,7 +953,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.GameOverUI
   exitButtonName: exit-button
-  gameTime: 
 --- !u!1 &802847844
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,7 +1123,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NTO.GameplaySettingsOpening
   settingsOpeningKey: 9
   exitKey: exit
-  character: {fileID: 0}
 --- !u!4 &1150914024
 Transform:
   m_ObjectHideFlags: 0
@@ -2530,6 +2461,5 @@ SceneRoots:
   - {fileID: 290350191}
   - {fileID: 1150914024}
   - {fileID: 360318324}
-  - {fileID: 555533610}
   - {fileID: 596454935}
   - {fileID: 1840245684}

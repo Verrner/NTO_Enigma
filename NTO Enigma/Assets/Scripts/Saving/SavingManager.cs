@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.Serialization;
+using UnityEngine.SceneManagement;
 
 namespace NTO
 {
@@ -14,8 +14,9 @@ namespace NTO
         public sealed class GeneralData
         {
             public string name = "New Save";
-            [FormerlySerializedAs("creationDate")] public string creatingDate;
+            public string creatingDate;
             public string updatingDate;
+            public bool gameOver = false;
         }
 
         [Serializable]
@@ -36,7 +37,7 @@ namespace NTO
         
         [SerializeField] public GeneralData generalData;
         [SerializeField] private GameObject[] sources;
-        
+
         public event Action SavingStarted;
         public event Action<string, bool> SavingEnded;
         
@@ -76,7 +77,8 @@ namespace NTO
         
         public async Task Save(Action<string, bool> savingEnded = null)
         {
-            SavingStarted?.Invoke();
+            if (SceneManager.GetActiveScene().name != "Hotel Scene")
+                SavingStarted?.Invoke();
             
             var message = "Saved successfully";
             var success = true;
@@ -98,7 +100,8 @@ namespace NTO
             });
             
             savingEnded?.Invoke(message, success);
-            SavingEnded?.Invoke(message, success);
+            if (SceneManager.GetActiveScene().name != "Hotel Scene")
+                SavingEnded?.Invoke(message, success);
         }
 
         public async Task Load(string fileName, Action<string, bool> loadingEnded = null)
@@ -183,7 +186,7 @@ namespace NTO
                 return;
             Directory.CreateDirectory(path);
         }
-        
+
         public string GetSavedData() => JsonUtility.ToJson(generalData);
         public void LoadData(string data) => generalData = JsonUtility.FromJson<GeneralData>(data);
         public string Id => "general-data";

@@ -13,6 +13,16 @@ namespace NTO
         public float ChunkSize => chunkSize;
         public LevelInstance LevelInstance => levelInstance;
 
+        public Bounds LevelBounds
+        {
+            get
+            {
+                var size = new Vector3(levelInstance.Size.x, levelInstance.Size.y, levelInstance.Size.z) * chunkSize;
+                var bounds = new Bounds(size / 2, size);
+                return bounds;
+            }
+        }
+
         private Chunk[] _chunks;
 
         private void Awake()

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
 namespace NTO
@@ -13,6 +14,7 @@ namespace NTO
     {
         [Header("Saves List"), SerializeField] private string savesListParentName = "saves-list-scroll-view";
         [SerializeField] private VisualTreeAsset saveButtonTemplate;
+        [SerializeField] private string gameOverTooltipKey = "game-over-tooltip";
         
         [Header("Save Settings"), SerializeField] private string saveSettingsContentName = "save-name-field";
         [SerializeField] private string savePathLabelName = "save-path-label";
@@ -46,6 +48,7 @@ namespace NTO
             try
             {
                 ShowAllSaves();
+                SetAvailableSaveIndex();
                 RedrawSettings();
             }
             catch (Exception e)
@@ -113,9 +116,12 @@ namespace NTO
             for (var i = 0; i < _saves.Count; i++)
             {
                 var (path, data) = _saves[i];
-                var template = GetSaveButton(data.name);
-                var button = (Button)template.Children().First();
-                button.clicked += () => SaveButtonClicked((path, data));
+                var template = GetSaveButton(data.name, data.gameOver);
+                if (!data.gameOver)
+                {
+                    var button = (Button)template.Children().First();
+                    button.clicked += () => SaveButtonClicked((path, data));
+                }
                 _savesListParent.Add(template);
             }
         }
@@ -127,21 +133,41 @@ namespace NTO
             LocalizationManager.LocalizeUI(_root, this);
         }
 
+        private void SetAvailableSaveIndex()
+        {
+            for (var i = 0; i < _saves.Count; i++)
+            {
+                if (_saves[i].Item2.gameOver) continue;
+                _selectedSaveIndex = i;
+                return;
+            }
+
+            _selectedSaveIndex = -1;
+        }
+        
         private void RedrawSettings()
         {
-            _saveSettingsContent.style.opacity = _selectedSaveIndex >= _saves.Count ? 0 : 1;
-            if (_selectedSaveIndex >= _saves.Count) return;
+            var indexAvailable = _selectedSaveIndex >= _saves.Count || _selectedSaveIndex == -1;
+            
+            _saveSettingsContent.style.opacity = indexAvailable ? 0 : 1;
+            if (indexAvailable) return;
 
             creatingDate = _saves[_selectedSaveIndex].Item2.creatingDate;
             updatingDate = _saves[_selectedSaveIndex].Item2.updatingDate;
             _savePathLabel.text = _saves[_selectedSaveIndex].Item1;
         }
 
-        private TemplateContainer GetSaveButton(string name)
+        private TemplateContainer GetSaveButton(string name, bool gameOver)
         {
             var template = saveButtonTemplate.Instantiate();
             var element = (Button)template.Children().First();
-            element.text = name;
+            element.text =
+                $"{name}{(gameOver ? $" ({LocalizationManager.GetValue(gameOverTooltipKey, this)})" : "")}";
+            LocalizationManager.LanguageChanged += () => element.text =
+                $"{name}{(gameOver ? $" ({LocalizationManager.GetValue(gameOverTooltipKey, this)})" : "")}";
+            if (gameOver)
+                element.style.color = Color.darkRed;
+            element.SetEnabled(!gameOver);
             return template;
         }
     }

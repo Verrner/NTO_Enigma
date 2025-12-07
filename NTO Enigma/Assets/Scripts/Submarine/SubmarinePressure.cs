@@ -88,7 +88,7 @@ namespace NTO
             deathCause = LocalizationManager.GetValue(pressureChanger.DeathSentenceKey, pressureChanger.Source);
             LocalizationManager.LanguageChanged += () =>
                 deathCause = LocalizationManager.GetValue(pressureChanger.DeathSentenceKey, pressureChanger.Source);
-            Death.ShowDeath("submarine-pressure-sentence", this);
+            DeathUI.ShowDeath("submarine-pressure-sentence", this);
         }
     }
 }

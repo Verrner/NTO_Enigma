@@ -56,7 +56,7 @@ namespace NTO
 
         private void Die()
         {
-            Death.ShowDeath(sentenceKey, this);
+            DeathUI.ShowDeath(sentenceKey, this);
             SwimAway();
         }
     }

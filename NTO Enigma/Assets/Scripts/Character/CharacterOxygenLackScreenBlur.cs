@@ -65,7 +65,7 @@ namespace NTO
 
         private void Died()
         {
-            Death.ShowDeath("oxygen-lack-sentence", this);
+            DeathUI.ShowDeath("oxygen-lack-sentence", this);
         }
     }
 }

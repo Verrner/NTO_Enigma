@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace NTO
@@ -11,6 +12,12 @@ namespace NTO
 
         public bool canInteract = true;
         public Character Character => character;
+
+        private void Awake()
+        {
+            SettingsUI.SettingsOpened += () => canInteract = false;
+            SettingsUI.SettingsClosed += () => canInteract = true;
+        }
 
         private void Update()
         {
