@@ -21,7 +21,6 @@ namespace NTO
         [SerializeField] private SubmarineLevelBounds submarineLevelBounds;
 
         private VisualElement _chunksMatrix;
-        private VisualElement _verticalPositionSliderBackground;
         private VisualElement _verticalPositionSlider;
         private Label _depthLevelLabel;
         private VisualElement _submarineElement;
@@ -93,7 +92,6 @@ namespace NTO
         private void SetElements()
         {
             _chunksMatrix = Root.Q(chunksMatrixName);
-            _verticalPositionSliderBackground = Root.Q(verticalPositionSliderBackgroundName);
             _verticalPositionSlider = Root.Q(verticalPositionSliderName);
             _depthLevelLabel = Root.Q<Label>(depthLevelLabelName);
             _submarineElement = Root.Q(submarineElementName);
@@ -147,10 +145,10 @@ namespace NTO
         private void ChangeChunkStyleAccordingToSubmarinePosition
             (Vector2Int chunkPos, VisualElement chunk, Vector2Int approximateSubmarineChunkPos)
         {
-            var near = chunkPos.x >= approximateSubmarineChunkPos.x - 2 &&
+            var near = (chunkPos.x >= approximateSubmarineChunkPos.x - 2 &&
                        chunkPos.x <= approximateSubmarineChunkPos.x &&
                        chunkPos.y >= approximateSubmarineChunkPos.y - 2 &&
-                       chunkPos.y <= approximateSubmarineChunkPos.y;
+                       chunkPos.y <= approximateSubmarineChunkPos.y) || level.LevelInstance[chunkPos.x, depthLevel, chunkPos.y] == 4;
             if (near)
             {
                 chunk.style.borderBottomWidth = 0;

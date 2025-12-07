@@ -382,7 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b6d623b912a47cb9fde91c1ed833777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.CharacterInteraction
-  radius: 3
+  radius: 5
   camera: {fileID: 1249455475}
   layerMask:
     serializedVersion: 2
@@ -469,11 +469,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.HotelCharacter
   canMove: 1
-  speed: 430
+  speed: 250
   audio: {fileID: 290350199}
   canRotate: 1
   camera: {fileID: 1080124387}
-  sensitivity: 400
+  sensitivity: 270
   smoothing: 5
   lockCursor: 1
   twitchCurve:
@@ -737,7 +737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c0d8cbbc08c443aa8c12fcbdc2c9469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.AudioSourceVolume
-  multiplier: 0.5
+  multiplier: 0.3
 --- !u!82 &481648775
 AudioSource:
   m_ObjectHideFlags: 0
@@ -749,7 +749,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: c1a4d6238f9812f43aa2e0525c2245e0, type: 3}
+  m_Resource: {fileID: 8300000, guid: 90a1a71ffcfa81f469fcbcec2a65535a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1121,7 +1121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7fbb39f633d4d6b947a95e7c1fec7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.GameplaySettingsOpening
-  settingsOpeningKey: 9
   exitKey: exit
 --- !u!4 &1150914024
 Transform:

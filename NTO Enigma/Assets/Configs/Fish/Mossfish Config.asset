@@ -17,4 +17,4 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: 75c51ec7c70fed444b584c9572a767b7, type: 3}
   timeUntilDeath: 20
   sentenceKey: silent-sentence
-  verticalOffsetForSwimAway: 100
+  verticalOffsetForSwimAway: 5

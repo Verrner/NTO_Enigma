@@ -34,7 +34,7 @@ namespace NTO
             
             var multiplier = intensityMultipliersCurve.Evaluate(_alarmTime % _curveDuration);
             foreach (var light in lights)
-                light.intensity *= multiplier;
+                light.intensity = multiplier;
             
             _alarmTime += Time.deltaTime;
         }
@@ -59,12 +59,12 @@ namespace NTO
             _reasons.Remove(reason);
             if (_reasons.Count != 0 || !_started)
                 return;
-            var lastMultiplier =
-                _instance.intensityMultipliersCurve.Evaluate(_instance._alarmTime % _instance._curveDuration);
+            var firstMultiplier =
+                _instance.intensityMultipliersCurve.Evaluate(0);
             foreach (var light in _instance.lights)
             {
                 light.color = _instance.defaultColor;
-                light.intensity /= lastMultiplier;
+                light.intensity = firstMultiplier;
             }
             _started = false;
         }

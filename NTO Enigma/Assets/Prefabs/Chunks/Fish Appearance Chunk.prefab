@@ -52,4 +52,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a96aefda8621b674d95d7dd22e615081, type: 2}
   - {fileID: 11400000, guid: 4b2f4764a9bed584bad2a972db6223e0, type: 2}
   minFishToAppear: 1
-  maxFishToAppear: 4
+  maxFishToAppear: 2
