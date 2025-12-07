@@ -29,21 +29,21 @@ namespace NTO
             altitudeChangingInteractable.Interacted += _ => ChangeInteraction(true);
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             altitudeChangingTransform.localPosition = new Vector3(altitudeChangingTransform.localPosition.x,
                 Mathf.Lerp(altitudeChangingTransform.localPosition.y, _targetAnimationPosition,
-                    animationSpeed * Time.deltaTime), altitudeChangingTransform.localPosition.z);
+                    animationSpeed), altitudeChangingTransform.localPosition.z);
             
             if (!_interacted)
                 return;
 
             var mouseButtonClicked = Input.GetMouseButton(0);
             var altitudeChangingRaw = mouseButtonClicked ? Input.GetAxis("Mouse Y") : 0;
-            var altitudeChangingAnimation = altitudeChangingRaw * animationSensitivity * Time.deltaTime;
+            var altitudeChangingAnimation = altitudeChangingRaw * animationSensitivity;
 
             _altitudeChangingActual = mouseButtonClicked
-                ? _altitudeChangingActual + altitudeChangingRaw * altitudeChangingMultiplier * Time.deltaTime
+                ? _altitudeChangingActual + altitudeChangingRaw * altitudeChangingMultiplier
                 : 0;
                 
 

@@ -12,6 +12,7 @@ namespace NTO
         
         [Header("Elements"), SerializeField] private string languageDropdownName = "language-dropdown";
         [SerializeField] private string volumeSliderName = "volume-slider";
+        [SerializeField] private string sensitivitySliderName = "sensitivity-slider";
 
         private static SettingsUI _instance;
 
@@ -22,16 +23,21 @@ namespace NTO
         
         private VisualElement _root;
         private Slider _volumeSlider;
+        private Slider _sensitivitySlider;
         private DropdownField _languageDropdown;
+
+        private CharacterSaving _characterSaving;
 
         private void Awake()
         {
             if (_instance == null)
             {
+                _characterSaving = FindFirstObjectByType<CharacterSaving>();
                 _instance = this;
                 FindFirstObjectByType<SavingManager>().LoadingEnded += (_, _) =>
                 {
                     _volumeSlider.value = AudioSettings.Volume;
+                    _sensitivitySlider.value = _characterSaving.sensitivity;
                     _languageDropdown.value = LocalizationManager.Language == SystemLanguage.English ? "English" : "Русский";
                 };
             }
@@ -60,6 +66,13 @@ namespace NTO
             _volumeSlider.RegisterValueChangedCallback(callback =>
             {
                 AudioSettings.Volume = callback.newValue;
+            });
+            
+            _sensitivitySlider = _root.Q<Slider>(sensitivitySliderName);
+            _sensitivitySlider.value = _characterSaving.sensitivity;
+            _sensitivitySlider.RegisterValueChangedCallback(callback =>
+            {
+                _characterSaving.sensitivity = callback.newValue;
             });
             
             LocalizationManager.LocalizeUI(_root, this);

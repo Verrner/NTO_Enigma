@@ -16,9 +16,7 @@ namespace NTO
 
         protected override void SubmarineEntered(Submarine submarine)
         {
-            var randomValue = Random.Range(0f, 100f);
-            if (chanceOfBreaking <= randomValue)
-                _engineBreak.EngineBroken = true;
+            _engineBreak.EngineBroken = true;
         }
 
         protected override void SubmarineLeave(Submarine submarine){}

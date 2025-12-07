@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a343cc109d44315b2f6bae6e40516fa, type: 3}
   m_Name: Phantom Humanoid Fish Config
   m_EditorClassIdentifier: Assembly-CSharp::NTO.PhantomHumanoidFish
-  chanceOfAppearance: 20
+  chanceOfAppearance: 50
   texture: {fileID: 2800000, guid: 8f5756e2fe267fd4bad2ca563115d205, type: 3}
   audioClip: {fileID: 8300000, guid: 75c51ec7c70fed444b584c9572a767b7, type: 3}
   timeUntilDeath: 25

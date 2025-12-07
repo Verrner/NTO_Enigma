@@ -13,6 +13,7 @@ namespace NTO
         public bool tankGrabbed;
         public float blurringTimeSinceOxygenOver;
         public float actualTimeSinceOxygenOver;
+        public float sensitivity;
         public bool Loaded { get; private set; }
 
         [Serializable]
@@ -26,9 +27,10 @@ namespace NTO
             public bool tankGrabbed;
             public float blurringTimeSinceOxygenOver;
             public float actualTimeSinceOxygenOver;
+            public float sensitivity;
 
             public CharacterSavingModel(Vector3 localPosition, Quaternion localRotation, bool canMove, bool canRotate, bool canInteract,
-                bool tankGrabbed, float blurringTimeSinceOxygenOver, float actualTimeSinceOxygenOver)
+                bool tankGrabbed, float blurringTimeSinceOxygenOver, float actualTimeSinceOxygenOver, float sensitivity)
             {
                 this.localPosition = localPosition;
                 this.localRotation = localRotation;
@@ -38,6 +40,7 @@ namespace NTO
                 this.tankGrabbed = tankGrabbed;
                 this.blurringTimeSinceOxygenOver = blurringTimeSinceOxygenOver;
                 this.actualTimeSinceOxygenOver = actualTimeSinceOxygenOver;
+                this.sensitivity = sensitivity;
             }
         }
         
@@ -45,7 +48,7 @@ namespace NTO
         {
             var model = new CharacterSavingModel
                 (localPosition, localRotation, canMove, canRotate,
-                canInteract, tankGrabbed, blurringTimeSinceOxygenOver, actualTimeSinceOxygenOver);
+                canInteract, tankGrabbed, blurringTimeSinceOxygenOver, actualTimeSinceOxygenOver, sensitivity);
             return JsonUtility.ToJson(model);
         }
 
@@ -60,6 +63,7 @@ namespace NTO
             tankGrabbed = model.tankGrabbed;
             blurringTimeSinceOxygenOver = model.blurringTimeSinceOxygenOver;
             actualTimeSinceOxygenOver = model.actualTimeSinceOxygenOver;
+            sensitivity = model.sensitivity;
             Loaded = true;
         }
 

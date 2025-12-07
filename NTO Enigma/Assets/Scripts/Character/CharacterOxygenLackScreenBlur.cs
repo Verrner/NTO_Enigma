@@ -31,6 +31,7 @@ namespace NTO
             {
                 _blurringTimeSinceOxygenOver = 0;
                 _actualTimeSinceOxygenOver = 0;
+                _blurBackground.style.opacity = 0;
             };
             
             if (blurringTimeMultiplier.length <= 1) throw new Exception("blurringTimeMultiplier must contain at least 2 key points");

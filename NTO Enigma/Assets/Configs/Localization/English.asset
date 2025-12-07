@@ -58,7 +58,7 @@ MonoBehaviour:
     choiceMethod: 0
     values:
     - condition: 
-      value: Turn (W/D)
+      value: Turn (A/D)
   - key: climb-down-tooltip
     choiceMethod: 0
     values:
@@ -272,3 +272,8 @@ MonoBehaviour:
         very little about the conditions on this planet, so some systems may break.\r\nBut
         don\u2019t worry, we\u2019ve given you the ability to fix everything! Just
         connect a few wires in the generator and everything will work again!"
+  - key: sensitivity-slider
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Sensitivity

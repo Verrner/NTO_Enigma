@@ -14,6 +14,7 @@ namespace NTO
             set
             {
                 engineBroken = value;
+                
                 if (value)
                 {
                     SubmarineAlarmSound.Play("engine-broken");

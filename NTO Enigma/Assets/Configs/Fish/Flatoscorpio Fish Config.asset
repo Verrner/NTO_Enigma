@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd13ef6d55214d4ab85d7805983da1a8, type: 3}
   m_Name: Flatoscorpio Fish Config
   m_EditorClassIdentifier: Assembly-CSharp::NTO.FlatoscorpioFish
-  chanceOfAppearance: 30
+  chanceOfAppearance: 60
   texture: {fileID: 2800000, guid: 13181df0796d211429c94fbaf1b23a6c, type: 3}
   audioClip: {fileID: 8300000, guid: 0570be23269c20f468b6770110875308, type: 3}
   timeUntilDeath: 21

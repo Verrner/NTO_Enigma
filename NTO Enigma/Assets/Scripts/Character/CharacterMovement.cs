@@ -1,9 +1,12 @@
+using System.Numerics;
 using UnityEngine;
+using Quaternion = UnityEngine.Quaternion;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 namespace NTO
 {
-    [RequireComponent(typeof(Character))]
-    public sealed class CharacterMovement : MonoBehaviour
+    public class CharacterMovement : MonoBehaviour
     {
         [SerializeField] private Rigidbody submarineRigidbody;
         
@@ -13,7 +16,6 @@ namespace NTO
 
         [Header("Camera Rotation"), SerializeField] private new Transform camera;
         [SerializeField] public bool canRotate = true;
-        [SerializeField, Min(0)] private float sensitivity;
         [SerializeField, Min(0)] private float smoothing;
         [SerializeField] private bool lockCursor = true;
 
@@ -29,11 +31,15 @@ namespace NTO
 
         private float _twitchTime;
         private float _baseCameraHeight;
+
+        private CharacterSaving _characterSaving;
         
         public bool Moving { get; private set; }
 
         private void Awake()
         {
+            _characterSaving = FindFirstObjectByType<CharacterSaving>();
+            
             _rigidbody = GetComponent<Rigidbody>();
             
             CheckCursorLocking();
@@ -52,7 +58,7 @@ namespace NTO
             };
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             UpdateMovement();
             UpdateCameraTwitch();
@@ -62,9 +68,9 @@ namespace NTO
         private void UpdateMovement()
         {
             var targetVelocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized * speed;
-            targetVelocity *= Time.deltaTime * (canMove ? 1 : 0);
+            targetVelocity *= canMove ? 1 : 0;
             _rigidbody.linearVelocity = _rigidbody.rotation * new Vector3(targetVelocity.x, 0, targetVelocity.y) +
-                                        submarineRigidbody.linearVelocity;
+                                        AddVelocity();
             
             if (targetVelocity.magnitude != 0 == Moving) return;
             
@@ -74,11 +80,13 @@ namespace NTO
             camera.localPosition = new Vector3(camera.localPosition.x, _baseCameraHeight, camera.localPosition.z);
         }
 
+        protected virtual Vector3 AddVelocity() => submarineRigidbody.linearVelocity;
+        
         private void UpdateCameraTwitch()
         {
             if (!Moving || !canTwitch || twitchCurve.length < 2) return;
             
-            _twitchTime = (_twitchTime + Time.deltaTime * twitchSpeed) % twitchCurve.keys[twitchCurve.length - 1].time;
+            _twitchTime = (_twitchTime + twitchSpeed) % twitchCurve.keys[twitchCurve.length - 1].time;
             
             var twitch = twitchCurve.Evaluate(_twitchTime) * twitchAmplitude;
 
@@ -88,7 +96,7 @@ namespace NTO
         private void UpdateCameraRotation()
         {
             var mouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
-            var rawFrameVelocity = Vector2.Scale(mouseDelta, Vector2.one * sensitivity * Time.deltaTime);
+            var rawFrameVelocity = Vector2.Scale(mouseDelta, Vector2.one * _characterSaving.sensitivity);
             _frameVelocity = !canRotate ? Vector2.zero : Vector2.Lerp(_frameVelocity, rawFrameVelocity, 1 / smoothing);
             _velocity += _frameVelocity;
             _velocity.y = Mathf.Clamp(_velocity.y, -90, 90);

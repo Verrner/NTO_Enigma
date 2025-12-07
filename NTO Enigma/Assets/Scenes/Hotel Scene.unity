@@ -386,7 +386,7 @@ MonoBehaviour:
   camera: {fileID: 1249455475}
   layerMask:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 4294967295
   character: {fileID: 0}
   canInteract: 1
 --- !u!4 &290350191
@@ -469,12 +469,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.HotelCharacter
   canMove: 1
-  speed: 250
+  speed: 3
   audio: {fileID: 290350199}
   canRotate: 1
   camera: {fileID: 1080124387}
-  sensitivity: 270
-  smoothing: 5
+  sensitivity: 13
+  smoothing: 3
   lockCursor: 1
   twitchCurve:
     serializedVersion: 2
@@ -554,7 +554,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  twitchSpeed: 0.6
+  twitchSpeed: 0.015
   twitchAmplitude: 2
 --- !u!114 &290350199
 MonoBehaviour:

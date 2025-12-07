@@ -181,7 +181,7 @@ namespace NTO
             var y = _horizontalPlanePos.y / level.ChunkSize * chunkSide;
             _submarineElement.style.translate = new Vector2(x, y);
             
-            _submarineElement.style.rotate = new StyleRotate(Quaternion.Euler(0, 0, submarine.rotation.eulerAngles.y + 180));
+            _submarineElement.style.rotate = new StyleRotate(Quaternion.Euler(0, 0, -submarine.rotation.eulerAngles.y - 180));
         }
     }
 }

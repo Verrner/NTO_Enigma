@@ -43,7 +43,7 @@ namespace NTO
                                  Vector3.one * level.ChunkSize / 2;
         }
         
-        private void Update()
+        private void FixedUpdate()
         {
             UpdateMovement();
         }
@@ -55,11 +55,11 @@ namespace NTO
                 SpeedMode.Default => 1,
                 SpeedMode.Fast => swiftModeSpeedMultiplier,
                 _ => silentModeSpeedMultiplier
-            }) * Time.deltaTime;
+            });
 
             _rigidbody.linearVelocity = _rigidbody.rotation * new Vector3(0, 0, curSpeed);
             
-            _energy.SpendEnergy(energyPerSecond * Time.deltaTime * (engineBreak.EngineBroken ? 1 : speedMode switch
+            _energy.SpendEnergy(energyPerSecond / 60 * (engineBreak.EngineBroken ? 1 : speedMode switch
             {
                 SpeedMode.Default => 1,
                 SpeedMode.Fast => swiftModeEnergyUsageMultiplier,

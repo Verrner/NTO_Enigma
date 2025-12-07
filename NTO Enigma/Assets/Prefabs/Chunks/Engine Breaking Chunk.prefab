@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NTO.EngineBreakingChunk
   level: {fileID: 0}
   index: {x: 0, y: 0, z: 0}
-  chanceOfBreaking: 90
+  chanceOfBreaking: 100

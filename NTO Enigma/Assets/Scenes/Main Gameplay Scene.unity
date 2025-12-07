@@ -2467,7 +2467,7 @@ MonoBehaviour:
   levelInstance:
     instances: 5
     size: {x: 5, y: 2, z: 5}
-    level: 0000000003000000000000000000000000000000020000000100000002000000010000000100000001000000030000000300000001000000000000000200000002000000010000000300000000000000000000000400000002000000020000000000000001000000000000000000000000000000000000000200000001000000020000000200000001000000010000000100000001000000010000000300000003000000030000000100000002000000030000000100000004000000030000000000000000000000
+    level: 0300000003000000000000000200000003000000020000000100000002000000030000000100000001000000030000000100000003000000030000000200000002000000030000000300000002000000020000000400000002000000020000000300000001000000020000000000000002000000030000000200000001000000020000000300000001000000020000000100000003000000020000000300000003000000030000000100000002000000030000000100000004000000030000000200000003000000
   draw: 1
   drawWire: 1
   drawGradient:
@@ -5220,7 +5220,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 5
+  MinDistance: 20
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -5308,7 +5308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c0d8cbbc08c443aa8c12fcbdc2c9469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.AudioSourceVolume
-  multiplier: 0.7
+  multiplier: 1
 --- !u!4 &794407634
 Transform:
   m_ObjectHideFlags: 0
@@ -5673,7 +5673,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 5
+  MinDistance: 20
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -5761,7 +5761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c0d8cbbc08c443aa8c12fcbdc2c9469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.AudioSourceVolume
-  multiplier: 0.7
+  multiplier: 1
 --- !u!4 &926365696
 Transform:
   m_ObjectHideFlags: 0
@@ -6488,7 +6488,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 5
+  MinDistance: 20
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -6576,7 +6576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c0d8cbbc08c443aa8c12fcbdc2c9469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.AudioSourceVolume
-  multiplier: 0.7
+  multiplier: 1
 --- !u!4 &973112993
 Transform:
   m_ObjectHideFlags: 0
@@ -8858,7 +8858,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 8
+  MinDistance: 5
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -10143,7 +10143,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 5
+  MinDistance: 20
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -10231,7 +10231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c0d8cbbc08c443aa8c12fcbdc2c9469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.AudioSourceVolume
-  multiplier: 0.7
+  multiplier: 1
 --- !u!4 &1831139848
 Transform:
   m_ObjectHideFlags: 0
@@ -12157,7 +12157,7 @@ MonoBehaviour:
   camera: {fileID: 110080126}
   layerMask:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 4294967295
   character: {fileID: 2965642871993814185}
   canInteract: 1
 --- !u!4 &2965642871993814187
@@ -12215,12 +12215,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NTO.Movement.CharacterMovement
   submarineRigidbody: {fileID: 2965642871993814190}
   canMove: 1
-  speed: 250
+  speed: 3
   audio: {fileID: 739873351}
   camera: {fileID: 110080130}
   canRotate: 1
-  sensitivity: 270
-  smoothing: 5
+  smoothing: 3
   lockCursor: 1
   canTwitch: 1
   twitchCurve:
@@ -12301,7 +12300,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  twitchSpeed: 0.6
+  twitchSpeed: 0.015
   twitchAmplitude: 2
 --- !u!54 &2965642871993814190
 Rigidbody:
@@ -12575,14 +12574,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823e8876fdf24d76b05756e2b4e718ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.SubmarineMovement
-  speed: 200
-  energyPerSecond: 300
+  speed: 2
+  energyPerSecond: 375
   level: {fileID: 306181839}
   engineBreak: {fileID: 2965642871993814204}
   swiftModeSpeedMultiplier: 1.5
-  swiftModeEnergyUsageMultiplier: 1.5
+  swiftModeEnergyUsageMultiplier: 7
   silentModeSpeedMultiplier: 0.15
-  silentModeEnergyUsageMultiplier: 0.2
+  silentModeEnergyUsageMultiplier: 0.5
   speedMode: 0
 --- !u!114 &2965642871993814201
 MonoBehaviour:
@@ -12596,7 +12595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ad13effcd7b427c8f821aa9aceb3ce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.SubmarineEnergy
-  energyOnStart: 500000
+  energyOnStart: 300000
   submarine: {fileID: 2965642871993814202}
   pressureAdding: 1000
   deathSentenceKey: energy-lack
@@ -12631,14 +12630,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fba29f5b556346a796262076ab6012ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.SubmarineAltitudeChanging
-  altitudeChangingMultiplier: 150
+  altitudeChangingMultiplier: 4
   exitKey: 27
   altitudeChangingInteractable: {fileID: 928423532}
   altitudeChangingTransform: {fileID: 5483754841029703189}
   character: {fileID: 2965642871993814185}
   submarine: {fileID: 2965642871993814190}
-  animationSensitivity: 10
-  animationSpeed: 10
+  animationSensitivity: 0.2
+  animationSpeed: 0.2
   maxAnimationPosition: 0.3
   minAnimationPosition: -0.3
   defaultAnimationPosition: 0

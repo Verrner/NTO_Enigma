@@ -401,9 +401,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.SettingsUI
   mainMenuUI: {fileID: 1976612911}
-  exitKey: 9
+  changingKey: 9
   languageDropdownName: language-dropdown
   volumeSliderName: volume-slider
+  sensitivitySliderName: sensitivity-slider
 --- !u!1 &550159557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1266,6 +1267,7 @@ MonoBehaviour:
   tankGrabbed: 0
   blurringTimeSinceOxygenOver: 0
   actualTimeSinceOxygenOver: 0
+  sensitivity: 10
 --- !u!4 &1891211591762238629
 Transform:
   m_ObjectHideFlags: 0
