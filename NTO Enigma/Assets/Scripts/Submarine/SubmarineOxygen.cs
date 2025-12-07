@@ -42,11 +42,13 @@ namespace NTO
                 if (_oxygen == 0)
                 {
                     SubmarineAlarmSound.Play("oxygen-lack");
+                    SubmarineAlarmLightning.Play("oxygen-lack");
                     OxygenOver?.Invoke();
                 }
                 else
                 {
                     SubmarineAlarmSound.Stop("oxygen-lack");
+                    SubmarineAlarmLightning.Stop("oxygen-lack");
                     OxygenAvailable?.Invoke();
                 }
             }

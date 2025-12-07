@@ -27,9 +27,13 @@ namespace NTO
                 {
                     _pressureTimer = 0;
                     SubmarineAlarmSound.Stop("pressure");
+                    SubmarineAlarmLightning.Stop("pressure");
                 }
                 else
+                {
                     SubmarineAlarmSound.Play("pressure");
+                    SubmarineAlarmLightning.Play("pressure");
+                }
             }
         }
 

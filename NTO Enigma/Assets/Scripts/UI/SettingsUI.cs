@@ -73,7 +73,7 @@ namespace NTO
             if (!Opened)
                 return;
             
-            if (Input.GetKeyDown(exitKey))
+            if (Input.GetKeyDown(exitKey) || Input.GetKeyDown(KeyCode.Escape))
                 Close();
         }
 

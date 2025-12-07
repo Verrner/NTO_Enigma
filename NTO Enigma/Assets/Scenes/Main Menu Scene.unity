@@ -401,8 +401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NTO.SettingsUI
   mainMenuUI: {fileID: 1976612911}
-  exitKey: 27
-  exitButtonName: exit-button
+  exitKey: 9
   languageDropdownName: language-dropdown
   volumeSliderName: volume-slider
 --- !u!1 &550159557
@@ -1128,6 +1127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NTO.MainMenuUI
   savesListParentName: saves-list-scroll-view
   saveButtonTemplate: {fileID: 9197481963319205126, guid: 2f7200fbcba46f34a977139b47870015, type: 3}
+  gameOverTooltipKey: game-over-tooltip
   saveSettingsContentName: save-settings-content
   savePathLabelName: save-path-label
   creatingDate: 
@@ -1238,6 +1238,7 @@ MonoBehaviour:
     name: New Save
     creatingDate: 
     updatingDate: 
+    gameOver: 0
   sources:
   - {fileID: 6999353569995281396}
   - {fileID: 5945486136183137761}
