@@ -232,3 +232,43 @@ MonoBehaviour:
     values:
     - condition: 
       value: game over
+  - key: tutorial-tooltip
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: Tutorial
+  - key: tutorial-controls-tooltip
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: D - Next/A - Previous/Esc - Exit
+  - key: tutorial-page-1
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: "Important principles:\r\nAlways monitor pressure; do not let it rise
+        too high - otherwise the alarm will warn you in advance.\r\nAlways monitor
+        your energy consumption: don\u2019t travel too fast, don\u2019t use the camera
+        for no reason; no one will save you if it runs out.\r\nAlways monitor your
+        oxygen and replace the tank - clients don\u2019t want to be left without
+        their packages.\r\nAlways listen for noise behind the ship - the local life
+        is always unpredictable.\r\nAnd remember: the company cares about you!"
+  - key: tutorial-page-2
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: "Boat controls:\r\nThe boat\u2019s turning angle using the wheel.\r\nThe
+        boat\u2019s speed using the lever.\r\nDiving/surfacing using the suspension
+        lever.\r\n\r\nMap:\r\nGray \u2014 normal.\r\nLight blue \u2014 current.\r\nYellow
+        \u2014 ???\r\nBrown \u2014 pressure zon.\nPurple \u2014 delivery point."
+  - key: tutorial-page-3
+    choiceMethod: 0
+    values:
+    - condition: 
+      value: "Environment photos:\r\nPhotograph the ship\u2019s surroundings to identify
+        the cause of hull damage.\r\n\r\nIf you see a light - ascend quickly.\r\nIf
+        you see someone below - swim away quickly.\r\nIf you see someone else - slow
+        down and make no sound.\r\n\r\nGenerator repair:\r\nUnfortunately, we know
+        very little about the conditions on this planet, so some systems may break.\r\nBut
+        don\u2019t worry, we\u2019ve given you the ability to fix everything! Just
+        connect a few wires in the generator and everything will work again!"

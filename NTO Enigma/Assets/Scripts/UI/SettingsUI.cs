@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 using UnityEngine.UIElements;
-using Cursor = UnityEngine.Cursor;
 
 namespace NTO
 {
@@ -9,7 +8,7 @@ namespace NTO
     public sealed class SettingsUI : MonoBehaviour
     {
         [Header("General"), SerializeField] private MainMenuUI mainMenuUI;
-        [SerializeField] private KeyCode exitKey = KeyCode.Escape;
+        [SerializeField] private KeyCode changingKey = KeyCode.Tab;
         
         [Header("Elements"), SerializeField] private string languageDropdownName = "language-dropdown";
         [SerializeField] private string volumeSliderName = "volume-slider";
@@ -70,10 +69,9 @@ namespace NTO
 
         private void Update()
         {
-            if (!Opened)
-                return;
-            
-            if (Input.GetKeyDown(exitKey) || Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(changingKey))
+                SetOpened(!Opened);
+            else if (Input.GetKeyDown(KeyCode.Escape))
                 Close();
         }
 

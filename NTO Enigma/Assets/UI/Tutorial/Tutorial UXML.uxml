@@ -1,0 +1,8 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Main%20Styles%20Overrides%20USS.uss?fileID=7433441132597879392&amp;guid=ca37d606641a9f848acecba0437296a1&amp;type=3#Main Styles Overrides USS" />
+    <ui:VisualElement name="background" style="flex-grow: 1; background-color: rgba(30, 30, 30, 0.89);">
+        <NTO.LocalizedLabel name="tutorial-label" _key="tutorial-tooltip" style="-unity-text-align: upper-center; -unity-font-style: bold; font-size: 50px; margin-top: 0; margin-right: 0; margin-bottom: 40px; margin-left: 0;" />
+        <ui:Label name="content-label" />
+        <NTO.LocalizedLabel name="tutorial-controls-tooltip-label" _key="tutorial-controls-tooltip" style="position: absolute; left: 0; bottom: 0; margin-top: 0; margin-right: 0; margin-bottom: 20px; margin-left: 20px; color: rgb(161, 161, 161);" />
+    </ui:VisualElement>
+</ui:UXML>

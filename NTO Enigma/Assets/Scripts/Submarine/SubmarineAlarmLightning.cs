@@ -15,6 +15,7 @@ namespace NTO
         private static bool _started;
         
         private float _alarmTime;
+        private float _curveDuration;
 
         private static List<string> _reasons = new List<string>();
 
@@ -23,6 +24,7 @@ namespace NTO
             _instance = this;
             foreach (var light in lights)
                 light.color = defaultColor;
+            _curveDuration = intensityMultipliersCurve.length;
         }
 
         private void Update()
@@ -30,7 +32,7 @@ namespace NTO
             if (!_started)
                 return;
             
-            var multiplier = intensityMultipliersCurve.Evaluate(_alarmTime);
+            var multiplier = intensityMultipliersCurve.Evaluate(_alarmTime % _curveDuration);
             foreach (var light in lights)
                 light.intensity *= multiplier;
             
@@ -58,7 +60,7 @@ namespace NTO
             if (_reasons.Count != 0 || !_started)
                 return;
             var lastMultiplier =
-                _instance.intensityMultipliersCurve.Evaluate(_instance.intensityMultipliersCurve.length);
+                _instance.intensityMultipliersCurve.Evaluate(_instance._alarmTime % _instance._curveDuration);
             foreach (var light in _instance.lights)
             {
                 light.color = _instance.defaultColor;

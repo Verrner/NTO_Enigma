@@ -4,9 +4,8 @@ using Cursor = UnityEngine.Cursor;
 
 namespace NTO
 {
-    public class GameplaySettingsOpening : MonoBehaviour
+    public class GameplaySettingsChanging : MonoBehaviour
     {
-        [SerializeField] private KeyCode settingsOpeningKey = KeyCode.Escape;
         [SerializeField] private string exitKey = "exit";
 
         private void Awake()
@@ -52,15 +51,6 @@ namespace NTO
         {
             Cursor.visible = state;
             Cursor.lockState = state ? CursorLockMode.None : CursorLockMode.Locked;
-        }
-
-        private void Update()
-        {
-            if (SettingsUI.Opened)
-                return;
-            
-            if (Input.GetKeyDown(settingsOpeningKey))
-                SettingsUI.Open();
         }
     }
 }
